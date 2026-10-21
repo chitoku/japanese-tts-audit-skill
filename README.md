@@ -82,7 +82,7 @@ CLI内蔵の文単位生成・プロジェクト初期化は現在ElevenLabs向�
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-31テストは、読み照合、ASR境界の再確認、聴取記録、予算、再試行防止、版管理、確認済み音声の保持、PCM結合を検証します。生成APIはモックで、実行しても音声生成費用はかかりません。GitHub CIのテンプレートは [docs/github-actions-tests.yml](docs/github-actions-tests.yml) に同梱しています。モデル推論は行いません。有効化にはworkflowを登録できる権限で `.github/workflows/tests.yml` に配置してください。
+31テストは、読み照合、ASR境界の再確認、聴取記録、予算、再試行防止、版管理、確認済み音声の保持、PCM結合を検証します。生成APIはモックで、実行しても音声生成費用はかかりません。GitHub Actionsの [自動テスト](.github/workflows/tests.yml) はpush・pull request・手動実行で動きます。Ubuntu / Python 3.12で31テストと保存済み認識によるスモークテストを実行します。有料APIやASRモデルは使いません。[初回実行は成功しました](https://github.com/chitoku/japanese-tts-audit-skill/actions/runs/39626915152)。テンプレートは docs/github-actions-tests.yml にも残しています。
 
 実際の誤警報には「経典」をヒョーテンと認識した例、読経の許容読みドッキョウ、ツヅケ／ツズケの表記差、短文での認識の揺れがあります。辞書、ASR、TTS、許容読み、曖昧な音を区別してください。本ツールはJoyo公式の採点実装でも、TTSモデルのリーダーボードでもありません。
 

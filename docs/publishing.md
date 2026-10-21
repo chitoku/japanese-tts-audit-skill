@@ -12,4 +12,4 @@
 
 ## Private Repoへの保管
 
-`https://github.com/chitoku/japanese-tts-audit-skill` にPrivate Repoとして保管します。一般公開やリリース発行とは別です。現在の認証にworkflowスコープがないため、自動テスト設定は `docs/github-actions-tests.yml` として同梱し、自動実行を有効にしていません。workflowを登録できる認証で `.github/workflows/tests.yml` へ配置すると有効化できます。
+`https://github.com/chitoku/japanese-tts-audit-skill` にPrivate Repoとして保管します。一般公開やリリース発行とは別です。本人認証でworkflow権限を追加し、`.github/workflows/tests.yml` を登録済みです。初回CIは成功しました。`docs/github-actions-tests.yml` は同じ内容のテンプレートとして残しています。詳細は検証記録を参照してください。
