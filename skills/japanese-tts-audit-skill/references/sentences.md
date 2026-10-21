@@ -2,6 +2,14 @@
 
 Use `python -m tts_audit.cli sentences` (or `tts-audit sentences`). Requires the package's `generation` extra for ElevenLabs generation and `asr` extra for local inspection. Existing audio can be imported without a generation API key.
 
+## Retain the creator’s existing provider
+
+Inspection with `tts-audit check` accepts supported audio files regardless of the service that generated them. For repairs, preserve the existing service, model, voice and relevant settings. Use an available provider tool or source-project editor with the user’s spending authorization. Keep the canonical script and other approved audio unchanged; record generation-only pronunciation changes separately. Recheck the complete regenerated sentence, approve before adoption, then listen to joins.
+
+If no provider operation is available, give the creator the sentence and proposed generation input, and inspect the returned file. Do not claim an API request, generation, replacement or cost check occurred unless it actually did. External-provider charges are not tracked by the ElevenLabs budget mechanism.
+
+The CLI’s `sentences init` and `sentences generate` currently assume ElevenLabs models and a voice ID. There is no general Google/other-provider generation adapter or provider-neutral sentence-project initializer yet. Use standalone `check` and the provider’s project workflow for those services; do not invent ElevenLabs settings. `import-audio` can attach an external recording to an already appropriate existing sentence project, with provider/model/voice provenance in `--note`; it does not make the initializer provider-neutral. For a continuous recording without sentence assets, retain the original and use the source editor or request an export before promising lossless replacement.
+
 ## Initialize and inspect segmentation
 
 ```sh
