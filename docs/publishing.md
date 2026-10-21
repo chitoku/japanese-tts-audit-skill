@@ -1,6 +1,6 @@
 # Release procedure · v0.2.0-beta
 
-公開用Repo名は `japanese-tts-audit-skill` です。調査時の `youtube-tts-misreading-pilot` から、制作者向けの点検Skillという役割が分かる名前に変更しました。CLIパッケージ名は `ja-tts-pronunciation-audit`、Skill呼出名は `tts-pronunciation-audit` です。
+公開用Repo名は `japanese-tts-audit-skill` です。調査時の `youtube-tts-misreading-pilot` から、制作者向けの点検Skillという役割が分かる名前に変更しました。CLIパッケージ名は `ja-tts-pronunciation-audit`、Skill呼出名は `japanese-tts-audit-skill` です。
 
 このフォルダは調査用のwork/や全outputs/から、許可した公開ファイルだけを取り出したものです。キー、アカウント残高、ユーザー端末パス、モデル重み、仮想環境を追加しないでください。
 

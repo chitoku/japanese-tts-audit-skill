@@ -1,4 +1,4 @@
 interface:
   display_name: "日本語ナレーション読み点検"
   short_description: "台本と音声から読みの差を探し、該当区間を聴ける確認レポートを作る"
-  default_prompt: "$tts-pronunciation-audit でこの台本と音声を点検し、音声付きの要確認レポートを作ってください。"
+  default_prompt: "$japanese-tts-audit-skill でこの台本と音声を点検し、音声付きの要確認レポートを作ってください。"

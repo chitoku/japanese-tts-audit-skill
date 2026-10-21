@@ -56,17 +56,17 @@ uv pip install --python .venv/bin/python '.[asr,generation]'
 
 `outputs/project/index.html` で文の分け方・全バージョンを確認できます。句読点による自動分割を直す場合は、初期化時に `--sentences-json` で指定します。未生成の文だけを生成し、再実行しても既存音声は作り直しません。
 
-修正は `review needs_revision → generate --regenerate → check --version latest → review approved → select` の順で行います。生成しただけでは採用版を変更せず、確認済みの他の文と旧版を保持します。詳細は [文単位ワークフロー](skills/tts-pronunciation-audit/references/sentences.md)。
+修正は `review needs_revision → generate --regenerate → check --version latest → review approved → select` の順で行います。生成しただけでは採用版を変更せず、確認済みの他の文と旧版を保持します。詳細は [文単位ワークフロー](skills/japanese-tts-audit-skill/references/sentences.md)。
 
 結合には `sentences assemble` を使います。通常は全採用文の承認が必要です。未承認を含む試聴用には `--preview` を明示します。各文の16kHz PCMサンプルを変更せず結合し、完全一致を検証します。文間の声量・間・話し方の自然さは、人の聴取で確認します。
 
 ## Codex Skillとして使う
 
-このRepoには、公式のリポジトリ配置である `.agents/skills/tts-pronunciation-audit` から `skills/tts-pronunciation-audit` への参照があります。このリポジトリでCodexを開き、CLIを導入したPython環境を使ってください。
+このRepoには、公式のリポジトリ配置である `.agents/skills/japanese-tts-audit-skill` から `skills/japanese-tts-audit-skill` への参照があります。このリポジトリでCodexを開き、CLIを導入したPython環境を使ってください。
 
 依頼例：
 
-> $tts-pronunciation-audit この台本と音声を点検して、音声付きの要確認レポートを作ってください。Pythonは .venv/bin/python を使ってください。
+> $japanese-tts-audit-skill この台本と音声を点検して、音声付きの要確認レポートを作ってください。Pythonは .venv/bin/python を使ってください。
 
 別の作業場所で使う場合は、Skillフォルダをインストールし、CLIも別途導入します。Skillだけでは認識依存やモデルは入りません。ローカル配置の現在の規約は [OpenAI公式ガイド](https://learn.chatgpt.com/docs/build-skills) を参照してください。Pluginディレクトリへの登録は本リリースの範囲外です。
 

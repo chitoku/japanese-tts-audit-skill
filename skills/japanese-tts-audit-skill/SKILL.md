@@ -1,5 +1,5 @@
 ---
-name: tts-pronunciation-audit
+name: japanese-tts-audit-skill
 description: Inspect Japanese narration against its script using Kana Whisper and a playable local report. When authorized, generate and repair individual sentences while preserving approved audio. Use for pre-publication TTS proofreading and sentence replacement workflows.
 ---
 
