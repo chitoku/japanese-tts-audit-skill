@@ -1,0 +1,31 @@
+name: Tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install package and mocked-generation dependencies
+        run: python -m pip install '.[generation]'
+      - name: Run unit tests (no TTS or ASR API calls)
+        run: python -m unittest discover -s tests -v
+      - name: Smoke test with recorded kana transcript (no ASR model download)
+        run: tts-audit check examples/known-error/audio.mp3 --script examples/known-error/script.txt --readings examples/known-error/readings.json --transcript-json examples/known-error/transcript.json --out outputs/smoke
+      - name: Verify smoke report and known-error candidate
+        run: |
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          root = Path('outputs/smoke')
+          data = json.loads((root / 'report.json').read_text(encoding='utf-8'))
+          assert any('糾弾' in item['surface'] for item in data['findings']), 'Missing known-error candidate'
+          assert (root / 'report.html').is_file(), 'Missing playable HTML report'
+          assert (root / 'audio.wav').is_file(), 'Missing report audio'
+          print('Playable report and known-error candidate verified.')
+          PYCODE
