@@ -1,0 +1,23 @@
+{
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 5.52,
+      "text": "ホンドーノコンリューニカカワッタヒトビトノナマエワ、フルイキロクニノコサレテイマス"
+    }
+  ],
+  "recognition": {
+    "mode": "local Kana Whisper",
+    "model": "sbintuitions/kana-whisper",
+    "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+    "device": "mps",
+    "dtype": "torch.float32",
+    "torch": "2.9.0",
+    "chunk_seconds": 18,
+    "chunk_strategy": "nearby_low_energy_v1",
+    "script_supplied_to_asr": false,
+    "external_audio_upload": false,
+    "paid_api_cost_usd": 0
+  },
+  "audio_sha256": "a725357e9122a9cc8ff0c166da6df2846037ebb22c5dd61bcd8b6c374b8521f2"
+}

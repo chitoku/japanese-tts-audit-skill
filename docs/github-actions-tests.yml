@@ -1,0 +1,15 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[generation]'
+      - run: python -m unittest discover -s tests -v
+      - run: tts-audit check examples/known-error/audio.mp3 --script examples/known-error/script.txt --readings examples/known-error/readings.json --transcript-json examples/known-error/transcript.json --out outputs/smoke

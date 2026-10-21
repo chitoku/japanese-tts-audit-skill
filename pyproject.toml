@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ja-tts-pronunciation-audit"
+version = "0.2.0b0"
+description = "Local Japanese narration review from a script and audio using Kana Whisper"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "licenses/*"]
+classifiers = ["Development Status :: 4 - Beta", "Programming Language :: Python :: 3", "Operating System :: MacOS"]
+dependencies = ["sudachipy>=0.6.8,<1", "sudachidict_core", "numpy", "scipy", "soundfile"]
+
+[project.optional-dependencies]
+generation = ["requests>=2.31,<3"]
+asr = ["torch>=2.4,<=2.9", "transformers>=4.45,<5", "accelerate", "huggingface_hub<1"]
+
+[project.scripts]
+tts-audit = "tts_audit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,17 @@
+{
+  "audio_sha256": "500a5e28ef3437c4c92ae44c4a9f40ad2c7132143142334528fba5fb781e8105",
+  "segments": [
+    {
+      "start_s": 0,
+      "end_s": 6.966,
+      "text": "アケコオイッポーテキニシュータンスルマエニ、ナニガシゴトトシテカクニンサレテイルノカオセーリシテオキマショー"
+    }
+  ],
+  "recognition": {
+    "mode": "previously recorded local audio-only Kana Whisper",
+    "model": "sbintuitions/kana-whisper",
+    "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+    "script_supplied_to_asr": false,
+    "external_audio_upload": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "tts_model": "eleven_multilingual_v2",
+  "voice": "Jun",
+  "source_audio_sha256": "500a5e28ef3437c4c92ae44c4a9f40ad2c7132143142334528fba5fb781e8105",
+  "target": "糾弾",
+  "expected": "きゅうだん",
+  "listener_reported": "シュウタン",
+  "listener_scope": "A project user reported this word and other non-target differences. Not a whole-sentence reference transcript.",
+  "cause": "Unknown; observed sound does not establish the mechanism.",
+  "kana_asr_script_hint": false,
+  "audio_excluded_from_mit": true
+}

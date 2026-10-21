@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+work/
+outputs/
+*.log
+.env
+.env.*
+!.env.example
+*api-key*
+.DS_Store

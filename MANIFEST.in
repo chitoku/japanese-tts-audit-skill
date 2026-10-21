@@ -1,0 +1,5 @@
+include LICENSE THIRD_PARTY_NOTICES.md README.md CHANGELOG.md
+recursive-include licenses *.txt
+recursive-include skills *.md *.py *.yaml
+recursive-include examples *.txt *.json *.mp3 *.wav *.md
+recursive-include docs *.md
