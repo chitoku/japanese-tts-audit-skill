@@ -18,4 +18,4 @@
 
 自然言語だけでのSkill自動選択、Windows/Linuxでの実音声推論、一般的な検出率・適合率、実利用時の時間短縮は未検証です。GitHub Actionsのテンプレートは docs/github-actions-tests.yml に同梱しています。現在の認証に workflow 権限がないため、自動実行設定は未登録・リモート実行は未実施です。
 
-GitHub Repo作成、push、タグ、prerelease発行、PyPI公開は行っていません。
+クリーン環境検証後、Private Repoへのpushまで進めました。一般公開・タグ・prerelease発行・PyPI公開は行っていません。
