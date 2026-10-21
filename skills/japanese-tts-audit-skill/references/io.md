@@ -14,6 +14,8 @@ Output directory:
 - `transcript.json`: reusable kana segments bound to the original audio hash.
 - `audio.wav`: locally decoded/resampled review audio, 16 kHz PCM16.
 
-The page includes original script and recognized kana. HTML text is escaped. Review notes use a per-run browser-storage key; storage on local file URLs depends on the browser. Export notes JSON for a durable copy. Original source audio/script are not modified. Default inference is local; model retrieval contacts Hugging Face, not an audio recognition API. Nothing is submitted to an external project or published automatically.
+For the standard local-server workflow, see [review-server.md](review-server.md). `review-state.json` is authoritative for server-mode human labels and completion, separate from the unchanged ASR report.
+
+The page includes original script and recognized kana. HTML text is escaped. In file-only mode review notes use a per-run browser-storage key; storage on local file URLs depends on the browser. Export notes JSON for a durable copy. In server mode notes are saved directly to the report directory; browser storage is only a local backup and does not override the server state on reload. Original source audio/script are not modified. Default inference is local; model retrieval contacts Hugging Face, not an audio recognition API. Nothing is submitted to an external project or published automatically.
 
 Candidate classification is provisional. Normalization treats common long-vowel forms and particles alike but is not the official Joyo Kana-CER normalization/scoring implementation. The report is a review assistant, not a validated automatic pronunciation-error detector.

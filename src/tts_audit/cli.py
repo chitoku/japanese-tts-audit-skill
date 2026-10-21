@@ -173,11 +173,15 @@ def main(argv=None):
     os.environ.setdefault('TOKENIZERS_PARALLELISM','false')
     os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK','1')
     actual_argv=sys.argv[1:] if argv is None else argv
+    if actual_argv and actual_argv[0]=='serve':
+        from .server import main as serve_main
+        return serve_main(actual_argv[1:])
     if actual_argv and actual_argv[0]=='sentences':
         from .sentences import main as sentence_main
         return sentence_main(actual_argv[1:])
     parser=argparse.ArgumentParser(prog='tts-audit',description='台本と音声から、カナASRに基づく音声付き要確認レポートを作成')
     sub=parser.add_subparsers(dest='command',required=True)
+    sub.add_parser('serve',help='聴取画面をローカル配信し、判定をJSONへ直接保存（serve --help）')
     sub.add_parser('sentences',help='文単位の生成・点検・版管理・差し替え・結合（sentences --help）')
     p=sub.add_parser('check');p.add_argument('audio',type=Path);p.add_argument('--script',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     p.add_argument('--readings',type=Path,help='Optional JSON mapping original phrases to expected readings')

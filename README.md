@@ -32,7 +32,17 @@ uv pip install --python .venv/bin/python '.[asr,generation]'
 
 レポートは音声、期待読み、カナASR、差のハイライト、絵文字判定、聴取メモを表示します。スペースで現在の音声を再生・停止できます。時刻は認識区間の目安で、単語の正確な時刻ではありません。
 
-メモはブラウザー内に保存され、HTMLファイルには書き戻しません。JSONを書き出してバックアップします。取り込みは次のとおりです。
+### 判定をAgentへ直接渡す：ローカル確認サーバー
+
+```sh
+.venv/bin/tts-audit serve outputs/check --open
+```
+
+表示されたローカルURLで、同じ聴取画面を開きます。判定・聞こえた読み・メモは `outputs/check/review-state.json` に自動保存されます。ダウンロードやチャットへの添付は不要です。「確認終了」で `status: completed` となり、以後の編集は `draft` に戻ります。保存済み表示を確認してください。未判定・保留が残っていても終了でき、それらの件数は明示して残します。終了は正読保証や再生成許可ではありません。
+
+AgentはHTMLを解析せず、このJSONのrun_id・report_sha256・status・notesを読みます。サーバーは127.0.0.1だけで待ち受け、空きポートと推測困難なセッションURLを使います。Ctrl+Cで停止しても保存内容は残り、同じコマンドで再開できます。別の画面からの古い更新は拒否し、入力は画面に保持します。通常利用の手順とJSONの意味は [ローカル確認の仕様](skills/japanese-tts-audit-skill/references/review-server.md) を参照してください。
+
+HTMLをファイルとして直接開く従来の方式も使えます。その場合、メモはブラウザー内に保存され、HTMLファイルには書き戻しません。JSONを書き出してバックアップします。取り込みは次のとおりです。
 
 ```sh
 .venv/bin/python -m tts_audit.reviews outputs/check exported-notes.json
@@ -82,7 +92,7 @@ CLI内蔵の文単位生成・プロジェクト初期化は現在ElevenLabs向�
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-31テストは、読み照合、ASR境界の再確認、聴取記録、予算、再試行防止、版管理、確認済み音声の保持、PCM結合を検証します。生成APIはモックで、実行しても音声生成費用はかかりません。GitHub Actionsの [自動テスト](.github/workflows/tests.yml) はpush・pull request・手動実行で動きます。Ubuntu / Python 3.12で31テストと保存済み認識によるスモークテストを実行します。有料APIやASRモデルは使いません。[初回実行は成功しました](https://github.com/chitoku/japanese-tts-audit-skill/actions/runs/39626915152)。テンプレートは docs/github-actions-tests.yml にも残しています。
+テストは、読み照合、ASR境界の再確認、聴取記録、予算、再試行防止、版管理、確認済み音声の保持、PCM結合を検証します。生成APIはモックで、実行しても音声生成費用はかかりません。GitHub Actionsの [自動テスト](.github/workflows/tests.yml) はpush・pull request・手動実行で動きます。Ubuntu / Python 3.12でユニットテストと保存済み認識によるスモークテストを実行します。有料APIやASRモデルは使いません。[初回実行は成功しました](https://github.com/chitoku/japanese-tts-audit-skill/actions/runs/39626915152)。テンプレートは docs/github-actions-tests.yml にも残しています。
 
 実際の誤警報には「経典」をヒョーテンと認識した例、読経の許容読みドッキョウ、ツヅケ／ツズケの表記差、短文での認識の揺れがあります。辞書、ASR、TTS、許容読み、曖昧な音を区別してください。本ツールはJoyo公式の採点実装でも、TTSモデルのリーダーボードでもありません。
 

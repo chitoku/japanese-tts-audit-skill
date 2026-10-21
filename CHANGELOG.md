@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Add loopback-only `tts-audit serve`: existing listening UI, direct atomic JSON saving, explicit completion and stale-update conflict protection. Preserve file-only export/import.
+
 ## v0.2.0-beta
 
 - 台本と音声を、独立した辞書読みとローカルKana Whisperで照合。
