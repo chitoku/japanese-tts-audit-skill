@@ -23,3 +23,7 @@ No API keys, credentials, authentication/session configuration, remote tunnel, m
 ## Attribution
 
 Dictionary-derived headword/readings data uses JMdict, copyright James William BREEN and the Electronic Dictionary Research and Development Group, under CC BY-SA 4.0. See [dictionary attribution](history-dictionary-attribution.txt) and https://www.edrdg.org/edrdg/licence.html. The surrounding CLI code remains MIT; dictionary data is separately licensed. Narration examples were authored for this project. VOICEVOX audio credit, for audio retained locally: VOICEVOX 青山龍星. No audio is bundled in this snapshot.
+
+## 継続収集の正本
+
+このフォルダは実験時点の記録です。今後の語・用例・誤読観測と固定音声の管理は [data/benchmark](../../data/benchmark/README.md) に統合しました。参照セットの初版はv0.1.0で、採点対象と収集報告を区別し、元の判定を上書きせず保存しています。

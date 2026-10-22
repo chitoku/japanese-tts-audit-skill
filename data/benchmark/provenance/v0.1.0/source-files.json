@@ -1,0 +1,66 @@
+{
+  "evaluation-set-2026-10-21/recordings.json": {
+    "sha256": "fc26d46e267a175737894c4ec29765a384cc5620cbe1fb26cf01a4533559cfd8",
+    "bytes": 185854
+  },
+  "voicevox-trial-2026-10-21/results.json": {
+    "sha256": "7a99a4043afe2289cd66380528b8b18bb0c4a2de264280e3a68505273cfe533a",
+    "bytes": 197031
+  },
+  "tts-benchmark/sentences.v1.jsonl": {
+    "sha256": "26d325aa8ab880e4ed10afad2098395fcd0b9cb41962299d43d80aa566fe70cf",
+    "bytes": 38562
+  },
+  "evaluation-set-2026-10-21/error-cases.json": {
+    "sha256": "52a43e7d7ba04fc2a4ecde3f330e349f484211093f2f4dc9d6e63bd0f1a18e9e",
+    "bytes": 16457
+  },
+  "evaluation-set-2026-10-21/voicevox-spans.json": {
+    "sha256": "f7660bd12522864e3662d4a38fd81a6f01b731714c70a99699f8787e1e050b54",
+    "bytes": 36454
+  },
+  "tts-provider-comparison-2026-10-21/comparison-index.json": {
+    "sha256": "b26d8c2c16ccfad79cf77ddcf4a8767f5df3d0a96ab196c6ad790c94fedf338a",
+    "bytes": 3096477
+  },
+  "tts-provider-comparison-2026-10-21/human-confirmed-nonlexical-summary.json": {
+    "sha256": "5848ea07046571ee1ce9086f79916468fbd1b1e211904d7e16c4760127591e0a",
+    "bytes": 2846
+  },
+  "voicevox-history-200-2026-10-21/review-index.json": {
+    "sha256": "2868d71d7d453a54e855f57d06a772a98e7dbc2a14f66766cfd8aa5de239f23b",
+    "bytes": 400440
+  },
+  "voicevox-history-200-2026-10-21/review-state.json": {
+    "sha256": "a76fe8176504fee1680287b2c6c299c6c7f1f06dbcd77ea69d18b954a37ca95b",
+    "bytes": 15104
+  },
+  "channel-pride/candidate_cases.jsonl": {
+    "sha256": "b80c2bd7242ccb18b5147b4684dcbf2cbe47db5283b153dab73e26133b79a10b",
+    "bytes": 8417
+  },
+  "expanded/candidate_cases.jsonl": {
+    "sha256": "25739d5e50788bacab3dffbbd6a4f9f4512c5c117875e23612e7108add375f17",
+    "bytes": 23311
+  },
+  "nonlexical/candidate_cases.jsonl": {
+    "sha256": "3c50fe9d399bdc498284f925189d8f5f87ec2c2f1557be0d041ee0de3c92b8dc",
+    "bytes": 7393
+  },
+  "nonlexical-round2/candidate_cases.jsonl": {
+    "sha256": "45b088e5e4873de1cf1eb9446bd06e5d58131a67292386f34eedfacd81e06c2d",
+    "bytes": 7879
+  },
+  "same-level-extension/candidate_cases.jsonl": {
+    "sha256": "21026a1a2bbb7e03c859be9105581b58085f335f73a2222cf644be90497806ba",
+    "bytes": 1221
+  },
+  "observed-cases/gVGsJntCY8A-user-report.json": {
+    "sha256": "5fbb5dbb7c6de982f975ddc76ad4b3e0d7da3376b1fc21ad50a19699469a777c",
+    "bytes": 15323
+  },
+  "observed-cases/iiOtK2qYE94-user-report.json": {
+    "sha256": "bbe55bcc0a054d8222faca7ff7bd895971564637f2d919d54a950e5e5d8df1aa",
+    "bytes": 12659
+  }
+}
