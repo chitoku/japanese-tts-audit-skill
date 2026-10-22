@@ -1,6 +1,6 @@
 # Japanese TTS Audit Skill · v0.2.0-beta
 
-`japanese-tts-audit-skill` は、日本語ナレーションの**台本＋音声**から、読みの差を音声付きで確認するCLIとAgent Skillです。必要なら一文ずつ生成し、問題のある文だけを再生成・差し替えできます。
+`japanese-tts-audit-skill` は、日本語ナレーションの**台本＋音声**から、読みの差を音声付きで確認するCLIとAgent Skillです。必要ならAgentが既存のTTSサービスで問題のある文だけを再生成し、CLIで点検・差し替えを管理できます。
 
 試用版です。ASRと辞書の差は誤読確定ではありません。「検出ゼロ」は正読保証ではなく、検出率・適合率は未評価です。現在、実音声の動作確認はApple Silicon Macで行っています。
 
@@ -54,27 +54,58 @@ HTMLをファイルとして直接開く従来の方式も使えます。その�
 
 点検は音声ファイルを入力するため、生成元のサービスを問いません。Skillで修正を進める際は、制作者が使っているサービス・モデル・声・設定を引き継ぎます。Agentから操作できるAPIやツールがあればその方法で該当文を再生成し、なければ制作者にその文の再生成を依頼して、返された音声を再点検します。自動的にElevenLabsへ切り替えません。
 
-CLI内蔵の文単位生成・プロジェクト初期化は現在ElevenLabs向けです。他サービスの生成アダプターや汎用の初期化機能は未実装で、外部サービスの費用も内蔵予算には自動集計しません。他サービスではそのサービス側の編集・生成機能と、既存の `tts-audit check` を組み合わせます。
+文単位のプロジェクト管理は生成元に依存しません。**生成・再生成はエージェントが既存サービスで行い、CLIは音声の取り込み・点検・承認・採用版の差し替えを担当します。** 各サービスのAPIや編集ツールへの接続は、その環境で使える手段をエージェントが選びます。全サービスへの接続をCLIが内蔵しているわけではありません。
 
-## 一文ずつ生成・修正する
-
-この機能だけはElevenLabsへのテキスト送信とクレジット消費があります。既存音声の点検依頼から、自動的に有料生成へ進むことはありません。
+## 一文ずつ点検・修正する（任意のTTSサービス）
 
 ```sh
-.venv/bin/tts-audit sentences init --script script.txt --out outputs/project \
-  --model eleven_v3 --voice-id VOICE_ID \
-  --budget-usd 15 --baseline-usd PRIOR_RESERVE --max-new-usd NEW_LIMIT
-.venv/bin/tts-audit sentences generate outputs/project --key-file PRIVATE_KEY_FILE --max-requests SENTENCE_COUNT
-.venv/bin/tts-audit sentences check outputs/project --cache-dir CACHE --offline
+.venv/bin/tts-audit sentences init --script script.txt --readings readings.json \
+  --out outputs/project --provider external --source-json source.json
 ```
 
-`VOICE_ID`、既使用分の `PRIOR_RESERVE`、今回上限の `NEW_LIMIT`、文数を置き換えてください。秘密キーはリポジトリ外のファイルに保存します。プロジェクトには保存されません。API権限はText to Speechと、含有クレジットを確認するUserの読み取りが必要です。予算計上は安全側の予約で、請求額ではありません。別プロジェクト・共有アカウントでの別利用は自動集計しません。
+初期化はAPIを呼ばず、音声を生成しません。`--provider external` は既定なので省略できます。`source.json` は元の制作環境の情報です。実際に使用中のサービス・モデル・声・設定を記録し、APIキーは含めません。不明な場合は `--source-json` を省略して初期化できます。
 
-`outputs/project/index.html` で文の分け方・全バージョンを確認できます。句読点による自動分割を直す場合は、初期化時に `--sentences-json` で指定します。未生成の文だけを生成し、再実行しても既存音声は作り直しません。
+```json
+{"provider":"使用中のサービス名","model":"使用中のモデル名","voice":"使用中の声","settings":{}}
+```
 
-修正は `review needs_revision → generate --regenerate → check --version latest → review approved → select` の順で行います。生成しただけでは採用版を変更せず、確認済みの他の文と旧版を保持します。詳細は [文単位ワークフロー](skills/japanese-tts-audit-skill/references/sentences.md)。
+エージェントが既存サービスで文ごとの音声を生成するか、既存の文単位音声を書き出し、取り込みます。
 
-結合には `sentences assemble` を使います。通常は全採用文の承認が必要です。未承認を含む試聴用には `--preview` を明示します。各文の16kHz PCMサンプルを変更せず結合し、完全一致を検証します。文間の声量・間・話し方の自然さは、人の聴取で確認します。
+```sh
+.venv/bin/tts-audit sentences import-audio outputs/project --sentence S001 \
+  --audio sentence-S001.wav --source-json source.json --note '元の制作環境から取り込み'
+.venv/bin/tts-audit sentences check outputs/project --sentence S001 --version latest --cache-dir CACHE --offline
+```
+
+`outputs/project/index.html` で文と各版の音声・点検レポートを確認できます。`review` で承認・要修正と根拠を記録します。修正が必要なら、エージェントが**同じサービス・声・設定で該当文だけ**再生成します。かなに開くなど生成専用の変更は別ファイルに残し、元の台本は維持します。
+
+```sh
+# 既存サービスで作った修正版を候補として取り込み
+.venv/bin/tts-audit sentences import-audio outputs/project --sentence S001 \
+  --audio corrected-S001.wav --text-file corrected-S001.txt \
+  --source-json source.json --note '既存サービスで該当文のみ再生成'
+.venv/bin/tts-audit sentences check outputs/project --sentence S001 --version latest --cache-dir CACHE --offline
+.venv/bin/tts-audit sentences review outputs/project --sentence S001 --version latest \
+  --verdict approved --basis asr --note '再点検の結果を記録。人の聴取済みとは区別'
+.venv/bin/tts-audit sentences select outputs/project --sentence S001 --version v002
+```
+
+`v002` は候補の実際の版番号に合わせます。取り込んだだけでは既存の採用版を変更しません。点検・承認後に該当文だけを選び直し、他の確認済み音声を保持します。`--text-file` がない取り込みでは、生成用入力は元台本と同じという仮定を明示します。実際に修正した入力は必ず添えてください。外部サービスの費用はCLIの内蔵予算に自動集計しないため、エージェントがユーザーの予算と既使用分を確認します。
+
+結合は `sentences assemble outputs/project --out outputs/mix`。通常は全採用文の承認が必要です。文ごとの16kHz PCMサンプルを保持して結合し、継ぎ目の試聴音声も出します。話し方・声量・間の自然さは別途確認します。元が連続音声だけの場合、無劣化で該当文を差し替えられるとは限らず、元の編集環境か文単位の書き出しが必要です。詳細は [文単位ワークフロー](skills/japanese-tts-audit-skill/references/sentences.md)。
+
+### 任意：ElevenLabsの内蔵生成アダプター
+
+既存の制作環境がElevenLabsなら、補助機能としてCLIから直接生成する方法も残しています。これを既定の生成先にはしません。
+
+```sh
+.venv/bin/tts-audit sentences init --script script.txt --out outputs/eleven-project \
+  --provider elevenlabs --model eleven_v3 --voice-id VOICE_ID \
+  --budget-usd 15 --baseline-usd PRIOR_RESERVE --max-new-usd NEW_LIMIT
+.venv/bin/tts-audit sentences generate outputs/eleven-project --key-file PRIVATE_KEY_FILE --max-requests SENTENCE_COUNT
+```
+
+この任意アダプターはテキスト送信とクレジット消費を伴います。秘密キーはプロジェクトに保存しません。予算は安全側の予約額で請求額とは異なり、他プロジェクト・共有アカウントの利用は自動集計しません。既存のElevenLabsプロジェクトと旧形式の呼び出しは引き続き利用できます。
 
 ## Codex Skillとして使う
 

@@ -1,4 +1,4 @@
-"""Versioned sentence narration: bounded generation, local audit, explicit adoption."""
+"""Versioned sentence audio: provider-neutral import, local audit, explicit adoption."""
 import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -86,6 +86,8 @@ def load(root):
 
 
 def budget(d):
+    if d.get('provider','elevenlabs') != 'elevenlabs':
+        return {'tracking':'external_untracked','note':'Generation and spending are managed by the existing service/agent, not this CLI.'}
     reserved = sum(x['reserved_usd'] for x in d['requests'])
     b = d['budget']
     return {'new_reserved_usd': round(reserved,7), 'combined_reserved_usd': round(b['baseline_usd']+reserved,7),
@@ -118,11 +120,14 @@ def render_project(root, d):
             label='採用中' if v['id']==s['selected_version'] else '旧版・候補'
             verdict=v.get('review',{}).get('verdict','unreviewed')
             basis=v.get('review',{}).get('basis','—')
+            input_label='生成用入力（元台本と同じと仮定）' if v.get('provenance',{}).get('generation_text_basis')=='canonical_assumed' else '生成用入力'
             audit=f'<a href="{H(v["audit"].replace("report.json","report.html"))}">文の点検レポート</a>' if v.get('audit') else '未点検'
-            history.append(f'<div class="version"><b>{H(v["id"])}・{label}／{H(verdict)}（{H(basis)}）</b><p>生成用入力：{H(v["generation_text"])}</p><audio controls preload="none" src="{H(v["audio"])}"></audio><p>{audit}</p><small>SHA-256 {v["audio_sha256"]}</small></div>')
+            history.append(f'<div class="version"><b>{H(v["id"])}・{label}／{H(verdict)}（{H(basis)}）</b><p>{input_label}：{H(v["generation_text"])}</p><audio controls preload="none" src="{H(v["audio"])}"></audio><p>{audit}</p><small>SHA-256 {v["audio_sha256"]}</small></div>')
         rows.append(f'<section><h2>{s["id"]}</h2><p>{H(s["canonical_text"])}</p>'+''.join(history or ['<p>音声未生成</p>'])+'</section>')
     b=budget(d)
-    html=f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>文単位の制作・点検</title><style>body{{font-family:-apple-system,sans-serif;background:#eff4ef;color:#254133;line-height:1.8}}main{{max-width:1000px;margin:auto;padding:24px}}section,.version{{background:white;border:1px solid #ccddcc;border-radius:10px;padding:18px;margin:18px 0}}.version{{background:#f8fbf8}}audio{{width:100%}}small{{overflow-wrap:anywhere}}a{{color:#176647}}</style><main><h1>文単位の制作・点検</h1><p>{len(d['sentences'])}文。生成と採用は別操作です。新しい版を生成しても、確認済みの採用版を自動で変更しません。</p><p>予算計上：累計 ${b['combined_reserved_usd']:.4f} / ${b['limit_usd']:.2f}。今回の予算計上 ${b['new_reserved_usd']:.4f}。料金の請求額ではありません。</p><p>approvedは記録された根拠（human / asr / agent）と一緒に確認してください。ASR根拠の採用を人の聴取済みとは扱いません。文の判定はCLIで記録し、個別レポートの聴取メモはJSONで保存してください。</p>{''.join(rows)}</main><script>{player_js()}</script></html>'''
+    budget_html=(f"予算計上：累計 ${b['combined_reserved_usd']:.4f} / ${b['limit_usd']:.2f}。今回の予算計上 ${b['new_reserved_usd']:.4f}。料金の請求額ではありません。"
+                 if b.get('tracking')!='external_untracked' else '生成・再生成と費用の確認は、エージェントが既存の制作サービスで行います。このCLIは外部サービスの費用を集計しません。')
+    html=f'''<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>文単位の制作・点検</title><style>body{{font-family:-apple-system,sans-serif;background:#eff4ef;color:#254133;line-height:1.8}}main{{max-width:1000px;margin:auto;padding:24px}}section,.version{{background:white;border:1px solid #ccddcc;border-radius:10px;padding:18px;margin:18px 0}}.version{{background:#f8fbf8}}audio{{width:100%}}small{{overflow-wrap:anywhere}}a{{color:#176647}}</style><main><h1>文単位の制作・点検</h1><p>{len(d['sentences'])}文。生成と採用は別操作です。新しい版を生成しても、確認済みの採用版を自動で変更しません。</p><p>{budget_html}</p><p>approvedは記録された根拠（human / asr / agent）と一緒に確認してください。ASR根拠の採用を人の聴取済みとは扱いません。文の採用判定はCLIで記録します。個別レポートの聴取メモは、確認サーバー利用時は自動保存、ファイルで開く場合はJSONで書き出します。</p>{''.join(rows)}</main><script>{player_js()}</script></html>'''
     (root/'index.html').write_text(html,encoding='utf-8')
 
 
@@ -130,12 +135,41 @@ def player_js():
     return "const aa=[...document.querySelectorAll('audio')];let current=aa[0];aa.forEach(a=>{a.onplay=()=>{current=a;aa.forEach(b=>{if(a!==b)b.pause()})};a.onpointerdown=()=>current=a});document.addEventListener('keydown',e=>{if(e.code!=='Space'||e.repeat||e.ctrlKey||e.metaKey||e.altKey||e.target.closest('input,textarea,select,[contenteditable=true]'))return;e.preventDefault();if(current){if(current.paused)current.play().catch(()=>{});else current.pause()}});"
 
 
+def source_metadata(path):
+    if path is None:return None
+    data=read(path)
+    allowed={'provider','model','voice','settings','project_reference'}
+    if not isinstance(data,dict) or not data or set(data)-allowed:
+        raise ValueError('Source JSON must contain provider/model/voice/settings/project_reference metadata only; never credentials')
+    for key in allowed-{'settings'}:
+        if key in data and (not isinstance(data[key],str) or not data[key].strip()):
+            raise ValueError('Source '+key+' must be a nonempty string')
+    if 'settings' in data and not isinstance(data['settings'],dict):raise ValueError('Source settings must be an object')
+    return data
+
+
 def init(args):
     root=args.out.resolve()
     if root.exists(): raise ValueError('Project output exists; use a new directory')
-    if not all(math.isfinite(x) for x in [args.budget_usd,args.baseline_usd,args.max_new_usd]): raise ValueError('Budget must be finite')
-    if not 0<=args.baseline_usd<args.budget_usd or args.max_new_usd<=0: raise ValueError('Invalid budget')
-    if not re.fullmatch(r'[A-Za-z0-9_-]+',args.voice_id):raise ValueError('Invalid voice ID')
+    # Preserve old explicit ElevenLabs invocation while making the default neutral.
+    mode=getattr(args,'provider',None) or ('elevenlabs' if args.voice_id else 'external')
+    source=source_metadata(getattr(args,'source_json',None))
+    model=voice=None;limits=None
+    if mode=='elevenlabs':
+        if args.budget_usd is None or args.max_new_usd is None:raise ValueError('ElevenLabs generation requires --budget-usd and --max-new-usd')
+        if not all(math.isfinite(x) for x in [args.budget_usd,args.baseline_usd,args.max_new_usd]): raise ValueError('Budget must be finite')
+        if not 0<=args.baseline_usd<args.budget_usd or args.max_new_usd<=0: raise ValueError('Invalid budget')
+        if not args.voice_id or not re.fullmatch(r'[A-Za-z0-9_-]+',args.voice_id):raise ValueError('Invalid voice ID')
+        model=args.model or 'eleven_v3';voice=args.voice_id
+        if model not in {'eleven_v3','eleven_multilingual_v2'}:raise ValueError('Unsupported built-in ElevenLabs model')
+        if source is not None:raise ValueError('--source-json belongs to external projects; built-in ElevenLabs settings use --model/--voice-id')
+        source={'provider':'ElevenLabs','model':model,'voice':voice}
+        limits={'limit_usd':args.budget_usd,'baseline_usd':args.baseline_usd,'max_new_usd':args.max_new_usd,'reserve_per_character_usd':RATE}
+    elif mode=='external':
+        if args.model or args.voice_id or args.budget_usd is not None or args.max_new_usd is not None or args.baseline_usd:
+            raise ValueError('External projects use --source-json; spending is managed outside this CLI')
+        source=source or {'provider':'external'}
+    else:raise ValueError('Unsupported project provider mode')
     text=args.script.read_text(encoding='utf-8-sig')
     pieces=read(args.sentences_json) if args.sentences_json else split_sentences(text)
     if not isinstance(pieces,list) or not pieces or any(not isinstance(p,str) or not p.strip() for p in pieces): raise ValueError('Sentences JSON must contain nonempty strings')
@@ -149,8 +183,8 @@ def init(args):
         expected_readings(text,readings)  # Validate before creating a project or spending anything.
         write(tmp/'readings.json',readings)
         d={'schema_version':1,'tool_version':__import__('tts_audit').__version__,'project_id':str(uuid.uuid4()),'created_at':now(),
-           'script_sha256':digest(tmp/'canonical-script.txt'),'readings_sha256':digest(tmp/'readings.json'),'model':args.model,'voice_id':args.voice_id,
-           'budget':{'limit_usd':args.budget_usd,'baseline_usd':args.baseline_usd,'max_new_usd':args.max_new_usd,'reserve_per_character_usd':RATE},
+           'script_sha256':digest(tmp/'canonical-script.txt'),'readings_sha256':digest(tmp/'readings.json'),
+           'provider':mode,'source':source,'model':model,'voice_id':voice,'budget':limits,
            'requests':[],'sentences':[],'events':[]}
         for i,text in enumerate(pieces,1):
             ident=f'S{i:03d}';folder=tmp/'sentences'/ident;folder.mkdir(parents=True)
@@ -208,6 +242,8 @@ def generate(args,provider=None):
     provider=provider or elevenlabs
     with locked(args.project) as root:
         d=load(root)
+        if d.get('provider','elevenlabs')!='elevenlabs':
+            raise ValueError('External project: regenerate with the existing service/agent, then use import-audio; no built-in provider request sent')
         if any(r['outcome'] in {'reserved','uncertain'} for r in d['requests']): raise ValueError('Unresolved generation request; reconcile provider outcome before any paid retry')
         selected=chosen(d,args.sentence)
         if args.regenerate:
@@ -246,9 +282,16 @@ def generate(args,provider=None):
 
 
 def attach(args):
+    if not args.note.strip():raise ValueError('Provide import provenance in --note')
+    source=source_metadata(getattr(args,'source_json',None))
     with locked(args.project) as root:
         d=load(root);s=find_sentence(d,args.sentence)
-        v=store_version(root,d,s,s['canonical_text'],args.audio.read_bytes(),{'kind':'imported','source_audio_sha256':digest(args.audio),'note':args.note})
+        text_file=getattr(args,'text_file',None)
+        text=text_file.read_text(encoding='utf-8-sig').strip() if text_file else s['canonical_text']
+        if not text:raise ValueError('Generation text is empty')
+        v=store_version(root,d,s,text,args.audio.read_bytes(),{'kind':'imported','source_audio_sha256':digest(args.audio),
+            'source':source if source is not None else d.get('source'),
+            'generation_text_basis':'provided' if text_file else 'canonical_assumed','note':args.note})
         save(root,d);return {'imported':s['id']+'/'+v['id'],'selected_version':s['selected_version']}
 
 
@@ -335,11 +378,15 @@ def main(argv=None):
     sub=parser.add_subparsers(dest='command',required=True)
     p=sub.add_parser('init');p.add_argument('--script',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
     p.add_argument('--sentences-json',type=Path);p.add_argument('--readings',type=Path)
-    p.add_argument('--model',choices=['eleven_v3','eleven_multilingual_v2'],default='eleven_v3');p.add_argument('--voice-id',required=True)
-    p.add_argument('--budget-usd',type=float,required=True);p.add_argument('--baseline-usd',type=float,default=0);p.add_argument('--max-new-usd',type=float,required=True);p.set_defaults(func=init)
+    p.add_argument('--provider',choices=['external','elevenlabs'],help='Default: external; legacy --voice-id implies elevenlabs')
+    p.add_argument('--source-json',type=Path,help='External service/model/voice/settings metadata, without credentials')
+    p.add_argument('--model',choices=['eleven_v3','eleven_multilingual_v2']);p.add_argument('--voice-id')
+    p.add_argument('--budget-usd',type=float);p.add_argument('--baseline-usd',type=float,default=0);p.add_argument('--max-new-usd',type=float);p.set_defaults(func=init)
     p=sub.add_parser('generate');p.add_argument('project',type=Path);p.add_argument('--sentence',action='append');p.add_argument('--key-file',type=Path,required=True)
     p.add_argument('--regenerate',action='store_true');p.add_argument('--text-file',type=Path);p.add_argument('--max-requests',type=int,default=1);p.set_defaults(func=generate)
-    p=sub.add_parser('import-audio');p.add_argument('project',type=Path);p.add_argument('--sentence',required=True);p.add_argument('--audio',type=Path,required=True);p.add_argument('--note',required=True);p.set_defaults(func=attach)
+    p=sub.add_parser('import-audio');p.add_argument('project',type=Path);p.add_argument('--sentence',required=True);p.add_argument('--audio',type=Path,required=True);p.add_argument('--note',required=True)
+    p.add_argument('--text-file',type=Path,help='Actual generation input, separate from canonical text')
+    p.add_argument('--source-json',type=Path,help='Actual recording source metadata; otherwise inherit project source');p.set_defaults(func=attach)
     p=sub.add_parser('check');p.add_argument('project',type=Path);p.add_argument('--sentence',action='append');p.add_argument('--version');p.add_argument('--cache-dir',type=Path);p.add_argument('--offline',action='store_true');p.add_argument('--device');p.set_defaults(func=audit)
     p=sub.add_parser('review');p.add_argument('project',type=Path);p.add_argument('--sentence',required=True);p.add_argument('--version');p.add_argument('--verdict',choices=['approved','needs_revision','uncertain'],required=True);p.add_argument('--basis',choices=['human','asr','agent'],required=True);p.add_argument('--note',required=True);p.set_defaults(func=review)
     p=sub.add_parser('select');p.add_argument('project',type=Path);p.add_argument('--sentence',required=True);p.add_argument('--version',required=True);p.set_defaults(func=select)

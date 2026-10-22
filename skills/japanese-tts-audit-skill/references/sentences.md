@@ -1,57 +1,64 @@
 # Sentence production and repair
 
-Use `python -m tts_audit.cli sentences` (or `tts-audit sentences`). Requires the package's `generation` extra for ElevenLabs generation and `asr` extra for local inspection. Existing audio can be imported without a generation API key.
+Use `tts-audit sentences` (or `python -m tts_audit.cli sentences`). Project initialization, versioned import, inspection, review, selection and assembly are provider-independent. Generation and regeneration normally belong to the agent operating the creator's existing service. The `asr` extra enables local inspection; only the optional built-in ElevenLabs generator needs the `generation` extra and its API key.
 
-## Retain the creator’s existing provider
-
-Inspection with `tts-audit check` accepts supported audio files regardless of the service that generated them. For repairs, preserve the existing service, model, voice and relevant settings. Use an available provider tool or source-project editor with the user’s spending authorization. Keep the canonical script and other approved audio unchanged; record generation-only pronunciation changes separately. Recheck the complete regenerated sentence, approve before adoption, then listen to joins.
-
-If no provider operation is available, give the creator the sentence and proposed generation input, and inspect the returned file. Do not claim an API request, generation, replacement or cost check occurred unless it actually did. External-provider charges are not tracked by the ElevenLabs budget mechanism.
-
-The CLI’s `sentences init` and `sentences generate` currently assume ElevenLabs models and a voice ID. There is no general Google/other-provider generation adapter or provider-neutral sentence-project initializer yet. Use standalone `check` and the provider’s project workflow for those services; do not invent ElevenLabs settings. `import-audio` can attach an external recording to an already appropriate existing sentence project, with provider/model/voice provenance in `--note`; it does not make the initializer provider-neutral. For a continuous recording without sentence assets, retain the original and use the source editor or request an export before promising lossless replacement.
-
-## Initialize and inspect segmentation
+## Initialize for the creator's existing provider
 
 ```sh
 tts-audit sentences init --script script.txt --readings readings.json --out project \
-  --voice-id VOICE_ID --model eleven_v3 \
-  --budget-usd 15 --baseline-usd PRIOR_RESERVE --max-new-usd NEW_LIMIT
+  --provider external --source-json source.json
 ```
 
-Use the user's known budget and prior spending/reservations. The project enforces its own limits; unrelated provider activity and other projects are not automatically included. The reserve uses $0.30/1,000 reported credits or input characters plus one per request, whichever is greater. It is a conservative accounting convention, not a provider invoice or live price guarantee. Included credits are checked before each request. Do not purchase or enable overage.
+`external` is the default. Initializing never calls a generation API. Source JSON records metadata only:
 
-Inspect `project/index.html` before generating. The Japanese punctuation splitter is approximate; quotes, dialogue and abbreviations can need manual segmentation. `--sentences-json` accepts an ordered array of strings that must preserve the script apart from whitespace. Canonical script and expected readings are fixed for a project; create a new project if they change.
-
-## Initial generation and check
-
-```sh
-tts-audit sentences generate project --key-file PRIVATE_KEY_FILE --max-requests SENTENCE_COUNT
-tts-audit sentences check project --cache-dir CACHE --offline
+```json
+{"provider":"existing service","model":"existing model","voice":"existing voice","settings":{}}
 ```
 
-Default generation creates missing sentences only; repeating it does not regenerate existing audio. The default request limit is one; choose an explicit batch limit within user authorization. Keys are read locally and never stored in the project. No paid automatic retries occur. A persisted reserved/uncertain request blocks further paid calls until its provider outcome is reconciled; do not clear it blindly.
+Allowed source fields are `provider`, `model`, `voice`, `settings` and `project_reference`. Do not include credentials, access tokens or signed URLs. Use known source-project/session settings; omit unavailable fields or the entire optional `--source-json`, rather than inventing ElevenLabs settings. Source metadata passed on import describes that specific recording and replaces the project default for that version.
 
-Inspect each sentence's audit and record adoption evidence:
+Inspect `project/index.html` and `project.json` for sentence IDs and segmentation. The punctuation splitter is approximate; `--sentences-json` accepts an ordered array of nonempty strings preserving the canonical script apart from whitespace. Canonical script and expected readings are fixed; initialize a new project if they change.
+
+For continuous recordings without sentence assets, retain the original and use the source editor or request a sentence export before promising lossless replacement. The CLI does not automatically turn arbitrary continuous audio into precisely aligned replaceable sentences.
+
+## Generate externally, import, inspect
+
+Use the provider API, CLI, available connector or editable source project to generate each missing sentence with the existing model, voice and settings. When recordings already exist, import them without regenerating. Preserve the user's spending authorization and prior spending; external charges are not tracked or constrained by this CLI. If provider operation is unavailable, give the creator the affected sentence and proposed generation-only text changes, then inspect the returned audio. Do not claim a provider call or cost check that did not occur.
 
 ```sh
-tts-audit sentences review project --sentence S001 --verdict approved --basis asr --note 'No actionable difference in this inspection; human hearing not claimed'
+tts-audit sentences import-audio project --sentence S001 --audio sentence-S001.wav \
+  --source-json source.json --note 'Imported from the existing production environment'
+tts-audit sentences check project --sentence S001 --version latest --cache-dir CACHE --offline
 ```
 
-`approved` means approved for adoption with the recorded basis, not necessarily human-certified pronunciation. Use `--basis human` only for actual user/listener reports covering that sentence. A correct target word alone does not certify the rest of the sentence. Use `needs_revision` for a selected repair target and `uncertain` for unresolved cases. Preserve dictionary alternatives and ASR false positives rather than rewriting correct audio.
+Imports require no generation API key. They retain original provider bytes and a normalized 16kHz mono PCM audit/assembly copy. Project source settings are inherited when `--source-json` is absent. If the actual input is known, supply `--text-file`; otherwise the canonical text is saved with an explicit `canonical_assumed` basis. After any pronunciation change, always supply the actual generation input. Imports are not claims that this CLI generated the audio.
 
-## One-sentence repair and adoption
+Inspect each sentence's playable report. In server mode use `tts-audit serve` on the report directory and read its saved `review-state.json`; do not request a downloaded attachment. The sentence project's adoption decision is a separate CLI record:
 
 ```sh
-tts-audit sentences review project --sentence S007 --verdict needs_revision --basis asr --note 'Describe the observed difference and its uncertainty'
-tts-audit sentences generate project --sentence S007 --regenerate --text-file corrected-S007.txt --key-file PRIVATE_KEY_FILE --max-requests 1
+tts-audit sentences review project --sentence S001 --version latest \
+  --verdict approved --basis asr --note 'No actionable difference found; human hearing not claimed'
+```
+
+`approved` is an adoption decision with a recorded basis, not necessarily human-certified pronunciation. Use `--basis human` only for actual listener reports covering that sentence. A correct target word alone does not certify the rest. Use `needs_revision` for a selected repair target and `uncertain` for unresolved cases. Preserve accepted readings and ASR false alarms instead of rewriting correct audio.
+
+## Repair just the affected sentence
+
+1. Mark the selected repair target `needs_revision`, recording the evidence and uncertainty.
+2. Prepare a separate generation-only text file (for example, open the problematic word into kana) while keeping canonical display text unchanged.
+3. Ask the existing service's tool/editor to regenerate that sentence only, preserving the current model, voice and relevant settings.
+4. Import the returned candidate, inspect it against the canonical text, record approval and explicitly select it.
+
+```sh
+tts-audit sentences import-audio project --sentence S007 --audio corrected-S007.wav \
+  --text-file corrected-S007.txt --source-json source.json --note 'Sentence regenerated by the agent using the existing service'
 tts-audit sentences check project --sentence S007 --version latest --cache-dir CACHE --offline
-tts-audit sentences review project --sentence S007 --version latest --verdict approved --basis asr --note 'Describe reinspection evidence'
+tts-audit sentences review project --sentence S007 --version latest \
+  --verdict approved --basis asr --note 'Describe reinspection evidence and remaining uncertainty'
 tts-audit sentences select project --sentence S007 --version v002
 ```
 
-Only a selected sentence marked `needs_revision` can be regenerated. Put the corrected generation text in a separate file; keep the canonical script unchanged. Regeneration adds a candidate and retains the old selected version. `check --version latest` inspects that candidate against the original sentence. `select` requires an approved candidate and changes one sentence pointer. Other sentence files, audits and approvals remain unchanged. Inspect any other differences introduced within the regenerated sentence; do not retry solely to satisfy an unstable ASR.
-
-Use `import-audio project --sentence S007 --audio EXISTING_AUDIO --note PROVENANCE` to bring in a known sentence recording. It is an import, not a claim that the CLI freshly generated it. New imports also retain an existing selected version until explicit approval/selection.
+Use the candidate's actual version ID. Importing a replacement appends a version and retains the existing selected pointer. The first imported version becomes the initial selected pointer but remains unapproved. `select` requires approval; other sentences' audio, inspections and approvals remain unchanged. Check the complete regenerated sentence for newly introduced differences. Do not retry merely to satisfy unstable ASR, or regenerate approved unrelated sentences.
 
 ## Assemble and verify preservation
 
@@ -60,6 +67,23 @@ tts-audit sentences assemble project --out mix-v2 --gap-ms 250
 tts-audit sentences status project
 ```
 
-All selected sentences must be approved; `assemble --preview` explicitly permits a listening draft with unresolved sentences. The mix uses 16 kHz mono PCM without changing source sentence samples, and verifies exact sample equality. `assembly.json` records selected versions, source hashes, sample positions and review basis. Separate join clips allow listening to the transitions. Sample preservation does not guarantee consistent intonation, volume or pauses; joins are not automatically human-reviewed.
+All selected sentences must be approved; `assemble --preview` explicitly permits a listening draft with unresolved sentences. Assembly preserves each normalized sentence's PCM samples and verifies equality. `assembly.json` records versions, source hashes, sample positions and review basis. Join clips allow listening to transitions; matching samples do not guarantee consistent intonation, volume or pauses. Joins are not automatically human-reviewed.
 
-If an initial run has no genuine repair target, stop without unnecessary paid regeneration. To exercise replacement using an earlier real failure, keep it as a clearly labeled imported case or a separate reproduction project; do not present a seeded failure as a spontaneous failure of the new run.
+If no genuine repair target exists, stop without unnecessary paid regeneration. Imported reproductions of earlier failures should be labeled as such.
+
+## Optional built-in ElevenLabs adapter
+
+Use this only when it matches the creator's existing workflow. An external project cannot call this adapter; `generate` fails before sending a provider request.
+
+```sh
+tts-audit sentences init --script script.txt --readings readings.json --out eleven-project \
+  --provider elevenlabs --voice-id VOICE_ID --model eleven_v3 \
+  --budget-usd TOTAL_LIMIT --baseline-usd PRIOR_RESERVE --max-new-usd NEW_LIMIT
+tts-audit sentences generate eleven-project --key-file PRIVATE_KEY_FILE --max-requests SENTENCE_COUNT
+```
+
+For compatibility, an old initializer invocation with `--voice-id` and no explicit provider still selects this adapter. Old project files without a provider field retain their ElevenLabs semantics. New projects without those arguments default to external mode.
+
+The reserve is a conservative accounting convention: $0.30/1,000 reported credits or input characters plus one per request, whichever is greater. It is not an invoice or live price guarantee. Check included credits before requests; do not purchase or enable overage. Keys remain outside the project. Default generation fills missing sentences only, the default request limit is one, and no paid automatic retries occur. A reserved/uncertain request blocks further calls until its outcome is reconciled.
+
+For this adapter's one-sentence repair, mark the selected version `needs_revision`, then use `generate eleven-project --sentence S007 --regenerate --text-file corrected-S007.txt --key-file PRIVATE_KEY_FILE --max-requests 1`. Inspect and approve `--version latest` before selecting it, just as for an external candidate. Other projects, external services and unrelated account activity are not included in the built-in budget.
