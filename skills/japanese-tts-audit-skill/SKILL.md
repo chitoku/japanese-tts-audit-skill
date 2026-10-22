@@ -23,6 +23,7 @@ For sentence-by-sentence generation, repair and assembly supported by the CLI, u
 ## Interpret
 
 - Distinguish TTS errors, dictionary/G2P mistakes, ASR mistakes, valid alternate readings, and ambiguous sound. "No difference" does not guarantee correct pronunciation.
+- Standard-Japanese ヅ／ズ and ヂ／ジ spelling differences are normalized for audio comparison. A small surface-specific list of alternate readings (払拭, 施工, 私, いう) remains in JSON and playable cards at `low_variant` priority when the expectation came from the dictionary. An explicit `--readings` difference retains normal priority even if it matches that list. Do not treat a lower-priority card as human-confirmed correct or learn global pronunciation exceptions from a single listening label.
 - Look beyond any original benchmark target: a correct target does not imply the whole sentence is correct.
 - Record observed sound separately from claims about its cause. Cross-language-like sounds or dictionary-inexplicable readings do not prove a mechanism.
 - This preview uses whole-script sequence alignment and audio segments split near low-energy boundaries. Numeric readings, names, accepted variants, chunk boundaries, and major script/audio differences need care. Use `--readings` for known vocabulary; do not silently rewrite the script or regenerate audio.

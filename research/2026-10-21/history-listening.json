@@ -1,0 +1,650 @@
+{
+  "snapshot_at": "2026-10-21T22:31:17.959010-07:00",
+  "scope": "100 terms / 200 generated sentences; 100 reviewed sentences (one context per term). Unreviewed partner clips are not assigned the same label.",
+  "counts": {
+    "correct": 90,
+    "error": 8,
+    "uncertain": 2
+  },
+  "notes": {
+    "H0001": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:45:24.319Z"
+    },
+    "H0018": {
+      "verdict": "error",
+      "heard": "キキャク",
+      "note": "",
+      "updated_at": "2026-10-22T04:45:42.948Z"
+    },
+    "H0023": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:45:49.555Z"
+    },
+    "H0033": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:46:03.002Z"
+    },
+    "H0084": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:46:08.243Z"
+    },
+    "H0106": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:46:11.822Z"
+    },
+    "H0113": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:46:16.967Z"
+    },
+    "H0115": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T04:46:28.982Z"
+    },
+    "H0131": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:06:51.918Z"
+    },
+    "H0160": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:06:56.068Z"
+    },
+    "H0163": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:08:10.250Z"
+    },
+    "H0007": {
+      "verdict": "error",
+      "heard": "ワキモトジン",
+      "note": "",
+      "updated_at": "2026-10-22T05:10:56.196Z"
+    },
+    "H0059": {
+      "verdict": "error",
+      "heard": "き",
+      "note": "こけらぶ」を全部飛ばしたw",
+      "updated_at": "2026-10-22T05:11:38.958Z"
+    },
+    "H0139": {
+      "verdict": "error",
+      "heard": "ふねだんす",
+      "note": "",
+      "updated_at": "2026-10-22T05:13:42.757Z"
+    },
+    "H0147": {
+      "verdict": "error",
+      "heard": "ごふれがき",
+      "note": "",
+      "updated_at": "2026-10-22T05:13:52.688Z"
+    },
+    "H0171": {
+      "verdict": "error",
+      "heard": "センハシゴキ",
+      "note": "",
+      "updated_at": "2026-10-22T05:14:11.981Z"
+    },
+    "H0003": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:14:58.821Z"
+    },
+    "H0012": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:11.228Z"
+    },
+    "H0021": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:16.282Z"
+    },
+    "H0031": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:22.411Z"
+    },
+    "H0037": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:29.597Z"
+    },
+    "H0042": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:37.028Z"
+    },
+    "H0043": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:42.333Z"
+    },
+    "H0056": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:47.540Z"
+    },
+    "H0061": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:51.208Z"
+    },
+    "H0064": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:15:54.370Z"
+    },
+    "H0070": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:16:00.301Z"
+    },
+    "H0074": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:16:07.103Z"
+    },
+    "H0075": {
+      "verdict": "error",
+      "heard": "かじ",
+      "note": "",
+      "updated_at": "2026-10-22T05:16:20.818Z"
+    },
+    "H0082": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:17:07.344Z"
+    },
+    "H0085": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "「木樋」は主に「もくひ」と読みますが、「きどい」と読まれることもあります。また、北海道の地名としては「きとい」と読みます。\n\n読み方と意味・用途\n\n• もくひ（木樋）\n\t• 意味： 水や液体を送るために掛け渡したり、地下に埋設したりした木製の管や溝のことです。\n\t• 歴史・用途： 江戸時代などに神田上水や玉川上水などの上水道として使われ、松やヒノキなどの木材をくり抜いたり板を組み合わせたりして作られました。水漏れを防ぐために隙間に植物の繊維（槙肌）を詰めていました。\n• きどい（木樋）\n\t• 意味： 文献や作品などによって「きどい」と読まれる場合もあります。\n• きとい（木樋）\n\t• 意味： 北海道網走郡津別町にある地名です。\n",
+      "updated_at": "2026-10-22T05:17:38.394Z"
+    },
+    "H0088": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:17:45.871Z"
+    },
+    "H0089": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:17:50.580Z"
+    },
+    "H0096": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:17:58.555Z"
+    },
+    "H0103": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:18:13.266Z"
+    },
+    "H0107": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "捕り物が「トリブツ」になってる",
+      "updated_at": "2026-10-22T05:18:38.606Z"
+    },
+    "H0077": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:19:52.206Z"
+    },
+    "H0071": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:19:59.510Z"
+    },
+    "H0005": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:20:06.782Z"
+    },
+    "H0009": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:20:10.367Z"
+    },
+    "H0013": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:20:16.412Z"
+    },
+    "H0015": {
+      "verdict": "error",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:20:31.704Z"
+    },
+    "H0019": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:20.112Z"
+    },
+    "H0025": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:26.766Z"
+    },
+    "H0027": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:31.242Z"
+    },
+    "H0029": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:36.130Z"
+    },
+    "H0035": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:41.501Z"
+    },
+    "H0039": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:46.114Z"
+    },
+    "H0045": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:52.887Z"
+    },
+    "H0047": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:21:58.448Z"
+    },
+    "H0049": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:22:01.579Z"
+    },
+    "H0051": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:22:04.655Z"
+    },
+    "H0053": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:22:08.505Z"
+    },
+    "H0057": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:22:13.420Z"
+    },
+    "H0065": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:22:55.156Z"
+    },
+    "H0067": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:23:46.905Z"
+    },
+    "H0079": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:06.798Z"
+    },
+    "H0091": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:10.454Z"
+    },
+    "H0093": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:14.169Z"
+    },
+    "H0097": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:31.113Z"
+    },
+    "H0099": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:35.506Z"
+    },
+    "H0101": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:39.090Z"
+    },
+    "H0109": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:43.935Z"
+    },
+    "H0111": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:51.175Z"
+    },
+    "H0117": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:55.132Z"
+    },
+    "H0119": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:24:58.178Z"
+    },
+    "H0121": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:01.530Z"
+    },
+    "H0123": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:05.303Z"
+    },
+    "H0125": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:07.844Z"
+    },
+    "H0127": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:10.679Z"
+    },
+    "H0129": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:13.525Z"
+    },
+    "H0133": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:17.491Z"
+    },
+    "H0135": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:21.474Z"
+    },
+    "H0142": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:24.089Z"
+    },
+    "H0143": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:26.684Z"
+    },
+    "H0145": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:29.505Z"
+    },
+    "H0157": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:38.792Z"
+    },
+    "H0161": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:25:42.046Z"
+    },
+    "H0165": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "米が「ベー」って読まれてる。間違いでしょ？",
+      "updated_at": "2026-10-22T05:26:15.293Z"
+    },
+    "H0168": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:40.598Z"
+    },
+    "H0170": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:45.233Z"
+    },
+    "H0173": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:48.248Z"
+    },
+    "H0176": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:50.698Z"
+    },
+    "H0177": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:54.307Z"
+    },
+    "H0179": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:57.032Z"
+    },
+    "H0181": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:26:59.655Z"
+    },
+    "H0183": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:04.328Z"
+    },
+    "H0186": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:07.661Z"
+    },
+    "H0187": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:11.562Z"
+    },
+    "H0189": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:14.588Z"
+    },
+    "H0192": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:17.266Z"
+    },
+    "H0193": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:25.862Z"
+    },
+    "H0195": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:29.304Z"
+    },
+    "H0199": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:36.910Z"
+    },
+    "H0197": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:40.629Z"
+    },
+    "H0137": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:27:48.591Z"
+    },
+    "H0149": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:28:00.713Z"
+    },
+    "H0156": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:28:05.407Z"
+    },
+    "H0151": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:28:08.290Z"
+    },
+    "H0153": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T05:28:16.084Z"
+    }
+  },
+  "supplemental_observations": [
+    {
+      "id": "H0107-catchphrase-1",
+      "sentence_id": "H0107",
+      "target": "刺股",
+      "surface": "捕り物",
+      "additional_target_spellings": [
+        "捕物",
+        "捕り物"
+      ],
+      "expected_kana": "とりもの",
+      "heard": "トリブツ",
+      "evidence": "User explicit listening note plus follow-up in chat",
+      "source_note": "捕り物が「トリブツ」になってる",
+      "source_note_updated_at": "2026-10-22T05:18:38.606Z",
+      "original_sentence_verdict": "correct",
+      "classification": "既存音読み「物＝ブツ」を選んだ熟語の誤読。辞書にない音の創作とは区別",
+      "include_in_human_reported_error_inventory": true,
+      "changes_original_review_verdict": false,
+      "observed_audio_sha256": "03b661f6da87d65022462bf057175d98a1b7b929a3cdf50ea45b734fad6d0a5d",
+      "added_at": "2026-10-21T22:19:56.594558-07:00"
+    },
+    {
+      "id": "H0165-rice-1",
+      "sentence_id": "H0165",
+      "target": "石高",
+      "surface": "米",
+      "expected_kana": "こめ",
+      "heard": "ベー",
+      "evidence": "Explicit human listening note and screenshot in chat",
+      "source_note": "米が「ベー」って読まれてる。間違いでしょ？",
+      "source_note_updated_at": "2026-10-22T05:26:15.293Z",
+      "original_sentence_verdict": "correct",
+      "classification": "既存音読みベイの文脈に合わない選択。参照側Sudachiも同じ誤選択をしたため自動照合が見逃した",
+      "include_in_human_reported_error_inventory": true,
+      "changes_original_review_verdict": false
+    }
+  ],
+  "warning": "Eight error button labels are not eight adjudicated nonlexical errors. H0075 has an error verdict but an unclear heard field; review separately. Explicit error notes on correct-labeled sentences are preserved as supplements."
+}

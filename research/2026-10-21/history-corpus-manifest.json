@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-21T21:35:09.282936-07:00",
+  "target_count": 100,
+  "sentence_count": 200,
+  "characters": 5514,
+  "source_dictionary": "JMdict (EDRDG), downloaded 2026-10-21; supporting museum/publisher references",
+  "dictionary_sha256": "91037607250dcc60b0f0723d229d77553d8be512a3d0ab152e4760bc1a418120",
+  "dictionary_terms": 93,
+  "accepted_alternatives_not_errors": true,
+  "engine": "VOICEVOX 0.25.2 青山龍星 ノーマル13",
+  "custom_pronunciation": false,
+  "corpus_sha256": "913b2ee9fc8e6f35d23de6227f19930c2e85bba94ce3a2a99d3aa8e5db8abd9a",
+  "scope": "Edo-focused history narration plus relevant building/craft terms; not every word originated in Edo; original authored examples",
+  "additional_paid_api_cost_usd": 0
+}

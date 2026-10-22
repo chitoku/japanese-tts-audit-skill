@@ -8,6 +8,8 @@ Boundary rechecking defaults on for local recognition. A finding within six reco
 
 `report.json` retains all first-pass `findings`. `review_priority: low_boundary` means the difference was not reproduced and at least six expected kana on either side (or the available edge context) matched on pass two, with at least 80% overall alignment. This is evidence of segmentation sensitivity, not a human correctness label. `boundary_recheck` records the second transcript, all secondary differences, and per-finding decisions. Persistent, uncertain, failed, or dictionary-uncertain checks retain normal priority. Second-pass-only differences remain visible in diagnostics; they are not automatically promoted to proven errors. A zero-priority report is not a guarantee that the full audio is correct.
 
+`review_priority: low_variant` retains a whole-unit match to a small known alternate-reading list in a separate playable section. `reading_variant` records allowed kana and whether the expectation was explicit. Explicit user overrides retain normal priority; no listening verdict is assigned automatically. Standard-Japanese ヅ／ズ and ヂ／ジ differences are normalized before alignment, so spelling-only differences do not create new findings. Original kana transcripts remain available.
+
 Output directory:
 - `report.html`: playable local review interface; keep beside `audio.wav`.
 - `report.json`: candidate spans in script, expected and observed kana, segment-level times, dictionary warnings, model/cache/run provenance.

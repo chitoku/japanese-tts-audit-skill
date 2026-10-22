@@ -1,0 +1,14 @@
+const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict');
+const html=fs.readFileSync('outputs/voicevox-history-200-2026-10-21/index.html','utf8'),js=html.split('<script>')[1].split('</script>')[0];
+const elements={},el=id=>elements[id]??={value:id==='mode'?'target':'',checked:id==='pending'||id==='one',innerHTML:'',textContent:'',disabled:false,scrollIntoView(){}};
+const document={querySelector:s=>el(s.slice(1)),querySelectorAll:()=>[],getElementById:()=>({scrollIntoView(){}}),addEventListener(){}};
+const c=vm.createContext({document,fetch:()=>new Promise(()=>{}),setTimeout,clearTimeout,setInterval(){},window:{addEventListener(){}},console,structuredClone});vm.runInContext(js,c);
+c.seed=JSON.parse(fs.readFileSync('outputs/voicevox-history-200-2026-10-21/review-index.json','utf8'));
+vm.runInContext("rows=seed;state={run_id:'QA',revision:0,notes:{}};render(true)",c);
+const initial=vm.runInContext('ids.slice()',c);assert(initial.length>1);let first=initial[0];let t=vm.runInContext(`rows.find(r=>r.id==='${first}').term_id`,c);c.first=first;c.term=t;
+const before=el('remaining').textContent;vm.runInContext("state.notes[first]={verdict:'uncertain',heard:'test',note:''};progress()",c);assert.notEqual(el('remaining').textContent,before);assert.deepEqual(vm.runInContext('ids.slice()',c),initial);
+vm.runInContext('render(true)',c);assert.equal(vm.runInContext('ids.some(id=>rows.find(r=>r.id===id).term_id===term)',c),false);
+el('one').checked=false;vm.runInContext('render(true)',c);assert.equal(vm.runInContext('rows.filter(r=>r.term_id===term).some(r=>note(r.id).verdict===\'unreviewed\')',c),true);
+vm.runInContext("document.querySelector('#mode').value='all';document.querySelector('#pending').checked=false;render(true)",c);assert(vm.runInContext('ids.length',c)>20);assert.match(el('range').textContent,/1〜20/);el('next').onclick();assert.match(el('range').textContent,/21〜40/);
+console.log('PASS: counts, stable queue during judgment, reviewed term does not return through context 2, independent audio labels, pagination');
+fs.writeFileSync('work/history-200/ui-verification.json',JSON.stringify({passed:true,checks:['counts','stable queue while judging','term-level context deduplication','independent audio verdicts','20-item pagination']},null,2));

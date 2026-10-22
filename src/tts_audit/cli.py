@@ -166,7 +166,8 @@ def check(args,recognizer=None):
     except Exception:
         shutil.rmtree(tmp);raise
     low=sum(f.get('review_priority')=='low_boundary' for f in result['findings'])
-    print(json.dumps({'report':str((args.out/'report.html').resolve()),'review_candidates':len(result['findings'])-low,'boundary_deprioritized':low,'reading_warnings':len(result['reading_warnings']),'audio_seconds':duration,'elapsed_seconds':result['elapsed_seconds']},ensure_ascii=False),flush=True)
+    variants=sum(f.get('review_priority')=='low_variant' for f in result['findings'])
+    print(json.dumps({'report':str((args.out/'report.html').resolve()),'review_candidates':len(result['findings'])-low-variants,'total_review_candidates':len(result['findings']),'variant_deprioritized':variants,'boundary_deprioritized':low,'reading_warnings':len(result['reading_warnings']),'audio_seconds':duration,'elapsed_seconds':result['elapsed_seconds']},ensure_ascii=False),flush=True)
     return 0
 
 def main(argv=None):

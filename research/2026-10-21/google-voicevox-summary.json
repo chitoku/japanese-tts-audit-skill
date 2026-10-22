@@ -1,0 +1,33 @@
+{
+  "processed_sentences": 2000,
+  "total_sentences": 2000,
+  "unique_target_terms": 1000,
+  "google_voice": "ja-JP-Neural2-C",
+  "voicevox_voice": "青山龍星 / ノーマル / engine 0.25.2",
+  "google_difference_sentences": 253,
+  "google_target_difference_sentences": 124,
+  "voicevox_difference_sentences": 427,
+  "voicevox_target_difference_sentences": 183,
+  "union_difference_sentences": 582,
+  "no_difference_controls": 20,
+  "review_batches": 4,
+  "processing_complete": true,
+  "asr": "Same Kana Whisper weights, MLX float32, restored original encoder position matrix, independent audio-only decoding. Earlier VOICEVOX transcripts rerun when backend differed.",
+  "human_error_counts_not_assessed": true,
+  "expected_readings_not_gold": true,
+  "source_voicevox_reviews_modified": false,
+  "budget": {
+    "prior_conservative_reserve_usd": 13.8810086,
+    "google_reserved_characters": 58093,
+    "google_reserved_usd": 0.929488,
+    "combined_conservative_reserve_usd": 14.810496599999999,
+    "limit_usd": 15.0,
+    "remaining_reserved_usd": 0.18950340000000054,
+    "full_corpus_characters": 58093,
+    "full_corpus_google_estimate_usd": 0.929488,
+    "rate_usd_per_character": 1.6e-05,
+    "free_quota_applied": false,
+    "invoice_cost_known": false,
+    "pricing_source": "https://cloud.google.com/text-to-speech/pricing"
+  }
+}

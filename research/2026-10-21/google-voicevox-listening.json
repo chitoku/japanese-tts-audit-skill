@@ -1,0 +1,1246 @@
+{
+  "snapshot_at": "2026-10-21T22:31:17.958413-07:00",
+  "scope": "Selected sentences, whole-sentence human judgments per engine; not 2000 fully listened sentences. Raw labels include variants and unresolved reference problems.",
+  "counts": {
+    "G": {
+      "correct": 62,
+      "dictionary": 11,
+      "uncertain": 10,
+      "error": 18,
+      "unreviewed": 1
+    },
+    "V": {
+      "correct": 73,
+      "dictionary": 7,
+      "uncertain": 10,
+      "error": 11,
+      "unreviewed": 1
+    }
+  },
+  "notes": {
+    "G-S1607": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:50:00.046Z"
+    },
+    "V-S1607": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:50:11.078Z"
+    },
+    "G-S1621": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "\n読み方の使い分け・補足\n\n• こうどう：文部科学省の学術用語集をはじめ、現代の天文学や一般的な解説で最も広く使われている読み方です。\n• おうどう：漢音と呉音の違いによるもので、一部の天文学者や慣習的な表現で「おうどう（例：おうどうじゅうにせいざ）」と読まれることもあります。",
+      "updated_at": "2026-10-22T02:50:50.054Z"
+    },
+    "V-S1621": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "\n読み方の使い分け・補足\n\n• こうどう：文部科学省の学術用語集をはじめ、現代の天文学や一般的な解説で最も広く使われている読み方です。\n• おうどう：漢音と呉音の違いによるもので、一部の天文学者や慣習的な表現で「おうどう（例：おうどうじゅうにせいざ）」と読まれることもあります。",
+      "updated_at": "2026-10-22T02:50:50.542Z"
+    },
+    "G-S1767": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:50:59.345Z"
+    },
+    "V-S1767": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:01.981Z"
+    },
+    "G-S1801": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:08.162Z"
+    },
+    "V-S1801": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:10.126Z"
+    },
+    "G-S1803": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "\n読み方について\n\n• 本来の正しい読み方： ひとごと（熟字訓）\n• 近年の誤読・慣用読み： たにんごと（元々は「たにん」＋「ごと」の読み間違いから広がったもの）",
+      "updated_at": "2026-10-22T02:51:38.312Z"
+    },
+    "V-S1803": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "\n読み方について\n\n• 本来の正しい読み方： ひとごと（熟字訓）\n• 近年の誤読・慣用読み： たにんごと（元々は「たにん」＋「ごと」の読み間違いから広がったもの）",
+      "updated_at": "2026-10-22T02:51:37.600Z"
+    },
+    "G-S1911": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:44.223Z"
+    },
+    "V-S1911": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:44.964Z"
+    },
+    "G-S1931": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:50.529Z"
+    },
+    "V-S1931": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:51.159Z"
+    },
+    "G-S1961": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:57.043Z"
+    },
+    "V-S1961": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:51:58.676Z"
+    },
+    "G-S1963": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:04.764Z"
+    },
+    "V-S1963": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:05.432Z"
+    },
+    "G-S1965": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:10.605Z"
+    },
+    "V-S1965": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:11.326Z"
+    },
+    "G-S1967": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:30.273Z"
+    },
+    "V-S1967": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:30.873Z"
+    },
+    "G-S1585": {
+      "verdict": "error",
+      "heard": "ジテンショ",
+      "note": "",
+      "updated_at": "2026-10-22T03:09:21.238Z"
+    },
+    "V-S1585": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:09:28.498Z"
+    },
+    "G-S1531": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:04.603Z"
+    },
+    "V-S1531": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:05.256Z"
+    },
+    "G-S1551": {
+      "verdict": "error",
+      "heard": "けん",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:22.068Z"
+    },
+    "V-S1551": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:15.691Z"
+    },
+    "G-S1799": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:55.342Z"
+    },
+    "V-S1799": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:21:56.115Z"
+    },
+    "G-S1805": {
+      "verdict": "uncertain",
+      "heard": "ひとだんらく",
+      "note": "",
+      "updated_at": "2026-10-22T03:23:13.882Z"
+    },
+    "V-S1805": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:23:15.048Z"
+    },
+    "G-S1919": {
+      "verdict": "error",
+      "heard": "ショイ",
+      "note": "",
+      "updated_at": "2026-10-22T03:23:50.266Z"
+    },
+    "V-S1919": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:23:56.416Z"
+    },
+    "V-S1947": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:05.609Z"
+    },
+    "G-S1947": {
+      "verdict": "error",
+      "heard": "せいふぁ",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:13.653Z"
+    },
+    "G-S1999": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:27.269Z"
+    },
+    "V-S1999": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:27.787Z"
+    },
+    "G-S1844": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:32.268Z"
+    },
+    "V-S1844": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:33.536Z"
+    },
+    "G-S1876": {
+      "verdict": "error",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:27:05.386Z"
+    },
+    "V-S1876": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:27:07.952Z"
+    },
+    "G-S1880": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:27:14.927Z"
+    },
+    "V-S1880": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:27:17.439Z"
+    },
+    "G-S1608": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:14.771Z"
+    },
+    "V-S1608": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:17.696Z"
+    },
+    "G-S1622": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:21.098Z"
+    },
+    "V-S1622": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:21.986Z"
+    },
+    "G-S1802": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:28.316Z"
+    },
+    "V-S1802": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:29.312Z"
+    },
+    "G-S1810": {
+      "verdict": "error",
+      "heard": "セイブツ",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:40.057Z"
+    },
+    "V-S1810": {
+      "verdict": "error",
+      "heard": "セイブツ",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:49.385Z"
+    },
+    "G-S1878": {
+      "verdict": "error",
+      "heard": "さいちゅう",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:02.164Z"
+    },
+    "V-S1878": {
+      "verdict": "error",
+      "heard": "さいちゅう",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:08.690Z"
+    },
+    "G-S1882": {
+      "verdict": "error",
+      "heard": "ヘタ",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:18.844Z"
+    },
+    "V-S1882": {
+      "verdict": "error",
+      "heard": "ヘタ",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:25.399Z"
+    },
+    "G-S1912": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:31.271Z"
+    },
+    "V-S1912": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:31.968Z"
+    },
+    "G-S1936": {
+      "verdict": "error",
+      "heard": "ぶっしん",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:44.075Z"
+    },
+    "V-S1936": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:49.976Z"
+    },
+    "G-S1962": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:56.653Z"
+    },
+    "V-S1962": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:29:59.333Z"
+    },
+    "G-S1970": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:03.515Z"
+    },
+    "V-S1970": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:04.226Z"
+    },
+    "G-S1591": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:31:25.270Z"
+    },
+    "V-S1591": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:31:26.015Z"
+    },
+    "V-S1777": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:31:36.183Z"
+    },
+    "G-S1777": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:31:37.048Z"
+    },
+    "G-S1813": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:31:58.403Z"
+    },
+    "V-S1813": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:32:02.189Z"
+    },
+    "G-S1861": {
+      "verdict": "error",
+      "heard": "てんぷ",
+      "note": "",
+      "updated_at": "2026-10-22T03:32:21.426Z"
+    },
+    "V-S1861": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:32:25.484Z"
+    },
+    "G-S1796": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:21.818Z"
+    },
+    "V-S1796": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:22.468Z"
+    },
+    "G-S1889": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:48.240Z"
+    },
+    "V-S1889": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:49.694Z"
+    },
+    "G-S1093": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "これ、りょうてきでもりゅうてきでもいい読みの言葉なのでは。",
+      "updated_at": "2026-10-22T02:47:32.001Z"
+    },
+    "V-S1093": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "これ、りょうてきでもりゅうてきでもいい読みの言葉なのでは。",
+      "updated_at": "2026-10-22T02:47:35.908Z"
+    },
+    "G-S1173": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "どっちでも読んでいい言葉。カワドコもカショウも。",
+      "updated_at": "2026-10-22T02:48:16.719Z"
+    },
+    "V-S1173": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:48:17.316Z"
+    },
+    "G-S1203": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:48:34.746Z"
+    },
+    "V-S1203": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:48:35.316Z"
+    },
+    "G-S1397": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:48:42.049Z"
+    },
+    "V-S1397": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:48:43.208Z"
+    },
+    "G-S1449": {
+      "verdict": "error",
+      "heard": "めいみぞ",
+      "note": "",
+      "updated_at": "2026-10-22T02:49:20.572Z"
+    },
+    "V-S1449": {
+      "verdict": "error",
+      "heard": "あかりみぞ",
+      "note": "",
+      "updated_at": "2026-10-22T02:49:28.646Z"
+    },
+    "G-S1453": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:49:42.539Z"
+    },
+    "V-S1453": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:49:43.132Z"
+    },
+    "G-S1044": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:55:06.734Z"
+    },
+    "V-S1044": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:55:08.002Z"
+    },
+    "G-S1094": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "リュウテキもリョウテキもOKっぽい",
+      "updated_at": "2026-10-22T02:55:32.617Z"
+    },
+    "V-S1094": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "リュウテキもリョウテキもOKっぽい",
+      "updated_at": "2026-10-22T02:55:35.341Z"
+    },
+    "G-S1174": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "どっちもOK",
+      "updated_at": "2026-10-22T02:55:52.552Z"
+    },
+    "V-S1174": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "どっちもOK",
+      "updated_at": "2026-10-22T02:55:51.998Z"
+    },
+    "V-S1176": {
+      "verdict": "error",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:56:21.204Z"
+    },
+    "G-S1176": {
+      "verdict": "dictionary",
+      "heard": "ヒガサ",
+      "note": "",
+      "updated_at": "2026-10-22T02:56:45.257Z"
+    },
+    "G-S1204": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:56:56.895Z"
+    },
+    "V-S1204": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:56:57.479Z"
+    },
+    "G-S1398": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:57:01.533Z"
+    },
+    "V-S1398": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:57:04.074Z"
+    },
+    "G-S1059": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:49.032Z"
+    },
+    "V-S1059": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:49.620Z"
+    },
+    "G-S1063": {
+      "verdict": "error",
+      "heard": "ほうかいいし",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:03.868Z"
+    },
+    "V-S1063": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:06.027Z"
+    },
+    "G-S1113": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:12.395Z"
+    },
+    "V-S1113": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:13.173Z"
+    },
+    "G-S1121": {
+      "verdict": "unreviewed",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:50.783Z"
+    },
+    "V-S1121": {
+      "verdict": "unreviewed",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:18:51.476Z"
+    },
+    "G-S1145": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:04.262Z"
+    },
+    "V-S1145": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:04.860Z"
+    },
+    "V-S1175": {
+      "verdict": "error",
+      "heard": "ヒカサ",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:22.142Z"
+    },
+    "G-S1175": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:24.035Z"
+    },
+    "G-S1185": {
+      "verdict": "error",
+      "heard": "やまいも",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:53.039Z"
+    },
+    "V-S1185": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:19:58.279Z"
+    },
+    "G-S1299": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:09.194Z"
+    },
+    "V-S1299": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:09.672Z"
+    },
+    "G-S1417": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:29.842Z"
+    },
+    "V-S1417": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:30.507Z"
+    },
+    "G-S1463": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:37.306Z"
+    },
+    "V-S1463": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:37.937Z"
+    },
+    "G-S1465": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:58.783Z"
+    },
+    "V-S1465": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:20:59.632Z"
+    },
+    "G-S1476": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:20.651Z"
+    },
+    "V-S1476": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:21.421Z"
+    },
+    "G-S1450": {
+      "verdict": "error",
+      "heard": "メイミゾ",
+      "note": "",
+      "updated_at": "2026-10-22T03:27:50.074Z"
+    },
+    "V-S1450": {
+      "verdict": "error",
+      "heard": "あかりみぞ",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:00.553Z"
+    },
+    "G-S1454": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:06.469Z"
+    },
+    "V-S1454": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:28:09.304Z"
+    },
+    "G-S1371": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:49.962Z"
+    },
+    "V-S1371": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "アンナイジンって言ってる！案内人",
+      "updated_at": "2026-10-22T03:31:02.104Z"
+    },
+    "G-S1192": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:02.937Z"
+    },
+    "V-S1192": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:05.776Z"
+    },
+    "G-S0643": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:12.374Z"
+    },
+    "V-S0643": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:13.015Z"
+    },
+    "G-S0775": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:20.613Z"
+    },
+    "V-S0775": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:21.221Z"
+    },
+    "G-S0969": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:28.027Z"
+    },
+    "V-S0969": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:28.645Z"
+    },
+    "G-S0975": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:36.389Z"
+    },
+    "V-S0975": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:45:37.213Z"
+    },
+    "G-S0644": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:53:05.832Z"
+    },
+    "V-S0644": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:53:07.860Z"
+    },
+    "G-S0676": {
+      "verdict": "dictionary",
+      "heard": "あきさめ",
+      "note": "\n主な読み方と意味\n\n• あきさめ: 秋に長く降り続く雨のこと。\n• しゅうう: 音読みでの読み方。",
+      "updated_at": "2026-10-22T02:53:50.379Z"
+    },
+    "V-S0676": {
+      "verdict": "dictionary",
+      "heard": "あきさめ",
+      "note": "\n主な読み方と意味\n\n• あきさめ: 秋に長く降り続く雨のこと。\n• しゅうう: 音読みでの読み方。",
+      "updated_at": "2026-10-22T02:53:53.981Z"
+    },
+    "G-S0856": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:54:00.372Z"
+    },
+    "V-S0856": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:54:01.669Z"
+    },
+    "G-S0970": {
+      "verdict": "dictionary",
+      "heard": "えきびょう",
+      "note": "「疫病」の読み方は主に以下の2つです：\n• えきびょう（一般的な読み方）\n• やくびょう（「疫病神（やくびょうがみ）」などの熟語で使われる読み方）\nまた、単独で「えやみ」と読むこともあります。",
+      "updated_at": "2026-10-22T02:54:44.699Z"
+    },
+    "V-S0970": {
+      "verdict": "dictionary",
+      "heard": "えきびょう",
+      "note": "「疫病」の読み方は主に以下の2つです：\n• えきびょう（一般的な読み方）\n• やくびょう（「疫病神（やくびょうがみ）」などの熟語で使われる読み方）\nまた、単独で「えやみ」と読むこともあります。",
+      "updated_at": "2026-10-22T02:54:59.672Z"
+    },
+    "G-S0705": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:16:16.390Z"
+    },
+    "V-S0705": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:16:16.999Z"
+    },
+    "G-S0721": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "対象語外だけど、天文が「テンブン」になって間違ってる",
+      "updated_at": "2026-10-22T03:16:56.885Z"
+    },
+    "V-S0721": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:03.603Z"
+    },
+    "V-S0821": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:17.276Z"
+    },
+    "G-S0821": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:17.875Z"
+    },
+    "G-S0827": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:24.754Z"
+    },
+    "V-S0827": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:27.093Z"
+    },
+    "G-S0883": {
+      "verdict": "error",
+      "heard": "だら",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:39.856Z"
+    },
+    "V-S0883": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:17:40.969Z"
+    },
+    "G-S0776": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:52.501Z"
+    },
+    "V-S0776": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:53.287Z"
+    },
+    "G-S0976": {
+      "verdict": "dictionary",
+      "heard": "つゆ",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:03.422Z"
+    },
+    "V-S0976": {
+      "verdict": "error",
+      "heard": "つゆ",
+      "note": "",
+      "updated_at": "2026-10-22T03:26:12.340Z"
+    },
+    "G-S0611": {
+      "verdict": "error",
+      "heard": "フシューギ",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:28.933Z"
+    },
+    "V-S0611": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:35.284Z"
+    },
+    "G-S0699": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:41.413Z"
+    },
+    "V-S0699": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:30:44.554Z"
+    },
+    "G-S0588": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "\n読み方の使い分けと歴史\n\n• だいじょうかん\n\t• 古代の律令制（飛鳥時代・奈良時代〜江戸時代など）における、朝廷の最高行政機関を指す場合に多く使われます。\n• だじょうかん\n\t• 幕末・明治維新期（1868年設置の明治政府）における最高官庁を指す場合に多く使われます（内閣制度が発足する1885年まで）。",
+      "updated_at": "2026-10-22T03:33:18.374Z"
+    },
+    "V-S0588": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "\n読み方の使い分けと歴史\n\n• だいじょうかん\n\t• 古代の律令制（飛鳥時代・奈良時代〜江戸時代など）における、朝廷の最高行政機関を指す場合に多く使われます。\n• だじょうかん\n\t• 幕末・明治維新期（1868年設置の明治政府）における最高官庁を指す場合に多く使われます（内閣制度が発足する1885年まで）。",
+      "updated_at": "2026-10-22T03:33:17.525Z"
+    },
+    "G-S0616": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "漢字「簾」の主な読み方は以下の通りです。\n\n読み方\n\n• 音読み\n\t• レン（例：御簾〈みす／ギョレン〉、暖簾〈のれん〉、水簾〈スイレン〉）\n• 訓読み\n\t• すだれ（細く割いた竹や葦などを糸で編んだもの）\n\t• す（巻きすや、せいろの底に敷くものなどの総称）\n\t• みす（御簾：細い竹を絹糸などですだれ状に編んだ高級なすだれ）\nさらに詳しい言葉の意味や、熟語の使い分けについて知りたい場合はお知らせください。\n• \nモジナビ\n「簾」の画数・部首・書き順・読み方・意味まとめ - モジナビ\nJul 14, 2019 — 『簾』の字には少なくとも、 簾 レン ・ 簾 すだれ ・ 簾 す の3種の読み方が存在する。 意味. すだれ. 簾【すだ...\nShow all\n",
+      "updated_at": "2026-10-22T03:33:56.172Z"
+    },
+    "V-S0616": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "漢字「簾」の主な読み方は以下の通りです。\n\n読み方\n\n• 音読み\n\t• レン（例：御簾〈みす／ギョレン〉、暖簾〈のれん〉、水簾〈スイレン〉）\n• 訓読み\n\t• すだれ（細く割いた竹や葦などを糸で編んだもの）\n\t• す（巻きすや、せいろの底に敷くものなどの総称）\n\t• みす（御簾：細い竹を絹糸などですだれ状に編んだ高級なすだれ）\nさらに詳しい言葉の意味や、熟語の使い分けについて知りたい場合はお知らせください。\n• \nモジナビ\n「簾」の画数・部首・書き順・読み方・意味まとめ - モジナビ\nJul 14, 2019 — 『簾』の字には少なくとも、 簾 レン ・ 簾 すだれ ・ 簾 す の3種の読み方が存在する。 意味. すだれ. 簾【すだ...\nShow all\n",
+      "updated_at": "2026-10-22T03:33:56.940Z"
+    },
+    "V-S0113": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:43:20.383Z"
+    },
+    "G-S0113": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:43:21.091Z"
+    },
+    "G-S0115": {
+      "verdict": "error",
+      "heard": "にんき",
+      "note": "",
+      "updated_at": "2026-10-22T02:43:52.152Z"
+    },
+    "V-S0115": {
+      "verdict": "error",
+      "heard": "にんき",
+      "note": "",
+      "updated_at": "2026-10-22T02:43:58.020Z"
+    },
+    "G-S0157": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:17.582Z"
+    },
+    "V-S0157": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:18.376Z"
+    },
+    "G-S0161": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:34.093Z"
+    },
+    "V-S0161": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:38.518Z"
+    },
+    "V-S0181": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:52.792Z"
+    },
+    "G-S0181": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:44:53.538Z"
+    },
+    "G-S0042": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:37.664Z"
+    },
+    "V-S0042": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:38.680Z"
+    },
+    "G-S0144": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:45.560Z"
+    },
+    "V-S0144": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:47.053Z"
+    },
+    "G-S0162": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:50.594Z"
+    },
+    "V-S0162": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:52:53.243Z"
+    },
+    "G-S0454": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:53:00.030Z"
+    },
+    "V-S0454": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T02:53:01.691Z"
+    },
+    "G-S0395": {
+      "verdict": "dictionary",
+      "heard": "にほんが",
+      "note": "",
+      "updated_at": "2026-10-22T03:14:54.688Z"
+    },
+    "V-S0395": {
+      "verdict": "error",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:14:58.768Z"
+    },
+    "G-S0495": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:15:33.961Z"
+    },
+    "V-S0495": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:15:34.720Z"
+    },
+    "G-S0132": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:37.456Z"
+    },
+    "V-S0132": {
+      "verdict": "uncertain",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:24:38.101Z"
+    },
+    "G-S0047": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:49.965Z"
+    },
+    "V-S0047": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:34:51.029Z"
+    },
+    "G-S0163": {
+      "verdict": "error",
+      "heard": "ながし",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:13.238Z"
+    },
+    "V-S0163": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:16.755Z"
+    },
+    "G-S0205": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:27.442Z"
+    },
+    "V-S0205": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:26.724Z"
+    },
+    "G-S0215": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:36.213Z"
+    },
+    "V-S0215": {
+      "verdict": "correct",
+      "heard": "",
+      "note": "",
+      "updated_at": "2026-10-22T03:35:39.705Z"
+    },
+    "G-S0396": {
+      "verdict": "dictionary",
+      "heard": "",
+      "note": "におほんが",
+      "updated_at": "2026-10-22T03:36:35.979Z"
+    },
+    "V-S0396": {
+      "verdict": "error",
+      "heard": "にっぽんが",
+      "note": "",
+      "updated_at": "2026-10-22T03:36:48.039Z"
+    }
+  }
+}

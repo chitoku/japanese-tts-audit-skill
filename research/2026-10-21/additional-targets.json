@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "target": "捕物",
+      "spellings": [
+        "捕物",
+        "捕り物"
+      ],
+      "expected_kana": "とりもの",
+      "reason": "Observed in H0107 outside the nominal target 刺股; user requests coverage",
+      "observed_reading": "トリブツ",
+      "examples": [
+        "町の捕物で使われた道具を、資料館の展示で紹介しています。",
+        "捕り物に加わった役人たちは、逃げた男の行方を追いました。"
+      ],
+      "new_audio_generated": false,
+      "existing_audio_id": "H0107"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+This project uses JMdict dictionary data. Copyright James William BREEN and the Electronic Dictionary Research and Development Group (EDRDG).
+Dictionary data and extracts: Creative Commons Attribution-ShareAlike 4.0.
+https://www.edrdg.org/edrdg/licence.html
+https://creativecommons.org/licenses/by-sa/4.0/
+Downloaded 2026-10-21. Extracted headwords/readings/glosses; normalized kana for comparison; additional museum sources recorded separately.
+Original example sentences were authored for this pilot; dictionary-derived data remains attributed to EDRDG.
+Audio credit: VOICEVOX 青山龍星.

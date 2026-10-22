@@ -1,0 +1,4115 @@
+[
+  {
+    "id": "S0042",
+    "term_id": "T0021",
+    "target": "遵守",
+    "text": "規則の遵守を求めるだけでなく、現場で守りにくい手順がないかを調べることも必要です。",
+    "context": 2,
+    "expected_kana": "じゅんしゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "遵守",
+          "expected": "じゅんしゅ",
+          "observed": "ジュンショ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キソクノジュンショオモトメルダケデナク、ゲンバデマモリニクイテジュンガナイカオシラベルコトモヒツヨーデス",
+      "diff_html": "キソクノジュンシ<mark>ョ</mark>オモトメルダケデナク、ゲンバデマモリニクイテジュンガナイカオシラベルコトモヒツヨーデス",
+      "duration_s": 6.9050625,
+      "audio_sha256": "deba0d6612b80337717a8b5cafdab074913bd06ce9098f3bd6763c593fb6dd60"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "遵守",
+          "expected": "じゅんしゅ",
+          "observed": "ジュンシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キソクノジュンシオモトメルダケデナク、ゲンバデマモリニクイテジュンガナイカオシラベルコトモヒツヨーデス",
+      "diff_html": "キソクノジュンシ<mark></mark>オモトメルダケデナク、ゲンバデマモリニクイテジュンガナイカオシラベルコトモヒツヨーデス",
+      "duration_s": 5.941375,
+      "audio_sha256": "820acf2c47e9d15f38dae8ef932619ee2d8b9912e6d8a207ff49a4019f233fcb"
+    }
+  },
+  {
+    "id": "S0047",
+    "term_id": "T0024",
+    "target": "逸脱",
+    "text": "当初の目的から逸脱した使い方が広がっていたため、管理者は利用条件を見直すことにしました。",
+    "context": 1,
+    "expected_kana": "いつだつ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "逸脱",
+          "expected": "いつだつ",
+          "observed": "イツラツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "トーショノモクテキカライツラツシタツカイカタガヒロガッテイタタメ、カンリシャワリヨージョーケンオミナオスコトニシマシタ",
+      "diff_html": "トーショノモクテキカライツ<mark>ラ</mark>ツシタツカイカタガヒロガッテイタタメ、カンリシャワリヨージョーケンオミナオスコトニシマシタ",
+      "duration_s": 7.31375,
+      "audio_sha256": "57dc4b439ff5a958c73d85f192fdd5388bb688a696306ee09790960ef4c05a64"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "トーショノモクテキカライツダツシタツカイカタガヒロガッテイタタメ、カンリシャワリヨージョーケンオミナオスコトニシマシタ",
+      "diff_html": "トーショノモクテキカライツ<mark>ダ</mark>ツシタツカイカタガヒロガッテイタタメ、カンリシャワリヨージョーケンオミナオスコトニシマシタ",
+      "duration_s": 6.645375,
+      "audio_sha256": "02c26321f4798c81fd9f0fe881052c1dcca327f81fa203d33c574bbb426801f4"
+    }
+  },
+  {
+    "id": "S0113",
+    "term_id": "T0057",
+    "target": "一日",
+    "text": "来月の一日に、境内で新しいお守りの授与が始まります。",
+    "context": 1,
+    "expected_kana": "ついたち",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "一日",
+          "expected": "ついたち",
+          "observed": "イチニチ",
+          "priority": "normal"
+        },
+        {
+          "surface": "が",
+          "expected": "ガ",
+          "observed": "ーガ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ライゲツノイチニチニ、ケーダイデアタラシーオマモリノジュヨーガハジマリマス",
+      "diff_html": "ライゲツノイチニチニ、ケ<mark>ー</mark>ダイデアタラシーオマモリノジュヨーガハジマリマス",
+      "duration_s": 5.180125,
+      "audio_sha256": "8cd1668923dcd0df322b328c25e4c1652f7fbf1010f60cfa59db2935e361ca83"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "一日",
+          "expected": "ついたち",
+          "observed": "イチニチ",
+          "priority": "normal"
+        },
+        {
+          "surface": "が",
+          "expected": "ガ",
+          "observed": "ーガ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ライゲツノイチニチニ、ケイダイデアタラシーオマモリノジュヨーガハジマリマス",
+      "diff_html": "ライゲツノイチニチニ、ケ<mark>イ</mark>ダイデアタラシーオマモリノジュヨーガハジマリマス",
+      "duration_s": 4.48,
+      "audio_sha256": "212a6ac5b88d0a11770bde9b1274ddac6d40cff8bcdb7b216d23da908daa58fb"
+    }
+  },
+  {
+    "id": "S0115",
+    "term_id": "T0058",
+    "target": "人気",
+    "text": "夜の境内は人気がなく、足音だけが静かに響いていました。",
+    "context": 1,
+    "expected_kana": "ひとけ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "人気",
+          "expected": "ひとけ",
+          "observed": "ニンキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ヨルノケーダイワニンキガナク、アシオトダケガシズカニヒビーテイマシタ",
+      "diff_html": "ヨルノケ<mark>ー</mark>ダイワニンキガナク、アシオトダケガシズカニヒビーテイマシタ",
+      "duration_s": 5.1138125,
+      "audio_sha256": "ac2473ee5a5aceb5ff5512b9e625b2ee8fe61bfcfd676e12887c21c693dd4b70"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "人気",
+          "expected": "ひとけ",
+          "observed": "ニンキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ヨルノケイダイワニンキガナク、アシオトダケガシズカニヒビーテイマシタ",
+      "diff_html": "ヨルノケ<mark>イ</mark>ダイワニンキガナク、アシオトダケガシズカニヒビーテイマシタ",
+      "duration_s": 4.4586875,
+      "audio_sha256": "a9cd67d8af5ea4cfc5e772e178f30a1306a92bc9e13f32a9202a53a6eb30ae4e"
+    }
+  },
+  {
+    "id": "S0132",
+    "term_id": "T0066",
+    "target": "後",
+    "text": "会議の後に担当者が集まり、次の日程を決めました。",
+    "context": 2,
+    "expected_kana": "あと",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "後",
+          "expected": "あと",
+          "observed": "ノチ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイギノノチニタントーシャガアツマリ、ツギノニッテーオキメマシタ",
+      "diff_html": "カイギノ<mark>ノチ</mark>ニタントーシャガアツマリ、ツギノニッテーオキメマシタ",
+      "duration_s": 4.7306875,
+      "audio_sha256": "8f095d5fc97214131e0e365010c8e215cf9f49b4954185fc5333a3637edc7dc1"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カイギノアトニタントーシャガアツマリ、ツギノニッテーオキメマシタ",
+      "diff_html": "カイギノ<mark>アト</mark>ニタントーシャガアツマリ、ツギノニッテーオキメマシタ",
+      "duration_s": 4.053375,
+      "audio_sha256": "1cf95fdb9d13ba2d275750234f30ba9f795f3f255631d3b9d53106eb89141fee"
+    }
+  },
+  {
+    "id": "S0144",
+    "term_id": "T0072",
+    "target": "歳出",
+    "text": "経済番組では歳出を取り上げ、関連する統計を紹介しました。",
+    "context": 2,
+    "expected_kana": "サイシュツ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "歳出",
+          "expected": "サイシュツ",
+          "observed": "サイシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワサイシツオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワサイシツオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 5.7446875,
+      "audio_sha256": "6d443ba2897d5700f09a91b7a60ab1f8b19178dab6331fa1bd911c3df115fcaf"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "歳出",
+          "expected": "サイシュツ",
+          "observed": "サイシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワサイシツオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワサイシツオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 4.917375,
+      "audio_sha256": "103c9963fbd98b0597527c9f9eae9902c166fc0dfeb7fb64468d890f3c5341b3"
+    }
+  },
+  {
+    "id": "S0157",
+    "term_id": "T0079",
+    "target": "荷役",
+    "text": "交通の歴史を紹介する展示では、荷役を図で解説しています。",
+    "context": 1,
+    "expected_kana": "ニヤク",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "荷役",
+          "expected": "ニヤク",
+          "observed": "ニヒャク",
+          "priority": "normal"
+        },
+        {
+          "surface": "を",
+          "expected": "オ",
+          "observed": "オー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーツーノレキシオショーカイスルテンジデワ、ニヒャクオーズデカイセツシテイマス",
+      "diff_html": "コーツーノレキシオショーカイスルテンジデワ、ニ<mark>ヒャクオ</mark>ーズデカイセツシテイマス",
+      "duration_s": 5.2055,
+      "audio_sha256": "e2c900806ae1ec3edffd6541e6649206a559641bf71c70566676ebc50ce0d9db"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "荷役",
+          "expected": "ニヤク",
+          "observed": "ニヤコ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーツーノレキシオショーカイスルテンジデワ、ニヤコーズデカイセツシテイマス",
+      "diff_html": "コーツーノレキシオショーカイスルテンジデワ、ニ<mark>ヤコ</mark>ーズデカイセツシテイマス",
+      "duration_s": 4.501375,
+      "audio_sha256": "6a4d48c7c552d621cbdc6c0732a81853927c95271e8439da4cf225113f5c048b"
+    }
+  },
+  {
+    "id": "S0161",
+    "term_id": "T0081",
+    "target": "析出",
+    "text": "実験の授業では析出を取り上げ、変化の様子を観察しました。",
+    "context": 1,
+    "expected_kana": "セキシュツ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "析出",
+          "expected": "セキシュツ",
+          "observed": "セキシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ジッケンノジュギョーデワセキシツオトリアゲ、ヘンカノヨースオカンサツシマシタ",
+      "diff_html": "ジッケンノジュギョーデワセキシツオトリアゲ、ヘンカノヨースオカンサツシマシタ",
+      "duration_s": 5.453875,
+      "audio_sha256": "f5bf21efbde71f939bef3090ac52ec02aa5c51dbf1cf45daa3356357a9d2f742"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "析出",
+          "expected": "セキシュツ",
+          "observed": "セキシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ジッケンノジュギョーデワセキシツオトリアゲ、ヘンカノヨースオカンサツシマシタ",
+      "diff_html": "ジッケンノジュギョーデワセキシツオトリアゲ、ヘンカノヨースオカンサツシマシタ",
+      "duration_s": 4.672,
+      "audio_sha256": "0f28df5403ec50df83441b11a862cbc6ea1a4c679276a203777dd943bfde26fe"
+    }
+  },
+  {
+    "id": "S0162",
+    "term_id": "T0081",
+    "target": "析出",
+    "text": "研究者は析出について説明し、実験の記録を示しました。",
+    "context": 2,
+    "expected_kana": "セキシュツ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "析出",
+          "expected": "セキシュツ",
+          "observed": "セキシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケンキューシャワセキシツニツイテセツメーシ、ジッケンノキロクオシメシマシタ",
+      "diff_html": "ケンキューシャワセキシツニツイテセツメーシ、ジッケンノキロクオシメシマシタ",
+      "duration_s": 5.383125,
+      "audio_sha256": "110167e194e7589155dd848b82af18ac12c2df9b2d21a2b380c1fe1c2451c923"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "析出",
+          "expected": "セキシュツ",
+          "observed": "セキシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケンキューシャワセキシツニツイテセツメーシ、ジッケンノキロクオシメシマシタ",
+      "diff_html": "ケンキューシャワセキシツニツイテセツメーシ、ジッケンノキロクオシメシマシタ",
+      "duration_s": 4.6506875,
+      "audio_sha256": "121f0d5a7acdc9a660b5d606e6a96e99923297ac248af39f210f5b5483a8c37d"
+    }
+  },
+  {
+    "id": "S0163",
+    "term_id": "T0082",
+    "target": "長石",
+    "text": "展示では長石の性質を紹介し、身近な用途を説明しています。",
+    "context": 1,
+    "expected_kana": "チョウセキ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "長石",
+          "expected": "チョウセキ",
+          "observed": "ナガシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンジデワナガシノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワ<mark>ナガシ</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 5.3953125,
+      "audio_sha256": "6416e058bb9ae0bd1d7be7ff3041914815b4673cee3f1633815052064ff58824"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンジデワチョーセキノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワ<mark>チョーセキ</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 4.96,
+      "audio_sha256": "546f646abc1c2910ac0ab7d1533b88ed0fbc5907caa8c1761439de0352419479"
+    }
+  },
+  {
+    "id": "S0181",
+    "term_id": "T0091",
+    "target": "播種",
+    "text": "農業の研修では播種を取り上げ、現場で使う道具を紹介しました。",
+    "context": 1,
+    "expected_kana": "ハシュ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "播種",
+          "expected": "ハシュ",
+          "observed": "ハシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ノーギョーノケンシューデワハシオトリアゲ、ゲンバデツカウドーグオショーカイシマシタ",
+      "diff_html": "ノーギョーノケンシューデワハシオトリアゲ、ゲンバデツカウドーグオショーカイシマシタ",
+      "duration_s": 5.673375,
+      "audio_sha256": "51533a46344c7a0a4d1626a5bb02adb9fc48a162d8d66f0174f95514040d0b57"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "播種",
+          "expected": "ハシュ",
+          "observed": "ハシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ノーギョーノケンシューデワハシオトリアゲ、ゲンバデツカウドーグオショーカイシマシタ",
+      "diff_html": "ノーギョーノケンシューデワハシオトリアゲ、ゲンバデツカウドーグオショーカイシマシタ",
+      "duration_s": 4.853375,
+      "audio_sha256": "bfbea4373d1851bed4038da4e4b9606dda6da83b1f95142fcbb7c25edb370c51"
+    }
+  },
+  {
+    "id": "S0205",
+    "term_id": "T0103",
+    "target": "遠慮",
+    "text": "会議では遠慮について意見を交わし、それぞれの考えを整理しました。",
+    "context": 1,
+    "expected_kana": "エンリョ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "遠慮",
+          "expected": "エンリョ",
+          "observed": "エンリュー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイギデワエンリューニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "diff_html": "カイギデワエンリ<mark>ュー</mark>ニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "duration_s": 5.5715625,
+      "audio_sha256": "3a3593bb336e8963758046cf0b5884973699fae4fe81ebf9634c5a839d70fc9b"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カイギデワエンリョニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "diff_html": "カイギデワエンリ<mark>ョ</mark>ニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "duration_s": 4.949375,
+      "audio_sha256": "814e3e03e992480577d0f6cf48a821e557b5281987a713aa21cb1230abffd833"
+    }
+  },
+  {
+    "id": "S0215",
+    "term_id": "T0108",
+    "target": "屏風",
+    "text": "昔の暮らしを伝える展示では、屏風を紹介しています。",
+    "context": 1,
+    "expected_kana": "ビョウブ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "屏風",
+          "expected": "ビョウブ",
+          "observed": "リョーブ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ムカシノクラシオツタエルテンジデワ、リョーブオショーカイシテイマス",
+      "diff_html": "ムカシノクラシオツタエルテンジデワ、<mark>リ</mark>ョーブオショーカイシテイマス",
+      "duration_s": 4.7005625,
+      "audio_sha256": "aef80de03b728f0929e0251555bee23bf5361091fabe80d02a4c614992a01366"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ムカシノクラシオツタエルテンジデワ、ビョーブオショーカイシテイマス",
+      "diff_html": "ムカシノクラシオツタエルテンジデワ、<mark>ビ</mark>ョーブオショーカイシテイマス",
+      "duration_s": 4.1066875,
+      "audio_sha256": "734826a872d6b6f07db203c4b4b6107042c7a1f144d6a5ba21037d2a94239011"
+    }
+  },
+  {
+    "id": "S0395",
+    "term_id": "T0198",
+    "target": "日本画",
+    "text": "美術館の展示では日本画を取り上げ、制作の工程を紹介しています。",
+    "context": 1,
+    "expected_kana": "ニッポンガ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "日本画",
+          "expected": "ニッポンガ",
+          "observed": "ニホンガ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ビジュツカンノテンジデワニホンガオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "diff_html": "ビジュツカンノテンジデワニ<mark>ホ</mark>ンガオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "duration_s": 5.7939375,
+      "audio_sha256": "6b607d5f9fe0d1c9cf4d38cb63de75b98b2b8dc9e23633b63857b1f03cbc0764"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ビジュツカンノテンジデワニッポンガオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "diff_html": "ビジュツカンノテンジデワニ<mark>ッポ</mark>ンガオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "duration_s": 5.109375,
+      "audio_sha256": "c9f6437b1decf072b7d2a368a1005238e0331b05ac257e3b04390acaae1b66f2"
+    }
+  },
+  {
+    "id": "S0396",
+    "term_id": "T0198",
+    "target": "日本画",
+    "text": "職人は日本画について説明し、使っている道具を見せました。",
+    "context": 2,
+    "expected_kana": "ニッポンガ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "日本画",
+          "expected": "ニッポンガ",
+          "observed": "ニホンガ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ショクニンワニホンガニツイテセツメーシ、ツカッテイルドーグオミセマシタ",
+      "diff_html": "ショクニンワニ<mark>ホ</mark>ンガニツイテセツメーシ、ツカッテイルドーグオミセマシタ",
+      "duration_s": 4.9205,
+      "audio_sha256": "e749fcb0abe6cb14d3b1a0150c85209f63db79c55094f6a0ac7ce11748c3f986"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ショクニンワニッポンガニツイテセツメーシ、ツカッテイルドーグオミセマシタ",
+      "diff_html": "ショクニンワニ<mark>ッポ</mark>ンガニツイテセツメーシ、ツカッテイルドーグオミセマシタ",
+      "duration_s": 4.5546875,
+      "audio_sha256": "0c3bed0ff6b4a13cd2be3d04dabee007b841042aacb1c5c8ec468ee672f35005"
+    }
+  },
+  {
+    "id": "S0454",
+    "term_id": "T0227",
+    "target": "嵌合",
+    "text": "工場の研修では嵌合を取り上げ、作業の注意点を確認しました。",
+    "context": 2,
+    "expected_kana": "カンゴウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "嵌合",
+          "expected": "カンゴウ",
+          "observed": "カンゴ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージョーノケンシューデワカンゴオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "diff_html": "コージョーノケンシューデワカンゴオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "duration_s": 5.754375,
+      "audio_sha256": "70421355ddcaec36e45be86c6ca59460dfd8adf7f492404e2d273016a892a9bd"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "嵌合",
+          "expected": "カンゴウ",
+          "observed": "カンゴ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージョーノケンシューデワカンゴオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "diff_html": "コージョーノケンシューデワカンゴオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "duration_s": 4.9386875,
+      "audio_sha256": "dacf82950e8cb7939c7871a8b4631083fd07bbd77c183f3cfc0e498b52e052e0"
+    }
+  },
+  {
+    "id": "S0495",
+    "term_id": "T0248",
+    "target": "石彫",
+    "text": "美術館の展示では石彫を取り上げ、制作の工程を紹介しています。",
+    "context": 1,
+    "expected_kana": "イシボリ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "石彫",
+          "expected": "イシボリ",
+          "observed": "セキチョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ビジュツカンノテンジデワセキチョーオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "diff_html": "ビジュツカンノテンジデワ<mark>セキチョー</mark>オトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "duration_s": 5.8115,
+      "audio_sha256": "4d740ad2bd6eb2c73ce06d93cfb9e083d06876f9171510c9d5de0b5f0ea89ec6"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ビジュツカンノテンジデワイシボリオトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "diff_html": "ビジュツカンノテンジデワ<mark>イシボリ</mark>オトリアゲ、セーサクノコーテーオショーカイシテイマス",
+      "duration_s": 4.949375,
+      "audio_sha256": "ad927ddb9fb798e0f214f2e5a83f6590078280d759dd5bee1bff3ccf8d5bb39a"
+    }
+  },
+  {
+    "id": "S0588",
+    "term_id": "T0294",
+    "target": "太政官",
+    "text": "案内人は太政官について説明し、地域に残る記録を紹介しました。",
+    "context": 2,
+    "expected_kana": "ダジョウカン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "太政官",
+          "expected": "ダジョウカン",
+          "observed": "ダイジョーカン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイニンワダイジョーカンニツイテセツメーシ、チイキニノコルキロクオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ニ</mark>ンワダ<mark>イ</mark>ジョーカンニツイテセツメーシ、チイキニノコルキロクオショーカイシマシタ",
+      "duration_s": 6.185125,
+      "audio_sha256": "3f416c3d28b1fb1e9cdb38f802f3075131646a1b4d18bfb075ac96a8a142309d"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイジンワダジョーカンニツイテセツメーシ、チイキニノコルキロクオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ジ</mark>ンワダ<mark></mark>ジョーカンニツイテセツメーシ、チイキニノコルキロクオショーカイシマシタ",
+      "duration_s": 5.216,
+      "audio_sha256": "596ff066e9e35d3b8ff167ce263cc35d1ea1cfc14c2be759fc990c675a4d0ed1"
+    }
+  },
+  {
+    "id": "S0611",
+    "term_id": "T0306",
+    "target": "不祝儀",
+    "text": "暮らしの講座では不祝儀を取り上げ、身近な場面を例に説明しました。",
+    "context": 1,
+    "expected_kana": "ブシュウギ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "不祝儀",
+          "expected": "ブシュウギ",
+          "observed": "フシューギ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "クラシノコーザデワフシューギオトリアゲ、ミジカナバメンオレーニセツメーシマシタ",
+      "diff_html": "クラシノコーザデ<mark></mark>ワ<mark>フ</mark>シューギオトリアゲ、ミジカナバメンオレーニセツメーシマシタ",
+      "duration_s": 5.7060625,
+      "audio_sha256": "bb673650799830f396541cfa01b4aeb320027a1d3e67d7d6ee2f01c0b5dde5c3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "は",
+          "expected": "ワ",
+          "observed": "オワ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "クラシノコーザデオワブシューギオトリアゲ、ミジカナバメンオレーニセツメーシマシタ",
+      "diff_html": "クラシノコーザデ<mark>オ</mark>ワ<mark>ブ</mark>シューギオトリアゲ、ミジカナバメンオレーニセツメーシマシタ",
+      "duration_s": 4.853375,
+      "audio_sha256": "db12952520e3807e8d4110cb9d975b0ca7bb30151ed844e1640358436f8be82d"
+    }
+  },
+  {
+    "id": "S0616",
+    "term_id": "T0308",
+    "target": "簾",
+    "text": "案内人は簾について説明し、使い方を実演しました。",
+    "context": 2,
+    "expected_kana": "スダレ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "簾",
+          "expected": "スダレ",
+          "observed": "ス",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイニンワスニツイテセツメーシ、ツカイカタオジツエンシマシタ",
+      "diff_html": "アンナイ<mark>ニ</mark>ンワス<mark></mark>ニツイテセツメーシ、ツカイカタオジツエンシマシタ",
+      "duration_s": 4.8831875,
+      "audio_sha256": "9a92ffa5193ea9c1fdfe819d9ab423f4efdd29c26d149829ee9417cafcea5d47"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイジンワスダレニツイテセツメーシ、ツカイカタオジツエンシマシタ",
+      "diff_html": "アンナイ<mark>ジ</mark>ンワス<mark>ダレ</mark>ニツイテセツメーシ、ツカイカタオジツエンシマシタ",
+      "duration_s": 4.448,
+      "audio_sha256": "f664d0b34d2932548975d9092555b29f742ef3de0b656dd772e90d7d61b3c4b1"
+    }
+  },
+  {
+    "id": "S0643",
+    "term_id": "T0322",
+    "target": "富裕",
+    "text": "専門家は富裕の動向を解説し、暮らしへの影響を説明しました。",
+    "context": 1,
+    "expected_kana": "フユウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "富裕",
+          "expected": "フユウ",
+          "observed": "フユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "センモンカワフユノドーコーオカイセツシ、クラシエノエーキョーオセツメーシマシタ",
+      "diff_html": "センモンカワフユノ<mark>ド</mark>ーコーオカイセツシ、クラシエノエーキョーオセツメーシマシタ",
+      "duration_s": 5.82975,
+      "audio_sha256": "c979e676c09b871c10db5b7988687a314b5b1931a9cd1473750f0ec8b9420cbf"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "富裕",
+          "expected": "フユウ",
+          "observed": "フユ",
+          "priority": "normal"
+        },
+        {
+          "surface": "動向",
+          "expected": "ドウコウ",
+          "observed": "トーコー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "センモンカワフユノトーコーオカイセツシ、クラシエノエーキョーオセツメーシマシタ",
+      "diff_html": "センモンカワフユノ<mark>ト</mark>ーコーオカイセツシ、クラシエノエーキョーオセツメーシマシタ",
+      "duration_s": 5.1946875,
+      "audio_sha256": "71607ca944764bd1fb60d3991c5dc76e0843c1ee519a7d6bf92b852e104e610c"
+    }
+  },
+  {
+    "id": "S0644",
+    "term_id": "T0322",
+    "target": "富裕",
+    "text": "経済番組では富裕を取り上げ、関連する統計を紹介しました。",
+    "context": 2,
+    "expected_kana": "フユウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "富裕",
+          "expected": "フユウ",
+          "observed": "フユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワフユオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワフユオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 5.5556875,
+      "audio_sha256": "cd3652efbbe47994a923aa820710890066cec08ee19c9854d64b2ed1be4cfa25"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "富裕",
+          "expected": "フユウ",
+          "observed": "フユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワフユオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワフユオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 4.8106875,
+      "audio_sha256": "908ee6a5096e641ada892ebf2192dcc638e19180c71448a96375750565397a19"
+    }
+  },
+  {
+    "id": "S0676",
+    "term_id": "T0338",
+    "target": "秋雨",
+    "text": "観測の記録を調べ、秋雨について研究会で報告しました。",
+    "context": 2,
+    "expected_kana": "シュウウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "秋雨",
+          "expected": "シュウウ",
+          "observed": "アキサメ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、アキサメニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、アキサメニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 5.388,
+      "audio_sha256": "f860f75c616f24253b5dceab3137156ea9e790c51f08fe21f82df546207bacd3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "秋雨",
+          "expected": "シュウウ",
+          "observed": "アキサメ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、アキサメニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、アキサメニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 4.64,
+      "audio_sha256": "52a17b0102d62a11f2ef10106bbc1bd4927db581f44dd5a000672446613408bc"
+    }
+  },
+  {
+    "id": "S0699",
+    "term_id": "T0350",
+    "target": "暗喩",
+    "text": "文学の授業では暗喩を取り上げ、作品の一部を読みました。",
+    "context": 1,
+    "expected_kana": "アンユ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "暗喩",
+          "expected": "アンユ",
+          "observed": "アンヨー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ブンガクノジュギョーデワアンヨーオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "diff_html": "ブンガクノジュ<mark>ギ</mark>ョーデワアン<mark>ヨー</mark>オトリアゲ、サクヒンノイチブオヨミマシタ",
+      "duration_s": 5.087625,
+      "audio_sha256": "fbc147a396a30da890b72f46cf4f4f652bb539224e2ce2fd181983a67b2b8351"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "授業",
+          "expected": "ジュギョウ",
+          "observed": "ジュミョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ブンガクノジュミョーデワアンユオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "diff_html": "ブンガクノジュ<mark>ミ</mark>ョーデワアン<mark>ユ</mark>オトリアゲ、サクヒンノイチブオヨミマシタ",
+      "duration_s": 4.288,
+      "audio_sha256": "7e8dae3ebfab0e60139911bfe9bdded598b875e5bc5b401fa8dda46763aefe5b"
+    }
+  },
+  {
+    "id": "S0705",
+    "term_id": "T0353",
+    "target": "追憶",
+    "text": "会議では追憶について意見を交わし、それぞれの考えを整理しました。",
+    "context": 1,
+    "expected_kana": "ツイオク",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "追憶",
+          "expected": "ツイオク",
+          "observed": "ツイヨク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイギデワツイヨクニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "diff_html": "カイギデワツイ<mark>ヨ</mark>クニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "duration_s": 5.6106875,
+      "audio_sha256": "91b77ea0c8a5dd0c4b7bce1d520184498c639ff2363db3261181ab91503c6e34"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カイギデワツイオクニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "diff_html": "カイギデワツイ<mark>オ</mark>クニツイテイケンオカワシ、ソレゾレノカンガエオセーリシマシタ",
+      "duration_s": 5.077375,
+      "audio_sha256": "73c412660c177d7e88934b31b462419410b946781e77e75b1893ba034cd0a74b"
+    }
+  },
+  {
+    "id": "S0721",
+    "term_id": "T0361",
+    "target": "曙",
+    "text": "天文の講座では曙を取り上げ、観測した写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "アケボノ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "天文",
+          "expected": "テンモン",
+          "observed": "テンブン",
+          "priority": "normal"
+        },
+        {
+          "surface": "曙",
+          "expected": "アケボノ",
+          "observed": "アケモノ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンブンノコーザデワアケモノオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>ブ</mark>ンノコーザデワアケ<mark>モ</mark>ノオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 5.66225,
+      "audio_sha256": "06ec3a8ccb86eb24f9fbf191c1ce0b123e601b9dc894994039d3b485fe1bb680"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンモンノコーザデワアケボノオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>モ</mark>ンノコーザデワアケ<mark>ボ</mark>ノオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 4.7146875,
+      "audio_sha256": "713617b3443adeb8d3225bf9f598ac1e1a74a4d77216ea22d733db1b972f2495"
+    }
+  },
+  {
+    "id": "S0775",
+    "term_id": "T0388",
+    "target": "雷雨",
+    "text": "気象の解説では雷雨を取り上げ、空の写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "ライウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "雷雨",
+          "expected": "ライウ",
+          "observed": "ライユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キショーノカイセツデワライユオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワライユオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 5.22675,
+      "audio_sha256": "790b79b098073f33bf685ae969827b4d058a509494bf83b5eebf7cfc3941ebec"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "雷雨",
+          "expected": "ライウ",
+          "observed": "ライユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キショーノカイセツデワライユオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワライユオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 4.405375,
+      "audio_sha256": "837dc2eb4c30d50088565f98283ebf816d5e5d59e6ad1f9f55ddf45c7820b8cb"
+    }
+  },
+  {
+    "id": "S0776",
+    "term_id": "T0388",
+    "target": "雷雨",
+    "text": "観測の記録を調べ、雷雨について研究会で報告しました。",
+    "context": 2,
+    "expected_kana": "ライウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "雷雨",
+          "expected": "ライウ",
+          "observed": "ライユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、ライユニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、ライ<mark>ユ</mark>ニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 5.310875,
+      "audio_sha256": "2f58db1c7ff695d11ab71c4ec24bcb880dd07ba86c8e3a3cdcb80cbfd58915b1"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カンソクノキロクオシラベ、ライウニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、ライ<mark>ウ</mark>ニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 4.629375,
+      "audio_sha256": "67a76b0f9ea8d897805e6f44e3e84bce6897330f3faab8e4bf960804cff80b98"
+    }
+  },
+  {
+    "id": "S0821",
+    "term_id": "T0411",
+    "target": "明け方",
+    "text": "天文の講座では明け方を取り上げ、観測した写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "アケガタ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "天文",
+          "expected": "テンモン",
+          "observed": "テンブン",
+          "priority": "normal"
+        },
+        {
+          "surface": "明け方",
+          "expected": "アケガタ",
+          "observed": "アケカタ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンブンノコーザデワアケカタオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>ブ</mark>ンノコーザデワアケ<mark>カ</mark>タオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 5.585375,
+      "audio_sha256": "61f10bf97487b536292326c1e844fa0d0e0f6a40e0ec10fd70ea0331950b55e0"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンモンノコーザデワアケガタオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>モ</mark>ンノコーザデワアケ<mark>ガ</mark>タオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 4.7466875,
+      "audio_sha256": "e239f5982e30f172899b222da3265cd2ff47219ba8c8cfbde1591c3470969adc"
+    }
+  },
+  {
+    "id": "S0827",
+    "term_id": "T0414",
+    "target": "伝聞",
+    "text": "報道の仕組みを学ぶ講座で、伝聞について意見を交わしました。",
+    "context": 1,
+    "expected_kana": "デンブン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "伝聞",
+          "expected": "デンブン",
+          "observed": "ベンブン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ホードーノシクミオマナブコーザデ、ベンブンニツイテイケンオカワシマシタ",
+      "diff_html": "ホードーノシクミオマナブコーザデ、<mark>ベ</mark>ンブンニツイテイケンオカワシマシタ",
+      "duration_s": 5.0875625,
+      "audio_sha256": "2359788847d010e193418a54573a1c75541722d4e6705ffaf91a099dfaf761a2"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ホードーノシクミオマナブコーザデ、デンブンニツイテイケンオカワシマシタ",
+      "diff_html": "ホードーノシクミオマナブコーザデ、<mark>デ</mark>ンブンニツイテイケンオカワシマシタ",
+      "duration_s": 4.4906875,
+      "audio_sha256": "100f52200aa4f21a58b8e8b1a7ba3b3444f8046763bae4cd0770b632103cf247"
+    }
+  },
+  {
+    "id": "S0856",
+    "term_id": "T0428",
+    "target": "断線",
+    "text": "技術者は断線に関する図を示し、測定の結果を説明しました。",
+    "context": 2,
+    "expected_kana": "ダンセン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "断線",
+          "expected": "ダンセン",
+          "observed": "ダンセー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワダンセーニカンスルズオシメシ、ソクテーノケッカオセツメーシマシタ",
+      "diff_html": "ギジュツシャワダンセーニカンスルズオシメシ、ソクテーノケッカオセツメーシマシタ",
+      "duration_s": 5.7315,
+      "audio_sha256": "447b3dfd927d1f9eb8de00f6be2c382e6a6e163c48a07d02b6c23d3e3f2f187a"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "断線",
+          "expected": "ダンセン",
+          "observed": "ダンセー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワダンセーニカンスルズオシメシ、ソクテーノケッカオセツメーシマシタ",
+      "diff_html": "ギジュツシャワダンセーニカンスルズオシメシ、ソクテーノケッカオセツメーシマシタ",
+      "duration_s": 4.821375,
+      "audio_sha256": "f4dcae6a106b5f5e23d09221f1ccf53b0009befdadab8f3aae87997ed0fca0ff"
+    }
+  },
+  {
+    "id": "S0883",
+    "term_id": "T0442",
+    "target": "鱈",
+    "text": "食文化の番組では鱈を取り上げ、昔からの工夫を紹介しました。",
+    "context": 1,
+    "expected_kana": "タラ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "鱈",
+          "expected": "タラ",
+          "observed": "ダラ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ショクブンカノバングミデワダラオトリアゲ、ムカシカラノクフーオショーカイシマシタ",
+      "diff_html": "ショクブンカノバングミデワ<mark>ダ</mark>ラオトリアゲ、ムカシカラノクフーオショーカイシマシタ",
+      "duration_s": 5.56525,
+      "audio_sha256": "c03aa2a4f6cfd463da5fa4e078add988820b6637b2f23a49749c9949f12b6e4c"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ショクブンカノバングミデワタラオトリアゲ、ムカシカラノクフーオショーカイシマシタ",
+      "diff_html": "ショクブンカノバングミデワ<mark>タ</mark>ラオトリアゲ、ムカシカラノクフーオショーカイシマシタ",
+      "duration_s": 4.7786875,
+      "audio_sha256": "e6c8fade6d3e3501f7fefe2a1b9f019134bd1d4da9c6217c46b3266535979cd6"
+    }
+  },
+  {
+    "id": "S0969",
+    "term_id": "T0485",
+    "target": "疫病",
+    "text": "保健の授業では疫病を取り上げ、基本的な知識を確認しました。",
+    "context": 1,
+    "expected_kana": "ヤクビョウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "疫病",
+          "expected": "ヤクビョウ",
+          "observed": "エキビョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ホケンノジュギョーデワエキビョーオトリアゲ、キホンテキナチシキオカクニンシマシタ",
+      "diff_html": "ホケンノジュギョーデワエキビョーオトリアゲ、キホンテキナチシキオカクニンシマシタ",
+      "duration_s": 5.417125,
+      "audio_sha256": "93dfc4c7b9f58ee63caf40021331556089162bc71aa6a0fc7c9c2c204a10b927"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "疫病",
+          "expected": "ヤクビョウ",
+          "observed": "エキビョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ホケンノジュギョーデワエキビョーオトリアゲ、キホンテキナチシキオカクニンシマシタ",
+      "diff_html": "ホケンノジュギョーデワエキビョーオトリアゲ、キホンテキナチシキオカクニンシマシタ",
+      "duration_s": 4.704,
+      "audio_sha256": "8697adf0a26f67c270ec515256729cb49ebd39d6b7f5e45d6221b292c207fea8"
+    }
+  },
+  {
+    "id": "S0970",
+    "term_id": "T0485",
+    "target": "疫病",
+    "text": "担当者は疫病に関する資料を読み、説明会の準備を進めました。",
+    "context": 2,
+    "expected_kana": "ヤクビョウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "疫病",
+          "expected": "ヤクビョウ",
+          "observed": "エキビョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "タントーシャワエキビョーニカンスルシリョーオヨミ、セツメーカイノジュンビオススメマシタ",
+      "diff_html": "タントーシャワエキビョーニカンスルシリョーオヨミ、セツメーカイノジュンビオススメマシタ",
+      "duration_s": 5.682375,
+      "audio_sha256": "f016e5bb8c0e4453baa2f5608966ec4ca661fa5780defcd8a4d2deccca363763"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "疫病",
+          "expected": "ヤクビョウ",
+          "observed": "エキビョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "タントーシャワエキビョーニカンスルシリョーオヨミ、セツメーカイノジュンビオススメマシタ",
+      "diff_html": "タントーシャワエキビョーニカンスルシリョーオヨミ、セツメーカイノジュンビオススメマシタ",
+      "duration_s": 4.928,
+      "audio_sha256": "060ffcdd37d8a130c1fb2c6a089c24b5903066e5d585e4f467e97f6f1f79652b"
+    }
+  },
+  {
+    "id": "S0975",
+    "term_id": "T0488",
+    "target": "露",
+    "text": "気象の解説では露を取り上げ、空の写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "ロ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "露",
+          "expected": "ロ",
+          "observed": "ツユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キショーノカイセツデワツユオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワツ<mark>ユ</mark>オトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 5.1718125,
+      "audio_sha256": "2f2833eeef9c624e183826815c520a357204a5793113df0a5941e3e03666bc6d"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "露",
+          "expected": "ロ",
+          "observed": "ツイ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キショーノカイセツデワツイオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワツ<mark>イ</mark>オトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 4.3626875,
+      "audio_sha256": "637e651f23c31741bf04a097f2a8516d666e81323a40e1f5d30f3cfcb951201a"
+    }
+  },
+  {
+    "id": "S0976",
+    "term_id": "T0488",
+    "target": "露",
+    "text": "観測の記録を調べ、露について研究会で報告しました。",
+    "context": 2,
+    "expected_kana": "ロ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "露",
+          "expected": "ロ",
+          "observed": "スユ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、スユニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、<mark>スユ</mark>ニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 5.24525,
+      "audio_sha256": "67f04f1e0a7f4fdbb16a5eb07d5574365e153dc70de1ed64f50094cdc0d9ea6e"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カンソクノキロクオシラベ、ロニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、<mark>ロ</mark>ニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 4.32,
+      "audio_sha256": "6f57aa0d67acdf955e2b7f3cbbd9b6be37dd105e5f925da9f342d3afbfe79b0c"
+    }
+  },
+  {
+    "id": "S1044",
+    "term_id": "T0522",
+    "target": "外需",
+    "text": "経済番組では外需を取り上げ、関連する統計を紹介しました。",
+    "context": 2,
+    "expected_kana": "ガイジュ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "外需",
+          "expected": "ガイジュ",
+          "observed": "ガイジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワガイジオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワガイジオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 5.5151875,
+      "audio_sha256": "03160c42f56ff9b59a43e73852929b1307a576aa7c2d5b8384cb476247c91958"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "外需",
+          "expected": "ガイジュ",
+          "observed": "ガイジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーザイバングミデワガイジオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "diff_html": "ケーザイバングミデワガイジオトリアゲ、カンレンスルトーケーオショーカイシマシタ",
+      "duration_s": 4.7786875,
+      "audio_sha256": "9d963c30e08af9d7797fcc5b6346f83f23b2f5ba875acbc7a5bc675fa841de72"
+    }
+  },
+  {
+    "id": "S1059",
+    "term_id": "T0530",
+    "target": "振動",
+    "text": "授業では振動を取り上げ、身近な道具で実験しました。",
+    "context": 1,
+    "expected_kana": "シンドウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "振動",
+          "expected": "シンドウ",
+          "observed": "シンロー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ジュギョーデワシンローオトリアゲ、ミジカナドーグデジッケンシマシタ",
+      "diff_html": "ジュギョーデワシン<mark>ロ</mark>ーオトリアゲ、ミジカナドーグデジッケンシマシタ",
+      "duration_s": 4.7345,
+      "audio_sha256": "0011ddea8af92ccac150f7c517ea8adaf0c32ae9992188e42c4abde21d54bea4"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ジュギョーデワシンドーオトリアゲ、ミジカナドーグデジッケンシマシタ",
+      "diff_html": "ジュギョーデワシン<mark>ド</mark>ーオトリアゲ、ミジカナドーグデジッケンシマシタ",
+      "duration_s": 4.117375,
+      "audio_sha256": "5051e6a6479e94afae43c3943654b04ae4c4ca76815816d073c1b992866b9289"
+    }
+  },
+  {
+    "id": "S1063",
+    "term_id": "T0532",
+    "target": "方解石",
+    "text": "展示では方解石の性質を紹介し、身近な用途を説明しています。",
+    "context": 1,
+    "expected_kana": "ホウカイセキ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "方解石",
+          "expected": "ホウカイセキ",
+          "observed": "ホーカイイシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンジデワホーカイイシノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワホーカイ<mark>イシ</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 5.635125,
+      "audio_sha256": "8f5ba539a888a231418dcf2e242df38bbadeee82511af662ff513ac11487b907"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンジデワホーカイセキノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワホーカイ<mark>セキ</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 5.141375,
+      "audio_sha256": "b5f264c3d51ed04c796dede2c3fec4c7c4e4047d5c31d6347b438eab5724a222"
+    }
+  },
+  {
+    "id": "S1093",
+    "term_id": "T0547",
+    "target": "龍笛",
+    "text": "文化を紹介する番組では龍笛を取り上げ、受け継がれた工夫を伝えました。",
+    "context": 1,
+    "expected_kana": "リュウテキ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "龍笛",
+          "expected": "リュウテキ",
+          "observed": "リョーテキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ブンカオショーカイスルバングミデワリョーテキオトリアゲ、ウケツガレタクフーオツタエマシタ",
+      "diff_html": "ブンカオショーカイスルバングミデワリョーテキオトリアゲ、ウケツガレタクフーオツタエマシタ",
+      "duration_s": 5.9900625,
+      "audio_sha256": "ead6c8bcaae694e22da60eff0b48d4e4c6a2ad837d82d1f90960d034d62f57f3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "龍笛",
+          "expected": "リュウテキ",
+          "observed": "リョーテキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ブンカオショーカイスルバングミデワリョーテキオトリアゲ、ウケツガレタクフーオツタエマシタ",
+      "diff_html": "ブンカオショーカイスルバングミデワリョーテキオトリアゲ、ウケツガレタクフーオツタエマシタ",
+      "duration_s": 5.1946875,
+      "audio_sha256": "966e7792483b85f7e0c63a19d3e4d70ab14d45c7eefe79e63db5adf1dc8311c9"
+    }
+  },
+  {
+    "id": "S1094",
+    "term_id": "T0547",
+    "target": "龍笛",
+    "text": "案内人は龍笛について説明し、昔の写真や道具を紹介しました。",
+    "context": 2,
+    "expected_kana": "リュウテキ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "龍笛",
+          "expected": "リュウテキ",
+          "observed": "リョーテキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイニンワリョーテキニツイテセツメーシ、ムカシノシャシンヤドーグオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ニ</mark>ンワリョーテキニツイテセツメーシ、ムカシノシャシンヤドー<mark>グ</mark>オショーカイシマシタ",
+      "duration_s": 5.95325,
+      "audio_sha256": "03ff49b2cc17f472bd1afc573563194f5d92f691ef0c7a9881492a426dc0ae46"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        },
+        {
+          "surface": "龍笛",
+          "expected": "リュウテキ",
+          "observed": "リョーテキ",
+          "priority": "normal"
+        },
+        {
+          "surface": "道具",
+          "expected": "ドウグ",
+          "observed": "ドーム",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイジンワリョーテキニツイテセツメーシ、ムカシノシャシンヤドームオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ジ</mark>ンワリョーテキニツイテセツメーシ、ムカシノシャシンヤドー<mark>ム</mark>オショーカイシマシタ",
+      "duration_s": 5.173375,
+      "audio_sha256": "a4b869a22636fa732171f626de009db6dfbd854e747d18ac80e6e2f1618aa9f8"
+    }
+  },
+  {
+    "id": "S1113",
+    "term_id": "T0557",
+    "target": "戸袋",
+    "text": "住まいや暮らしを紹介する展示で、戸袋について説明しています。",
+    "context": 1,
+    "expected_kana": "トブクロ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "戸袋",
+          "expected": "トブクロ",
+          "observed": "ポブクロ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "スマイヤクラシオショーカイスルテンジデ、ポブクロニツイテセツメーシテイマス",
+      "diff_html": "スマイヤクラシオショーカイスルテンジデ、<mark>ポ</mark>ブクロニツイテセツメーシテイマス",
+      "duration_s": 5.241625,
+      "audio_sha256": "2d9b3e8e2b99c549befce826bfbc8ac254fbf15d7ec6f3ddde0758c00c58e0f5"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "スマイヤクラシオショーカイスルテンジデ、トブクロニツイテセツメーシテイマス",
+      "diff_html": "スマイヤクラシオショーカイスルテンジデ、<mark>ト</mark>ブクロニツイテセツメーシテイマス",
+      "duration_s": 4.7466875,
+      "audio_sha256": "6dfe09b0a5469fe937288405475e1e06fe00378dc47a76057e4e80429e6f06c8"
+    }
+  },
+  {
+    "id": "S1121",
+    "term_id": "T0561",
+    "target": "望",
+    "text": "天文の講座では望を取り上げ、観測した写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "モチ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "天文",
+          "expected": "テンモン",
+          "observed": "テンブン",
+          "priority": "normal"
+        },
+        {
+          "surface": "望",
+          "expected": "モチ",
+          "observed": "ボー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンブンノコーザデワボーオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>ブ</mark>ンノコーザデワ<mark>ボー</mark>オトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 5.437625,
+      "audio_sha256": "fc41ff9d82b258d7028bdd5008f55151b8b8d2647c7e7d704c4f1af50f126f2e"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンモンノコーザデワモチオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>モ</mark>ンノコーザデワ<mark>モチ</mark>オトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 4.576,
+      "audio_sha256": "4aa58b6c11f324337ab69edcd8e7a3fb86ca7141ea9b64343a9784d39c640e8f"
+    }
+  },
+  {
+    "id": "S1145",
+    "term_id": "T0573",
+    "target": "稟議",
+    "text": "担当者は稟議について、会議で資料を示して説明しました。",
+    "context": 1,
+    "expected_kana": "リンギ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "稟議",
+          "expected": "リンギ",
+          "observed": "リンリ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "タントーシャワリンリニツイテ、カイギデシリョーオシメシテセツメーシマシタ",
+      "diff_html": "タントーシャワリン<mark>リ</mark>ニツイテ、カイギデシリョーオシメシテセツメーシマシタ",
+      "duration_s": 5.1019375,
+      "audio_sha256": "006b0c30db27325a0cb818031734f22a880ea30346e76686f21cd640be3a9b6e"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "タントーシャワリンギニツイテ、カイギデシリョーオシメシテセツメーシマシタ",
+      "diff_html": "タントーシャワリン<mark>ギ</mark>ニツイテ、カイギデシリョーオシメシテセツメーシマシタ",
+      "duration_s": 4.501375,
+      "audio_sha256": "88ce67f54aa5bbe567cdee73958d07e1279a4aefb541ef0a97c54738549657e4"
+    }
+  },
+  {
+    "id": "S1173",
+    "term_id": "T0587",
+    "target": "河床",
+    "text": "現地の調査では河床に注目し、水辺の様子を記録しました。",
+    "context": 1,
+    "expected_kana": "カワドコ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "河床",
+          "expected": "カワドコ",
+          "observed": "カショー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ゲンチノチョーサデワカショーニチューモクシ、ミズベノヨースオキロクシマシタ",
+      "diff_html": "ゲンチノチョーサデワカショーニチューモクシ、ミズベノヨースオキロクシマシタ",
+      "duration_s": 5.3445625,
+      "audio_sha256": "ab04d3ca620ca1f3a18302dfb13b6815d7c37669be93c0cdceface65a38f0bfb"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "河床",
+          "expected": "カワドコ",
+          "observed": "カショー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ゲンチノチョーサデワカショーニチューモクシ、ミズベノヨースオキロクシマシタ",
+      "diff_html": "ゲンチノチョーサデワカショーニチューモクシ、ミズベノヨースオキロクシマシタ",
+      "duration_s": 4.693375,
+      "audio_sha256": "dbb7516d5374cea9eed85bda94861dd13aa4f2b661a31f05595202c0f36090c5"
+    }
+  },
+  {
+    "id": "S1174",
+    "term_id": "T0587",
+    "target": "河床",
+    "text": "地理の授業では河床を取り上げ、地図と写真を比較しました。",
+    "context": 2,
+    "expected_kana": "カワドコ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "地理",
+          "expected": "チリ",
+          "observed": "シリ",
+          "priority": "normal"
+        },
+        {
+          "surface": "河床",
+          "expected": "カワドコ",
+          "observed": "カショー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "シリノジュギョーデワカショーオトリアゲ、チズトシャシンオヒカクシマシタ",
+      "diff_html": "<mark>シ</mark>リノジュギョーデワカショ<mark>ー</mark>オトリアゲ、チズトシャシンオヒカクシマシタ",
+      "duration_s": 4.916875,
+      "audio_sha256": "97e26a241c06696fa6ab5ad6927b4eff35dcdb3b5c16a7ba40c6655d0526c558"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "河床",
+          "expected": "カワドコ",
+          "observed": "カショ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "チリノジュギョーデワカショオトリアゲ、チズトシャシンオヒカクシマシタ",
+      "diff_html": "<mark>チ</mark>リノジュギョーデワカショ<mark></mark>オトリアゲ、チズトシャシンオヒカクシマシタ",
+      "duration_s": 4.085375,
+      "audio_sha256": "745dcb5b0bae94bac2a34c16be6be7fa6a0e9343109809cb78daddcfe2869f44"
+    }
+  },
+  {
+    "id": "S1175",
+    "term_id": "T0588",
+    "target": "日暈",
+    "text": "気象の解説では日暈を取り上げ、空の写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "ヒカサ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "日暈",
+          "expected": "ヒカサ",
+          "observed": "ヒガサ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キショーノカイセツデワヒガサオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワヒ<mark>ガ</mark>サオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 5.170875,
+      "audio_sha256": "2993a8c962ea28953b949ed8ffbc77c7d8e5d48530aed3c99b3630454d6833b3"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "キショーノカイセツデワヒカサオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "diff_html": "キショーノカイセツデワヒ<mark>カ</mark>サオトリアゲ、ソラノシャシンオショーカイシマシタ",
+      "duration_s": 4.469375,
+      "audio_sha256": "ec9df309175dcb30d39f42696cab7d3df88a09ff00e3a57cbea4904beff66287"
+    }
+  },
+  {
+    "id": "S1176",
+    "term_id": "T0588",
+    "target": "日暈",
+    "text": "観測の記録を調べ、日暈について研究会で報告しました。",
+    "context": 2,
+    "expected_kana": "ヒカサ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "日暈",
+          "expected": "ヒカサ",
+          "observed": "ヒガサ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、ヒガサニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、<mark>ヒガ</mark>サニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 5.2985,
+      "audio_sha256": "8497eb48a579082e170bac177e593375e14e162ad96ce998798f779a9859fcd9"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "日暈",
+          "expected": "ヒカサ",
+          "observed": "ミチカサ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、ミチカサニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、<mark>ミチカ</mark>サニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 4.629375,
+      "audio_sha256": "37c5f8f667fd6cbebfef38291b884398a790f62610b379e9866ec1813561bd5d"
+    }
+  },
+  {
+    "id": "S1185",
+    "term_id": "T0593",
+    "target": "薯蕷",
+    "text": "料理の講座では薯蕷を取り上げ、食材や道具を紹介しました。",
+    "context": 1,
+    "expected_kana": "トロロ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "薯蕷",
+          "expected": "トロロ",
+          "observed": "ヤマイモ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "リョーリノコーザデワヤマイモオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "diff_html": "リョーリノコーザデワ<mark>ヤマイモ</mark>オトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "duration_s": 5.3928125,
+      "audio_sha256": "121241f21c7cde8220dc41ba687be077c3137dee556cf2fbc126e4d235a7a1fb"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "リョーリノコーザデワトロロオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "diff_html": "リョーリノコーザデワ<mark>トロロ</mark>オトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "duration_s": 4.4586875,
+      "audio_sha256": "7bf582579eaf7437f3f72fb52e80af9ec62d0b71bab4c9ac85ad2f15f631fb4b"
+    }
+  },
+  {
+    "id": "S1192",
+    "term_id": "T0596",
+    "target": "木魚",
+    "text": "展示では木魚を取り上げ、地域に伝わる習慣を紹介しています。",
+    "context": 2,
+    "expected_kana": "モクギョ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "木魚",
+          "expected": "モクギョ",
+          "observed": "モクヒョ",
+          "priority": "normal"
+        },
+        {
+          "surface": "を",
+          "expected": "オ",
+          "observed": "ーオ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンジデワモクヒョーオトリアゲ、チイキニツタワルシューカンオショーカイシテイマス",
+      "diff_html": "テンジデワモク<mark>ヒ</mark>ョーオトリアゲ、チイキニツタワルシューカンオショーカイシテイマス",
+      "duration_s": 5.419875,
+      "audio_sha256": "b65ee6fce23b819c7eb29a0ea41a20ade01e45c4a1c19d826fd2bfe5a3fb2a8a"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "を",
+          "expected": "オ",
+          "observed": "ーオ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンジデワモクギョーオトリアゲ、チイキニツタワルシューカンオショーカイシテイマス",
+      "diff_html": "テンジデワモク<mark>ギ</mark>ョーオトリアゲ、チイキニツタワルシューカンオショーカイシテイマス",
+      "duration_s": 4.5866875,
+      "audio_sha256": "64d6ce5ca846383f3510c6a57034b589e8ce4e4b09408c7bc96a7e3ba527224d"
+    }
+  },
+  {
+    "id": "S1203",
+    "term_id": "T0602",
+    "target": "感慨",
+    "text": "物語の登場人物が抱く感慨について、授業で意見を交わしました。",
+    "context": 1,
+    "expected_kana": "カンガイ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "感慨",
+          "expected": "カンガイ",
+          "observed": "カンガエ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モノガタリノトージョージンブツガイダクカンガエニツイテ、ジュギョーデイケンオカワシマシタ",
+      "diff_html": "モノガタリノトージョージンブツガイダクカンガエニツイテ、ジュギョーデイケンオカワシマシタ",
+      "duration_s": 5.9475625,
+      "audio_sha256": "9d4bc7589328dcd51c3dfebaafb51dda17c15c0190ed626866ce922616c860fc"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "感慨",
+          "expected": "カンガイ",
+          "observed": "カンガエ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モノガタリノトージョージンブツガイダクカンガエニツイテ、ジュギョーデイケンオカワシマシタ",
+      "diff_html": "モノガタリノトージョージンブツガイダクカンガエニツイテ、ジュギョーデイケンオカワシマシタ",
+      "duration_s": 5.056,
+      "audio_sha256": "a2c0f80e58549f1682201ec486e1b46cd308f1f9b6a679281382d5aef85bd8f3"
+    }
+  },
+  {
+    "id": "S1204",
+    "term_id": "T0602",
+    "target": "感慨",
+    "text": "講師は感慨について説明し、人の表情や行動を例に挙げました。",
+    "context": 2,
+    "expected_kana": "カンガイ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "感慨",
+          "expected": "カンガイ",
+          "observed": "カンガエ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーシワカンガエニツイテセツメーシ、ヒトノヒョージョーヤコードーオレーニアゲマシタ",
+      "diff_html": "コーシワカンガエニツイテセツメーシ、ヒトノヒョージョーヤコードーオレーニアゲマシタ",
+      "duration_s": 5.8089375,
+      "audio_sha256": "d77b93a9431f6b311083ecfaa75176e20e5cb48061cfe19ce11451225cccb4f3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "感慨",
+          "expected": "カンガイ",
+          "observed": "カンガエ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーシワカンガエニツイテセツメーシ、ヒトノヒョージョーヤコードーオレーニアゲマシタ",
+      "diff_html": "コーシワカンガエニツイテセツメーシ、ヒトノヒョージョーヤコードーオレーニアゲマシタ",
+      "duration_s": 4.8746875,
+      "audio_sha256": "ec340518977fd12b17df132bf3eee8d2144833ecc74e03e4afc48a2a0b8907eb"
+    }
+  },
+  {
+    "id": "S1299",
+    "term_id": "T0650",
+    "target": "寓意",
+    "text": "文学の授業では寓意を取り上げ、作品の一部を読みました。",
+    "context": 1,
+    "expected_kana": "グウイ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "寓意",
+          "expected": "グウイ",
+          "observed": "グルイ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ブンガクノジュギョーデワグルイオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "diff_html": "ブンガクノジュギョーデワグ<mark>ル</mark>イオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "duration_s": 5.073875,
+      "audio_sha256": "53cb01ea800049f7f6822d5e9876ab08aa1e7688851c5efb891ea65180439136"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ブンガクノジュギョーデワグーイオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "diff_html": "ブンガクノジュギョーデワグ<mark>ー</mark>イオトリアゲ、サクヒンノイチブオヨミマシタ",
+      "duration_s": 4.277375,
+      "audio_sha256": "3424f73a3ff3a17560b06c9588bf5d30ebae65c3700a12148086fcce331c100e"
+    }
+  },
+  {
+    "id": "S1371",
+    "term_id": "T0686",
+    "target": "谷底",
+    "text": "案内人は谷底の特徴を説明し、地図で場所を示しました。",
+    "context": 1,
+    "expected_kana": "タニソコ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "谷底",
+          "expected": "タニソコ",
+          "observed": "タニゾコ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイニンワタニゾコノトクチョーオセツメーシ、チズデバショオシメシマシタ",
+      "diff_html": "アンナイ<mark>ニ</mark>ンワタニ<mark>ゾ</mark>コノトクチョーオセツメーシ、チズデバショオシメシマシタ",
+      "duration_s": 5.2334375,
+      "audio_sha256": "908e1d07b60faa59f8ce4347eea4f7072beec0b9ed68cff65973cb3231510e39"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイジンワタニソコノトクチョーオセツメーシ、チズデバショオシメシマシタ",
+      "diff_html": "アンナイ<mark>ジ</mark>ンワタニ<mark>ソ</mark>コノトクチョーオセツメーシ、チズデバショオシメシマシタ",
+      "duration_s": 4.576,
+      "audio_sha256": "d96c34c16d368ca6ba9c4b8f8c55f9b2e1e8e5972f9599c8f0d64b991933671a"
+    }
+  },
+  {
+    "id": "S1397",
+    "term_id": "T0699",
+    "target": "熟字訓",
+    "text": "言葉を学ぶ講座では熟字訓を取り上げ、身近な例を示しました。",
+    "context": 1,
+    "expected_kana": "ツクヅクジクン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "熟字訓",
+          "expected": "ツクヅクジクン",
+          "observed": "ジュクジクン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コトバオマナブコーザデワジュクジクンオトリアゲ、ミジカナレーオシメシマシタ",
+      "diff_html": "コトバオマナブコーザデワジュクジクンオトリアゲ、ミジカナレーオシメシマシタ",
+      "duration_s": 5.3074375,
+      "audio_sha256": "db4e517136cd4d19316f234b1c2bfc34b5a24aa5fb4ce9f79f7e95dd92b3adcd"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "熟字訓",
+          "expected": "ツクヅクジクン",
+          "observed": "ジュクジクン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コトバオマナブコーザデワジュクジクンオトリアゲ、ミジカナレーオシメシマシタ",
+      "diff_html": "コトバオマナブコーザデワジュクジクンオトリアゲ、ミジカナレーオシメシマシタ",
+      "duration_s": 4.6186875,
+      "audio_sha256": "5f55b7c0d623cca49b2f3e9d7a65508df934dc01a883c7e43aecbd7754f9b7b6"
+    }
+  },
+  {
+    "id": "S1398",
+    "term_id": "T0699",
+    "target": "熟字訓",
+    "text": "研究者は熟字訓について説明し、資料に書かれた用例を紹介しました。",
+    "context": 2,
+    "expected_kana": "ツクヅクジクン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "熟字訓",
+          "expected": "ツクヅクジクン",
+          "observed": "ジュクジクン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケンキューシャワジュクジクンニツイテセツメーシ、シリョーニカカレタヨーレーオショーカイシマシタ",
+      "diff_html": "ケンキューシャワジュクジクンニツイテセツメーシ、シリョーニカカレタヨーレーオショーカイシマシタ",
+      "duration_s": 6.080875,
+      "audio_sha256": "ac0f97768897af681d4b45a222ef644c10b958bb0b6317a78971e3f64a6e86dd"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "熟字訓",
+          "expected": "ツクヅクジクン",
+          "observed": "ジュクジクン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケンキューシャワジュクジクンニツイテセツメーシ、シリョーニカカレタヨーレーオショーカイシマシタ",
+      "diff_html": "ケンキューシャワジュクジクンニツイテセツメーシ、シリョーニカカレタヨーレーオショーカイシマシタ",
+      "duration_s": 5.365375,
+      "audio_sha256": "bda028f9befe7f0a8c88e4e42abffc089145903065144a2659a53c1cede101c6"
+    }
+  },
+  {
+    "id": "S1417",
+    "term_id": "T0709",
+    "target": "脚絆",
+    "text": "衣服の展示では脚絆を取り上げ、地域ごとの違いを紹介しています。",
+    "context": 1,
+    "expected_kana": "キャハン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "脚絆",
+          "expected": "キャハン",
+          "observed": "キハン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "イフクノテンジデワキハンオトリアゲ、チイキゴトノチガイオショーカイシテイマス",
+      "diff_html": "イフクノテンジデワキ<mark></mark>ハンオトリアゲ、チイキゴトノチガイオショーカイシテイマス",
+      "duration_s": 5.46675,
+      "audio_sha256": "19b5058b4438d6f92dcd911cab34f23707e8d7005d2f07438d8f7900011027b9"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "イフクノテンジデワキャハンオトリアゲ、チイキゴトノチガイオショーカイシテイマス",
+      "diff_html": "イフクノテンジデワキ<mark>ャ</mark>ハンオトリアゲ、チイキゴトノチガイオショーカイシテイマス",
+      "duration_s": 4.7146875,
+      "audio_sha256": "12c3fa90d6bff4b653b4ae9736d3699b08ed1b189af908a1c4e3a757b646a06b"
+    }
+  },
+  {
+    "id": "S1449",
+    "term_id": "T0725",
+    "target": "明渠",
+    "text": "技術者は明渠の状態を調べ、現地の写真を記録しました。",
+    "context": 1,
+    "expected_kana": "メイキョ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "明渠",
+          "expected": "メイキョ",
+          "observed": "メーミゾ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワメーミゾノジョータイオシラベ、ゲンチノシャシンオキロクシマシタ",
+      "diff_html": "ギジュツシャワ<mark>メー</mark>ミゾノジョータイオシラベ、ゲンチノシャシンオキロクシマシタ",
+      "duration_s": 5.339375,
+      "audio_sha256": "4777a9d72f43f2426dfbc9fb328b93197e1a6629cd0b5f2357e4af511c5e14ad"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "明渠",
+          "expected": "メイキョ",
+          "observed": "アカリミゾ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワアカリミゾノジョータイオシラベ、ゲンチノシャシンオキロクシマシタ",
+      "diff_html": "ギジュツシャワ<mark>アカリ</mark>ミゾノジョータイオシラベ、ゲンチノシャシンオキロクシマシタ",
+      "duration_s": 4.5546875,
+      "audio_sha256": "71b8a162fc44c0e56c1b37890b3313ad5ee65896fddc7f2097eed719c47326b4"
+    }
+  },
+  {
+    "id": "S1450",
+    "term_id": "T0725",
+    "target": "明渠",
+    "text": "工事の説明会では明渠を取り上げ、図面を使って解説しました。",
+    "context": 2,
+    "expected_kana": "メイキョ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "明渠",
+          "expected": "メイキョ",
+          "observed": "メーミゾー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージノセツメーカイデワメーミゾーオトリアゲ、ズメンオツカッテカイセツシマシタ",
+      "diff_html": "コージノセツメーカイデワ<mark>メー</mark>ミゾ<mark>ー</mark>オトリアゲ、ズメンオツカッテカイセツシマシタ",
+      "duration_s": 5.494625,
+      "audio_sha256": "4866f66df0582e99e562fc19a97de48ce5215c7cd7d77b38f8ff65fca04bf6b7"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "明渠",
+          "expected": "メイキョ",
+          "observed": "アカリミゾ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージノセツメーカイデワアカリミゾオトリアゲ、ズメンオツカッテカイセツシマシタ",
+      "diff_html": "コージノセツメーカイデワ<mark>アカリ</mark>ミゾ<mark></mark>オトリアゲ、ズメンオツカッテカイセツシマシタ",
+      "duration_s": 4.8106875,
+      "audio_sha256": "439dc3144da3c2ffea2c67da25f3a6783174c26c7c009adb79fc4ae7ef4e8bf4"
+    }
+  },
+  {
+    "id": "S1453",
+    "term_id": "T0727",
+    "target": "射出",
+    "text": "技術者は射出について、実物の部品を示して説明しました。",
+    "context": 1,
+    "expected_kana": "シャシュツ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "射出",
+          "expected": "シャシュツ",
+          "observed": "シャシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワシャシツニツイテ、ジツブツノブヒンオシメシテセツメーシマシタ",
+      "diff_html": "ギジュツシャワシャシツニツイテ、ジツブツノブヒンオシメシテセツメーシマシタ",
+      "duration_s": 5.1283125,
+      "audio_sha256": "6dd98cc68533fc6cca9bb3625d1858049e3e4ad10e813ce90b49a2ec7efff3a1"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "射出",
+          "expected": "シャシュツ",
+          "observed": "シャシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ギジュツシャワシャシツニツイテ、ジツブツノブヒンオシメシテセツメーシマシタ",
+      "diff_html": "ギジュツシャワシャシツニツイテ、ジツブツノブヒンオシメシテセツメーシマシタ",
+      "duration_s": 4.48,
+      "audio_sha256": "8dbc7e0bf5d3ea49217ec6feaa11cb056c882ed8e249990f028c5b6e56b305a2"
+    }
+  },
+  {
+    "id": "S1454",
+    "term_id": "T0727",
+    "target": "射出",
+    "text": "工場の研修では射出を取り上げ、作業の注意点を確認しました。",
+    "context": 2,
+    "expected_kana": "シャシュツ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "射出",
+          "expected": "シャシュツ",
+          "observed": "シャシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージョーノケンシューデワシャシツオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "diff_html": "コージョーノケンシューデワシャシツオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "duration_s": 5.595375,
+      "audio_sha256": "ecad7a78c43266d7cef3726210d2e41ffb565cd9675664ded113f86b2b79dffb"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "射出",
+          "expected": "シャシュツ",
+          "observed": "シャシツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コージョーノケンシューデワシャシツオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "diff_html": "コージョーノケンシューデワシャシツオトリアゲ、サギョーノチューイテンオカクニンシマシタ",
+      "duration_s": 4.8746875,
+      "audio_sha256": "a582d5fa9489d0679c199045a7bccc3061d05fd8be0d8804a7505fe688e70552"
+    }
+  },
+  {
+    "id": "S1463",
+    "term_id": "T0732",
+    "target": "白金",
+    "text": "展示では白金の性質を紹介し、身近な用途を説明しています。",
+    "context": 1,
+    "expected_kana": "ハッキン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "白金",
+          "expected": "ハッキン",
+          "observed": "シロガネ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンジデワシロガネノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワ<mark>シロガネ</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 5.3964375,
+      "audio_sha256": "73c23d0257504e9fafae65d53f1a8ee324cc4ad2abd2cf174d75ed06917d932a"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "テンジデワハッキンノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "diff_html": "テンジデワ<mark>ハッキン</mark>ノセーシツオショーカイシ、ミジカナヨートオセツメーシテイマス",
+      "duration_s": 4.96,
+      "audio_sha256": "d9f7894038270d19c8c3c114ad9811b49ab3373eaefd399717992cdb5bcd3efd"
+    }
+  },
+  {
+    "id": "S1465",
+    "term_id": "T0733",
+    "target": "治癒",
+    "text": "医療の解説では治癒を取り上げ、図を使って説明しました。",
+    "context": 1,
+    "expected_kana": "チユ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "治癒",
+          "expected": "チユ",
+          "observed": "チイ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "イリョーノカイセツデワチイオトリアゲ、ズオツカッテセツメーシマシタ",
+      "diff_html": "イリョーノカイセツデワチ<mark>イ</mark>オトリアゲ、ズオツカッテセツメーシマシタ",
+      "duration_s": 5.0265,
+      "audio_sha256": "1f4b90946ca52a29ae585853420e35e2f6427b10bfe442a5f5cc5590d989f9ad"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "イリョーノカイセツデワチユオトリアゲ、ズオツカッテセツメーシマシタ",
+      "diff_html": "イリョーノカイセツデワチ<mark>ユ</mark>オトリアゲ、ズオツカッテセツメーシマシタ",
+      "duration_s": 4.0746875,
+      "audio_sha256": "bb7ddd31d1bb43023b60f985d1d364d6152ca2322e4b8abda9c3f267f8d4a6b5"
+    }
+  },
+  {
+    "id": "S1476",
+    "term_id": "T0738",
+    "target": "巻雲",
+    "text": "観測の記録を調べ、巻雲について研究会で報告しました。",
+    "context": 2,
+    "expected_kana": "ケンウン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "巻雲",
+          "expected": "ケンウン",
+          "observed": "ケーウン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カンソクノキロクオシラベ、ケーウンニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、ケ<mark>ー</mark>ウンニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 5.42475,
+      "audio_sha256": "6ad458e3c5f8c8702db3085e09dae4167df2be2e9458f168a8d9808426de3d01"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カンソクノキロクオシラベ、ケンウンニツイテケンキューカイデホーコクシマシタ",
+      "diff_html": "カンソクノキロクオシラベ、ケ<mark>ン</mark>ウンニツイテケンキューカイデホーコクシマシタ",
+      "duration_s": 4.629375,
+      "audio_sha256": "c26537ee1ca32c038e9b870c6f26d497c1e231e6df9c887d34f4f622b197785b"
+    }
+  },
+  {
+    "id": "S1531",
+    "term_id": "T0766",
+    "target": "失言",
+    "text": "会議では失言について意見を交わし、今後の方針を考えました。",
+    "context": 1,
+    "expected_kana": "シツゲン",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "失言",
+          "expected": "シツゲン",
+          "observed": "シュツゲン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイギデワシュツゲンニツイテイケンオカワシ、コンゴノホーシンオカンガエマシタ",
+      "diff_html": "カイギデワシ<mark>ュ</mark>ツゲンニツイテイケンオカワシ、コンゴノホーシンオカンガエマシタ",
+      "duration_s": 5.464125,
+      "audio_sha256": "48008e7e2fab0169e911ad8d2de78def027598b916d3bba3a7c7d9b0141b7030"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カイギデワシツゲンニツイテイケンオカワシ、コンゴノホーシンオカンガエマシタ",
+      "diff_html": "カイギデワシ<mark></mark>ツゲンニツイテイケンオカワシ、コンゴノホーシンオカンガエマシタ",
+      "duration_s": 4.8106875,
+      "audio_sha256": "a2c29e5d3021547a0d338165225085f6ca23f30b5c81f49b89517528095cfac8"
+    }
+  },
+  {
+    "id": "S1551",
+    "term_id": "T0776",
+    "target": "軒",
+    "text": "建物を見学した学生は軒に注目し、構造を図に描きました。",
+    "context": 1,
+    "expected_kana": "ノキ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "軒",
+          "expected": "ノキ",
+          "observed": "ケン",
+          "priority": "normal"
+        },
+        {
+          "surface": "図",
+          "expected": "ズ",
+          "observed": "オーズ",
+          "priority": "normal"
+        },
+        {
+          "surface": "描き",
+          "expected": "エガキ",
+          "observed": "カキ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "タテモノオケンガクシタガクセーワケンニチューモクシ、コーゾーオオーズニカキマシタ",
+      "diff_html": "タテモノオケンガクシタガクセーワ<mark>ケン</mark>ニチューモクシ、コーゾーオ<mark>オー</mark>ズニ<mark>カ</mark>キマシタ",
+      "duration_s": 5.5270625,
+      "audio_sha256": "65b190f184d57741a59a90001ed1038360c63c12c26f42fa37fb0afbd089d990"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "タテモノオケンガクシタガクセーワノキニチューモクシ、コーゾーオズニエガキマシタ",
+      "diff_html": "タテモノオケンガクシタガクセーワ<mark>ノキ</mark>ニチューモクシ、コーゾーオ<mark></mark>ズニ<mark>エガ</mark>キマシタ",
+      "duration_s": 4.917375,
+      "audio_sha256": "29499c235838233b97e63aa06a517ab1e332c908d0658a1008527598423ef7c9"
+    }
+  },
+  {
+    "id": "S1585",
+    "term_id": "T0793",
+    "target": "自然薯",
+    "text": "料理の講座では自然薯を取り上げ、食材や道具を紹介しました。",
+    "context": 1,
+    "expected_kana": "ジネンジョ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "自然薯",
+          "expected": "ジネンジョ",
+          "observed": "ジテンショ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "リョーリノコーザデワジテンショオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "diff_html": "リョーリノコーザデワジ<mark>テ</mark>ン<mark>シ</mark>ョオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "duration_s": 5.36375,
+      "audio_sha256": "3371b3151d37de5e09d76deb6b4068f038939f3272d3d83c7664a9b19dd3ea8c"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "リョーリノコーザデワジネンジョオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "diff_html": "リョーリノコーザデワジ<mark>ネ</mark>ン<mark>ジ</mark>ョオトリアゲ、ショクザイヤドーグオショーカイシマシタ",
+      "duration_s": 4.565375,
+      "audio_sha256": "ca77a42a7856d6b6aecd0d063d6d9e5595a310b1853f4ccae46298c3d13f5789"
+    }
+  },
+  {
+    "id": "S1591",
+    "term_id": "T0796",
+    "target": "般若心経",
+    "text": "寺社を巡る番組で、案内人が般若心経について説明しました。",
+    "context": 1,
+    "expected_kana": "ハンニャシンギョウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "般若心経",
+          "expected": "ハンニャシンギョウ",
+          "observed": "ハンニャシンキョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ジシャオメグルバングミデ、アンナイニンガハンニャシンキョーニツイテセツメーシマシタ",
+      "diff_html": "ジシャオメグルバングミデ、アンナイ<mark>ニ</mark>ンガハンニャシン<mark>キ</mark>ョーニツイテセツメーシマシタ",
+      "duration_s": 5.5966875,
+      "audio_sha256": "e5f399bfe020b6f23540d57b4c15d3e5acbc48f7d045f4b2df2f9d68654f31db"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ジシャオメグルバングミデ、アンナイジンガハンニャシンギョーニツイテセツメーシマシタ",
+      "diff_html": "ジシャオメグルバングミデ、アンナイ<mark>ジ</mark>ンガハンニャシン<mark>ギ</mark>ョーニツイテセツメーシマシタ",
+      "duration_s": 4.917375,
+      "audio_sha256": "9f32149ca9c9ee82c29d569cc46515616db408fa58dc9b5bc6c1d53154444078"
+    }
+  },
+  {
+    "id": "S1607",
+    "term_id": "T0804",
+    "target": "諭告",
+    "text": "教育に関する説明会で、諭告について質問が出されました。",
+    "context": 1,
+    "expected_kana": "ユコク",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "諭告",
+          "expected": "ユコク",
+          "observed": "ヨコク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キョーイクニカンスルセツメーカイデ、ヨコクニツイテシツモンガダサレマシタ",
+      "diff_html": "キョーイクニカンスルセツメーカイデ、ヨコクニツイテシツモンガダサレマシタ",
+      "duration_s": 5.088125,
+      "audio_sha256": "2ee982232c31f9f2b4b0a9e1414d5b99b4cd095f3d34f6f006bd68e5e1c2b9d3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "諭告",
+          "expected": "ユコク",
+          "observed": "ヨコク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キョーイクニカンスルセツメーカイデ、ヨコクニツイテシツモンガダサレマシタ",
+      "diff_html": "キョーイクニカンスルセツメーカイデ、ヨコクニツイテシツモンガダサレマシタ",
+      "duration_s": 4.416,
+      "audio_sha256": "0ab6322ae2519872828052789626234263dff9a7831c44e90c2b87d985140253"
+    }
+  },
+  {
+    "id": "S1608",
+    "term_id": "T0804",
+    "target": "諭告",
+    "text": "講師は諭告について解説し、学校での事例を紹介しました。",
+    "context": 2,
+    "expected_kana": "ユコク",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "諭告",
+          "expected": "ユコク",
+          "observed": "ヨコク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーシワヨコクニツイテカイセツシ、ガッコーデノジレーオショーカイシマシタ",
+      "diff_html": "コーシワヨコクニツイテカイセツシ、ガッコーデノジレーオショーカイシマシタ",
+      "duration_s": 5.257625,
+      "audio_sha256": "d1896fc1b4a3419852b37c7a47ba4f16499116723e0319201e71a375009c4623"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "諭告",
+          "expected": "ユコク",
+          "observed": "ヨコク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コーシワヨコクニツイテカイセツシ、ガッコーデノジレーオショーカイシマシタ",
+      "diff_html": "コーシワヨコクニツイテカイセツシ、ガッコーデノジレーオショーカイシマシタ",
+      "duration_s": 5.1306875,
+      "audio_sha256": "12fe9f9a11f37a2099a556337c97f333ed08218d5246e2665655e66a7507f1c4"
+    }
+  },
+  {
+    "id": "S1621",
+    "term_id": "T0811",
+    "target": "黄道",
+    "text": "天文の講座では黄道を取り上げ、観測した写真を紹介しました。",
+    "context": 1,
+    "expected_kana": "オウドウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "天文",
+          "expected": "テンモン",
+          "observed": "テンブン",
+          "priority": "normal"
+        },
+        {
+          "surface": "黄道",
+          "expected": "オウドウ",
+          "observed": "コードー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンブンノコーザデワコードーオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>ブ</mark>ンノコーザデワコードーオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 5.596625,
+      "audio_sha256": "060a3f7755de7b373a1ddea34fed207a91e5ee7c8b1e6268a6f048ca5190ba2f"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "黄道",
+          "expected": "オウドウ",
+          "observed": "コードー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "テンモンノコーザデワコードーオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "diff_html": "テン<mark>モ</mark>ンノコーザデワコードーオトリアゲ、カンソクシタシャシンオショーカイシマシタ",
+      "duration_s": 4.725375,
+      "audio_sha256": "bd374cd648c3cd3c9035385cfaf60b58fc5fae7b8a31eb60bcdf7401e35497d1"
+    }
+  },
+  {
+    "id": "S1622",
+    "term_id": "T0811",
+    "target": "黄道",
+    "text": "解説者は黄道について説明し、空の様子を図で示しました。",
+    "context": 2,
+    "expected_kana": "オウドウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "黄道",
+          "expected": "オウドウ",
+          "observed": "コードー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイセツシャワコードーニツイテセツメーシ、ソラノヨースオズデシメシマシタ",
+      "diff_html": "カイセツシャワコードーニツイテセツメーシ、ソラノヨースオズデシメシマシタ",
+      "duration_s": 5.407625,
+      "audio_sha256": "755b1888bcfc8939ebff47fb942589cf77bda30a0b64689e5cca8cf7ff8e5b56"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "黄道",
+          "expected": "オウドウ",
+          "observed": "コードー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カイセツシャワコードーニツイテセツメーシ、ソラノヨースオズデシメシマシタ",
+      "diff_html": "カイセツシャワコードーニツイテセツメーシ、ソラノヨースオズデシメシマシタ",
+      "duration_s": 4.6506875,
+      "audio_sha256": "70886837a25e166f12f6ad60b5e11ee2f7ffc393418a63519ed20bb804d847f6"
+    }
+  },
+  {
+    "id": "S1767",
+    "term_id": "T0884",
+    "target": "動脈",
+    "text": "体の仕組みを学ぶ授業で、動脈の位置を模型で確かめました。",
+    "context": 1,
+    "expected_kana": "ドウミャク",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "動脈",
+          "expected": "ドウミャク",
+          "observed": "ボーミャク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カラダノシクミオマナブジュギョーデ、ボーミャクノイチオモケーデタシカメマシタ",
+      "diff_html": "カラダノシクミオマナブジュギョーデ、<mark>ボ</mark>ー<mark>ミ</mark>ャクノイチオモケーデタシカメマシタ",
+      "duration_s": 5.2276875,
+      "audio_sha256": "5cd81690b72dfb82f2757b64484c6833dc6f6b9027e0637c6e3593a60cb37f60"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "動脈",
+          "expected": "ドウミャク",
+          "observed": "ドーニャク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カラダノシクミオマナブジュギョーデ、ドーニャクノイチオモケーデタシカメマシタ",
+      "diff_html": "カラダノシクミオマナブジュギョーデ、<mark>ド</mark>ー<mark>ニ</mark>ャクノイチオモケーデタシカメマシタ",
+      "duration_s": 4.597375,
+      "audio_sha256": "a9cc8c1e3ea6c596f0b3664f611cbc60b1eca33a404c1fc93d7408e615831293"
+    }
+  },
+  {
+    "id": "S1777",
+    "term_id": "T0889",
+    "target": "紅葉",
+    "text": "植物園の案内人は紅葉について、実物を示しながら説明しました。",
+    "context": 1,
+    "expected_kana": "コウヨウ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "紅葉",
+          "expected": "コウヨウ",
+          "observed": "モミジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ショクブツエンノアンナイニンワモミジニツイテ、ジツブツオシメシナガラセツメーシマシタ",
+      "diff_html": "ショクブツエンノアンナイ<mark>ニ</mark>ンワ<mark>モミジ</mark>ニツイテ、ジツブツオシメシナガラセツメーシマシタ",
+      "duration_s": 5.7635,
+      "audio_sha256": "2a0420718a89a9cadf027c61254a0cb86c99601785a795ccaf86b4546ecc8781"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ショクブツエンノアンナイジンワコーヨーニツイテ、ジツブツオシメシナガラセツメーシマシタ",
+      "diff_html": "ショクブツエンノアンナイ<mark>ジ</mark>ンワ<mark>コーヨー</mark>ニツイテ、ジツブツオシメシナガラセツメーシマシタ",
+      "duration_s": 5.376,
+      "audio_sha256": "8c63bfde18993c4201a6dd0a953cf6fa82bf2bd1be691079420320a5c14e4abe"
+    }
+  },
+  {
+    "id": "S1796",
+    "term_id": "T0898",
+    "target": "御用達",
+    "text": "案内人は御用達の看板を示し、店に残る記録を紹介しました。",
+    "context": 2,
+    "expected_kana": "ごようたし",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "御用達",
+          "expected": "ごようたし",
+          "observed": "ゴヨータチ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイニンワゴヨータチノカンバンオシメシ、ミセニノコルキロクオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ニ</mark>ンワゴヨータ<mark>チ</mark>ノカンバンオシメシ、ミセニノコルキロクオショーカイシマシタ",
+      "duration_s": 5.969,
+      "audio_sha256": "78fd1611796acb7d82743939ef0e7fcfdb938b9d2b1546c48353b9c1d399a92f"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "案内人",
+          "expected": "アンナイニン",
+          "observed": "アンナイジン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アンナイジンワゴヨータシノカンバンオシメシ、ミセニノコルキロクオショーカイシマシタ",
+      "diff_html": "アンナイ<mark>ジ</mark>ンワゴヨータ<mark>シ</mark>ノカンバンオシメシ、ミセニノコルキロクオショーカイシマシタ",
+      "duration_s": 5.152,
+      "audio_sha256": "4fd76866572613b8926dd369183dfda63e085b8bb041f15951b65edefdf36728"
+    }
+  },
+  {
+    "id": "S1799",
+    "term_id": "T0900",
+    "target": "続柄",
+    "text": "申込書の続柄の欄には、世帯主との関係を記入します。",
+    "context": 1,
+    "expected_kana": "つづきがら",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "続柄",
+          "expected": "つづきがら",
+          "observed": "ゾクガラ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モーシコミショノゾクガラノランニワ、セタイヌシトノカンケーオキニューシマス",
+      "diff_html": "モーシコミショノ<mark>ゾク</mark>ガラノランニワ、セタイヌシトノカンケーオキニューシマス",
+      "duration_s": 5.2979375,
+      "audio_sha256": "f52f31ab4657cf80dde9ece04937ca591b26b6bde85a3861553108769e25d1a1"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "モーシコミショノツズキガラノランニワ、セタイヌシトノカンケーオキニューシマス",
+      "diff_html": "モーシコミショノ<mark>ツズキ</mark>ガラノランニワ、セタイヌシトノカンケーオキニューシマス",
+      "duration_s": 4.576,
+      "audio_sha256": "4ab043fb42c5d2575079f69777f121dd4a512e35ac0aecc671ea33b269f0a56f"
+    }
+  },
+  {
+    "id": "S1801",
+    "term_id": "T0901",
+    "target": "間髪",
+    "text": "相手の発言に間髪を入れず、司会者が次の質問をしました。",
+    "context": 1,
+    "expected_kana": "かんはつ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "間髪",
+          "expected": "かんはつ",
+          "observed": "カンパツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アイテノハツゲンニカンパツオイレズ、シカイシャガツギノシツモンオシマシタ",
+      "diff_html": "アイテノハツゲンニカンパツオイレズ、シカイシャガツギノシツモンオシマシタ",
+      "duration_s": 5.322,
+      "audio_sha256": "05c6891e63c565c78de47ef899cad3c80804cce24b185822265ee4627439b167"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "間髪",
+          "expected": "かんはつ",
+          "observed": "カンパツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アイテノハツゲンニカンパツオイレズ、シカイシャガツギノシツモンオシマシタ",
+      "diff_html": "アイテノハツゲンニカンパツオイレズ、シカイシャガツギノシツモンオシマシタ",
+      "duration_s": 4.672,
+      "audio_sha256": "c282b9d76c947316eb7d4600b7ead3c0d519618b9433ad7651fc1330517b472f"
+    }
+  },
+  {
+    "id": "S1802",
+    "term_id": "T0901",
+    "target": "間髪",
+    "text": "選手は間髪を入れずに動き、すぐに次の攻撃へ移りました。",
+    "context": 2,
+    "expected_kana": "かんはつ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "間髪",
+          "expected": "かんはつ",
+          "observed": "カンパツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "センシュワカンパツオイレズニウゴキ、スグニツギノコーゲキエウツリマシタ",
+      "diff_html": "センシュワカンパツオイレズニウゴキ、スグニツギノコーゲキエウツリマシタ",
+      "duration_s": 5.3008125,
+      "audio_sha256": "f078f111dcdeab8b1e64f211fc9e22340d6a38f0b85b0b35695402516ac0458f"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "間髪",
+          "expected": "かんはつ",
+          "observed": "カンパツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "センシュワカンパツオイレズニウゴキ、スグニツギノコーゲキエウツリマシタ",
+      "diff_html": "センシュワカンパツオイレズニウゴキ、スグニツギノコーゲキエウツリマシタ",
+      "duration_s": 4.5866875,
+      "audio_sha256": "79c3dfb2fdd0edf8cd8fb16300b5542a680305b905367b302fa21d82e9b3507a"
+    }
+  },
+  {
+    "id": "S1803",
+    "term_id": "T0902",
+    "target": "他人事",
+    "text": "防災の問題を他人事と思わず、家族で避難先を話し合いました。",
+    "context": 1,
+    "expected_kana": "ひとごと",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "他人事",
+          "expected": "ひとごと",
+          "observed": "タニンゴト",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ボーサイノモンダイオタニンゴトトオモワズ、カゾクデヒナンサキオハナシアイマシタ",
+      "diff_html": "ボーサイノモンダイオタニンゴトトオモワズ、カゾクデヒナンサキオハナシアイマシタ",
+      "duration_s": 5.6179375,
+      "audio_sha256": "d5be723eaf91e7af3445150d28f3e094459b58f9cb722d71ad33caea2ceda258"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "他人事",
+          "expected": "ひとごと",
+          "observed": "タニンゴト",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ボーサイノモンダイオタニンゴトトオモワズ、カゾクデヒナンサキオハナシアイマシタ",
+      "diff_html": "ボーサイノモンダイオタニンゴトトオモワズ、カゾクデヒナンサキオハナシアイマシタ",
+      "duration_s": 4.928,
+      "audio_sha256": "af50eacb46f787b89f8ea8d7068f87ff9fc718740b2d21928066994fa8ae64dc"
+    }
+  },
+  {
+    "id": "S1805",
+    "term_id": "T0903",
+    "target": "一段落",
+    "text": "片付けが一段落したので、全員で休憩を取りました。",
+    "context": 1,
+    "expected_kana": "いちだんらく",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "一段落",
+          "expected": "いちだんらく",
+          "observed": "ヒトダンラク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カタズケガヒトダンラクシタノデ、ゼンインデキューケーオトリマシタ",
+      "diff_html": "カタズケガ<mark>ヒト</mark>ダンラクシタノデ、ゼンインデキューケーオトリマシタ",
+      "duration_s": 4.7285625,
+      "audio_sha256": "e3292096f4ef0129ea815efbcecfc644c6d63632cdb10d3adda0be4f4e0e988e"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "カタズケガイチダンラクシタノデ、ゼンインデキューケーオトリマシタ",
+      "diff_html": "カタズケガ<mark>イチ</mark>ダンラクシタノデ、ゼンインデキューケーオトリマシタ",
+      "duration_s": 3.968,
+      "audio_sha256": "823789d2837e9f9a807d64899b9a6dee8b8cefa1d460b5f58c65b128f15554b1"
+    }
+  },
+  {
+    "id": "S1810",
+    "term_id": "T0905",
+    "target": "生物",
+    "text": "生物は傷みやすいので、買い物の後は早めに冷蔵庫へ入れました。",
+    "context": 2,
+    "expected_kana": "なまもの",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "生物",
+          "expected": "なまもの",
+          "observed": "セーブツ",
+          "priority": "normal"
+        },
+        {
+          "surface": "後",
+          "expected": "アト",
+          "observed": "ノチ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "セーブツワイタミヤスイノデ、カイモノノノチワハヤメニレーゾーコエイレマシタ",
+      "diff_html": "セーブツワイタミヤスイノデ、カイモノノ<mark>ノチ</mark>ワハヤメニレーゾーコエイレマシタ",
+      "duration_s": 5.4865,
+      "audio_sha256": "37c221c5e7647d7ca453ae881504d533fc15d5abc56ce6f4c53a4d7be1dcf254"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "生物",
+          "expected": "なまもの",
+          "observed": "セーブツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "セーブツワイタミヤスイノデ、カイモノノアトワハヤメニレーゾーコエイレマシタ",
+      "diff_html": "セーブツワイタミヤスイノデ、カイモノノ<mark>アト</mark>ワハヤメニレーゾーコエイレマシタ",
+      "duration_s": 4.736,
+      "audio_sha256": "94ce753555863c3b37b9d849b6bd5605ba81549218abad0210922c75c9220454"
+    }
+  },
+  {
+    "id": "S1813",
+    "term_id": "T0907",
+    "target": "本望",
+    "text": "長年の研究を発表できれば本望だと、研究者は語りました。",
+    "context": 1,
+    "expected_kana": "ほんもう",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "本望",
+          "expected": "ほんもう",
+          "observed": "ホンノー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ナガネンノケンキューオハッピョーデキレバホンノーダト、ケンキューシャワカタリマシタ",
+      "diff_html": "ナ<mark>ガ</mark>ネンノケンキューオハッピョーデキレバホン<mark>ノ</mark>ーダト、ケンキューシャワカタリマシタ",
+      "duration_s": 5.295875,
+      "audio_sha256": "d40cf27ca484985fac400461d14f7f4cc64bb424708e096ee5590d5ff6ef8cc7"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "長年",
+          "expected": "ナガネン",
+          "observed": "ナナネン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ナナネンノケンキューオハッピョーデキレバホンモーダト、ケンキューシャワカタリマシタ",
+      "diff_html": "ナ<mark>ナ</mark>ネンノケンキューオハッピョーデキレバホン<mark>モ</mark>ーダト、ケンキューシャワカタリマシタ",
+      "duration_s": 4.736,
+      "audio_sha256": "b7d46fd6c705dbcf843861b245e9f0a696b73c0569165251472ebc720e1e2069"
+    }
+  },
+  {
+    "id": "S1844",
+    "term_id": "T0922",
+    "target": "萎縮",
+    "text": "子どもが萎縮しないよう、講師は穏やかな声で話しかけました。",
+    "context": 2,
+    "expected_kana": "いしゅく",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "萎縮",
+          "expected": "いしゅく",
+          "observed": "イッシュク",
+          "priority": "normal"
+        }
+      ],
+      "kana": "コドモガイッシュクシナイヨー、コーシワオダヤカナコエデハナシカケマシタ",
+      "diff_html": "コドモガイ<mark>ッ</mark>シュクシナイヨー、コーシワオダヤカナコエデハナシカケマシタ",
+      "duration_s": 4.9146875,
+      "audio_sha256": "1ebc299b88c58600bc11c52e064243c9282c96b05a3079bd207e07862557512a"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "コドモガイシュクシナイヨー、コーシワオダヤカナコエデハナシカケマシタ",
+      "diff_html": "コドモガイ<mark></mark>シュクシナイヨー、コーシワオダヤカナコエデハナシカケマシタ",
+      "duration_s": 4.16,
+      "audio_sha256": "0343a7bc78b0281e00b11c24a05dac1c75d5d7d3eebdb70f17a62e7f86d72ebb"
+    }
+  },
+  {
+    "id": "S1861",
+    "term_id": "T0931",
+    "target": "貼付",
+    "text": "申請書に写真を貼付し、記入漏れがないか確かめました。",
+    "context": 1,
+    "expected_kana": "ちょうふ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "貼付",
+          "expected": "ちょうふ",
+          "observed": "テンプ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "シンセーショニシャシンオテンプシ、キニューモレガナイカタシカメマシタ",
+      "diff_html": "シンセーショニシャシンオ<mark>テンプ</mark>シ、キニューモレガナイカタ<mark>シ</mark>カメマシタ",
+      "duration_s": 4.8110625,
+      "audio_sha256": "57bcda28827974395a566a4737c6bd697026f29915cd46b6707cc5aec7efe798"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": false,
+      "findings": [
+        {
+          "surface": "確かめ",
+          "expected": "タシカメ",
+          "observed": "タチカメ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "シンセーショニシャシンオチョーフシ、キニューモレガナイカタチカメマシタ",
+      "diff_html": "シンセーショニシャシンオ<mark>チョーフ</mark>シ、キニューモレガナイカタ<mark>チ</mark>カメマシタ",
+      "duration_s": 4.288,
+      "audio_sha256": "2aab8ec9c6074970a8fefbd18e8354716823f44b356f938e46f390befb4d5d24"
+    }
+  },
+  {
+    "id": "S1876",
+    "term_id": "T0938",
+    "target": "末期",
+    "text": "物語では末期の水を取る場面が描かれ、家族の別れが語られます。",
+    "context": 2,
+    "expected_kana": "まつご",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "末期",
+          "expected": "まつご",
+          "observed": "マッキ",
+          "priority": "normal"
+        },
+        {
+          "surface": "描か",
+          "expected": "エガカ",
+          "observed": "カカ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モノガタリデワマッキノミズオトルバメンガカカレ、カゾクノワカレガカタラレマス",
+      "diff_html": "モノガタリデワマ<mark>ッキ</mark>ノミズオトルバメンガ<mark>カ</mark>カレ、カゾクノワカレガカタラレマス",
+      "duration_s": 5.548625,
+      "audio_sha256": "131dea2a10e6f0f93871f75014ed775cdc5675d5b072b2e32b2b323d0b43fe79"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "モノガタリデワマツゴノミズオトルバメンガエガカレ、カゾクノワカレガカタラレマス",
+      "diff_html": "モノガタリデワマ<mark>ツゴ</mark>ノミズオトルバメンガ<mark>エガ</mark>カレ、カゾクノワカレガカタラレマス",
+      "duration_s": 4.917375,
+      "audio_sha256": "e8235c0ee36778b744981ead60c95437351f1ddc5604b64ad15dba7e887e85d7"
+    }
+  },
+  {
+    "id": "S1878",
+    "term_id": "T0939",
+    "target": "最中",
+    "text": "店で買った最中には餡がたっぷり入り、香ばしい皮で包まれていました。",
+    "context": 2,
+    "expected_kana": "もなか",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "最中",
+          "expected": "もなか",
+          "observed": "サイチュー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ミセデカッタサイチューニワアンガタップリハイリ、コーバシーカワデツツマレテイマシタ",
+      "diff_html": "ミセデカッタサイチューニワアンガタップリハイリ、コーバシーカワデツツマレテイマシタ",
+      "duration_s": 5.72425,
+      "audio_sha256": "260b3a27c52f9b66d59bcf3f9a726ded9f7102d5ece73b87c9bfdd00ac790b74"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "最中",
+          "expected": "もなか",
+          "observed": "サイチュー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ミセデカッタサイチューニワアンガタップリハイリ、コーバシーカワデツツマレテイマシタ",
+      "diff_html": "ミセデカッタサイチューニワアンガタップリハイリ、コーバシーカワデツツマレテイマシタ",
+      "duration_s": 5.024,
+      "audio_sha256": "0518cc8fc07ad9661df1b2f8509c5d6e84d9057069a02657310eadb7903425f0"
+    }
+  },
+  {
+    "id": "S1880",
+    "term_id": "T0940",
+    "target": "上手",
+    "text": "相手の交渉術は一枚上手で、こちらの狙いを見抜いていました。",
+    "context": 2,
+    "expected_kana": "うわて",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "上手",
+          "expected": "うわて",
+          "observed": "ユワテ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "アイテノコーショージュツワイチマイユワテデ、コチラノネライオミヌイテイマシタ",
+      "diff_html": "アイテノコーショージュツワイチマイ<mark>ユ</mark>ワテデ、コチラノネライオミヌイテイマシタ",
+      "duration_s": 5.083375,
+      "audio_sha256": "7587a97bf725351fe8a0bb69aa99a0a981400bec7cfc8faa73c515c35ee1534c"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "アイテノコーショージュツワイチマイウワテデ、コチラノネライオミヌイテイマシタ",
+      "diff_html": "アイテノコーショージュツワイチマイ<mark>ウ</mark>ワテデ、コチラノネライオミヌイテイマシタ",
+      "duration_s": 4.5546875,
+      "audio_sha256": "5ab046a9095ad8fe95e1511301de6cdcddb5d2d87dffa1cccf6c719d10ff8a88"
+    }
+  },
+  {
+    "id": "S1882",
+    "term_id": "T0941",
+    "target": "下手",
+    "text": "役者は舞台の下手から現れ、客席に向かって一礼しました。",
+    "context": 2,
+    "expected_kana": "しもて",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "下手",
+          "expected": "しもて",
+          "observed": "ヘタ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ヤクシャワブタイノヘタカラアラワレ、キャクセキニムカッテイチレーシマシタ",
+      "diff_html": "ヤクシャワブタイノヘタカラアラワレ、キャクセキニムカッテイチレーシマシタ",
+      "duration_s": 5.0023125,
+      "audio_sha256": "59e8953f633d7460b4656e176ff51277afe4089130d814c41ac08b41b5bb7291"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "下手",
+          "expected": "しもて",
+          "observed": "ヘタ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ヤクシャワブタイノヘタカラアラワレ、キャクセキニムカッテイチレーシマシタ",
+      "diff_html": "ヤクシャワブタイノヘタカラアラワレ、キャクセキニムカッテイチレーシマシタ",
+      "duration_s": 4.2346875,
+      "audio_sha256": "89337af0b4d0c3085d5c01188eb2f26b9bd9649a4a8df24a690190d53cd2161c"
+    }
+  },
+  {
+    "id": "S1889",
+    "term_id": "T0945",
+    "target": "相応",
+    "text": "年齢に相応の役割を任され、彼は責任の重さを感じました。",
+    "context": 1,
+    "expected_kana": "そうおう",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "相応",
+          "expected": "そうおう",
+          "observed": "ソオー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ネンレーニソオーノヤクワリオマカサレカレワセキニンノオモサオカンジマシタ",
+      "diff_html": "ネンレーニソ<mark></mark>オーノヤクワリオマカサレ<mark></mark>カレワセキニンノオモサオカンジマシタ",
+      "duration_s": 5.2078125,
+      "audio_sha256": "508184309299eb64bb24e84c4e97603596d33846b8670ea44677879b25249935"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ネンレーニソーオーノヤクワリオマカサレ、カレワセキニンノオモサオカンジマシタ",
+      "diff_html": "ネンレーニソ<mark>ー</mark>オーノヤクワリオマカサレ<mark>、</mark>カレワセキニンノオモサオカンジマシタ",
+      "duration_s": 4.917375,
+      "audio_sha256": "6efecc227595c4a18beaa8fc6384f142d40435c87bfe0d4a2b8f954af5774fe8"
+    }
+  },
+  {
+    "id": "S1911",
+    "term_id": "T0956",
+    "target": "稀有",
+    "text": "それは稀有な出来事として記録され、研究者の関心を集めました。",
+    "context": 1,
+    "expected_kana": "けう",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "稀有",
+          "expected": "けう",
+          "observed": "ケーウ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ソレワケーウナデキゴトトシテキロクサレ、ケンキューシャノカンシンオアツメマシタ",
+      "diff_html": "ソレワ<mark>ケ</mark>ー<mark>ウ</mark>ナデキゴトトシテキロクサレ、ケンキューシャノカンシンオアツメマシタ",
+      "duration_s": 5.402875,
+      "audio_sha256": "bd794c2a3f8c42382f4b4ade43dd2937e07d170b5d0fa7be7b06cf601e6338b3"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "稀有",
+          "expected": "けう",
+          "observed": "キュー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ソレワキューナデキゴトトシテキロクサレ、ケンキューシャノカンシンオアツメマシタ",
+      "diff_html": "ソレワ<mark>キュ</mark>ー<mark></mark>ナデキゴトトシテキロクサレ、ケンキューシャノカンシンオアツメマシタ",
+      "duration_s": 4.5546875,
+      "audio_sha256": "ffc37b71d743b71b0f49085c82e247a8e8a67dc63a178cb8355614fd1c65d6ca"
+    }
+  },
+  {
+    "id": "S1912",
+    "term_id": "T0956",
+    "target": "稀有",
+    "text": "稀有な才能を持つ演奏家として、若い頃から注目されていました。",
+    "context": 2,
+    "expected_kana": "けう",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "稀有",
+          "expected": "けう",
+          "observed": "ケユー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケユーナサイノーオモツエンソーカトシテ、ワカイコロカラチューモクサレテイマシタ",
+      "diff_html": "ケ<mark></mark>ユーナサイノーオモツエンソーカトシテ、ワカイコロカラチューモクサレテイマシタ",
+      "duration_s": 5.376125,
+      "audio_sha256": "59f3823e5fb0cb8631a16aac82abac3c1c4790fc176e2c278aafda7919270eb0"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "稀有",
+          "expected": "けう",
+          "observed": "ケーユー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ケーユーナサイノーオモツエンソーカトシテ、ワカイコロカラチューモクサレテイマシタ",
+      "diff_html": "ケ<mark>ー</mark>ユーナサイノーオモツエンソーカトシテ、ワカイコロカラチューモクサレテイマシタ",
+      "duration_s": 4.661375,
+      "audio_sha256": "d2ba7c6b4d8c0d2855b3135acca04ca856db45fd577c1c0c74c3b8bb2b1ab2aa"
+    }
+  },
+  {
+    "id": "S1919",
+    "term_id": "T0960",
+    "target": "所為",
+    "text": "道が混んでいた所為で、会議への到着が遅れました。",
+    "context": 1,
+    "expected_kana": "せい",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "所為",
+          "expected": "せい",
+          "observed": "ショイ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ミチガコンデイタショイデ、カイギエノトーチャクガオクレマシタ",
+      "diff_html": "ミチガコンデイタ<mark>ショイ</mark>デ、カイギエノトーチャクガオクレマシタ",
+      "duration_s": 4.3736875,
+      "audio_sha256": "8e7fd5d66b8fb71412120577b647e38a18af16e060ecc2d9e3d956e8ba43b00f"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ミチガコンデイタセーデ、カイギエノトーチャクガオクレマシタ",
+      "diff_html": "ミチガコンデイタ<mark>セー</mark>デ、カイギエノトーチャクガオクレマシタ",
+      "duration_s": 3.8186875,
+      "audio_sha256": "ef4236c52f256ff0ef8a998f393a24773ddf60586fa85ec565928e6a71c312c4"
+    }
+  },
+  {
+    "id": "S1931",
+    "term_id": "T0966",
+    "target": "喪主",
+    "text": "喪主は参列者に挨拶し、家族を代表して感謝を伝えました。",
+    "context": 1,
+    "expected_kana": "もしゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喪主",
+          "expected": "もしゅ",
+          "observed": "モシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モシワサンレツシャニアイサツシ、カゾクオダイヒョーシテカンシャオツタエマシタ",
+      "diff_html": "モシワサンレツシャニアイサツシ、カゾクオダイヒョーシテカンシャオツタエマシタ",
+      "duration_s": 5.2095,
+      "audio_sha256": "0e9df4611bd56d67872ccd3fc3c5b60afb04449208c5cbebb6664b76ae449f21"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喪主",
+          "expected": "もしゅ",
+          "observed": "モシ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "モシワサンレツシャニアイサツシ、カゾクオダイヒョーシテカンシャオツタエマシタ",
+      "diff_html": "モシワサンレツシャニアイサツシ、カゾクオダイヒョーシテカンシャオツタエマシタ",
+      "duration_s": 4.629375,
+      "audio_sha256": "beadebbd4c3344874571767fc2bad3798522a15099a328b89d330196b34bd90d"
+    }
+  },
+  {
+    "id": "S1936",
+    "term_id": "T0968",
+    "target": "仏心",
+    "text": "厳しい言葉の後にも仏心が見え、弟子は感謝を伝えました。",
+    "context": 2,
+    "expected_kana": "ほとけごころ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "後",
+          "expected": "アト",
+          "observed": "ノチ",
+          "priority": "normal"
+        },
+        {
+          "surface": "仏心",
+          "expected": "ほとけごころ",
+          "observed": "ブッシン",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キビシーコトバノノチニモブッシンガミエ、デシワカンシャオツタエマシタ",
+      "diff_html": "キビシーコトバノ<mark>ノチ</mark>ニモ<mark>ブッシン</mark>ガミエ、デシワカンシャオツタエマシタ",
+      "duration_s": 4.9833125,
+      "audio_sha256": "1378b473ba62016b3d2fb1b31ab28ba6ccc48aaa78fd656438fee8deb9554aa2"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "仏心",
+          "expected": "ほとけごころ",
+          "observed": "ホトキゴコロ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "キビシーコトバノアトニモホトキゴコロガミエ、デシワカンシャオツタエマシタ",
+      "diff_html": "キビシーコトバノ<mark>アト</mark>ニモ<mark>ホトキゴコロ</mark>ガミエ、デシワカンシャオツタエマシタ",
+      "duration_s": 4.7146875,
+      "audio_sha256": "8027ab946bfc070c9b7dba1ba5837d5787aacb7c146a57cb0a315b62817cfdf6"
+    }
+  },
+  {
+    "id": "S1947",
+    "term_id": "T0974",
+    "target": "斎場",
+    "text": "斎場には親族が集まり、静かに式の開始を待っていました。",
+    "context": 1,
+    "expected_kana": "さいじょう",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "斎場",
+          "expected": "さいじょう",
+          "observed": "セーファ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "セーファニワシンゾクガアツマリ、シズカニシキノカイシオマッテイマシタ",
+      "diff_html": "<mark>セ</mark>ー<mark>ファ</mark>ニワシンゾクガアツマリ、シズカニシキノカイシオマッテイマシタ",
+      "duration_s": 5.1631875,
+      "audio_sha256": "e6527dfe0b3cd230d4ba7460afd886f7d458614c636f2b0ff5f6ae263345b30c"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "サイジョーニワシンゾクガアツマリ、シズカニシキノカイシオマッテイマシタ",
+      "diff_html": "<mark>サイジョ</mark>ー<mark></mark>ニワシンゾクガアツマリ、シズカニシキノカイシオマッテイマシタ",
+      "duration_s": 4.5226875,
+      "audio_sha256": "3fd659373f3d1e7c0af0e00aa563983a8272344871b2d7ebe6056f5bf0c4dae1"
+    }
+  },
+  {
+    "id": "S1961",
+    "term_id": "T0981",
+    "target": "喜寿",
+    "text": "地域の集まりで喜寿を迎えた人々を祝い、花を贈りました。",
+    "context": 1,
+    "expected_kana": "きじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喜寿",
+          "expected": "きじゅ",
+          "observed": "キジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "チイキノアツマリデキジオムカエタヒトビトオイワイ、ハナオオクリマシタ",
+      "diff_html": "チイキノアツマリデキジオムカエタヒトビトオイワイ、ハナオオクリマシタ",
+      "duration_s": 5.09,
+      "audio_sha256": "cc5d174fc7cde8ceaaf303bf1732ae2770905147195e97b7b6850ef7ec799289"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喜寿",
+          "expected": "きじゅ",
+          "observed": "キジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "チイキノアツマリデキジオムカエタヒトビトオイワイ、ハナオオクリマシタ",
+      "diff_html": "チイキノアツマリデキジオムカエタヒトビトオイワイ、ハナオオクリマシタ",
+      "duration_s": 4.352,
+      "audio_sha256": "affd100359c45187a1592e380d3823b5ecb157b76b22ec3f91cd0ed2eed85dac"
+    }
+  },
+  {
+    "id": "S1962",
+    "term_id": "T0981",
+    "target": "喜寿",
+    "text": "家族は喜寿の祝いを計画し、遠方の親族にも声をかけました。",
+    "context": 2,
+    "expected_kana": "きじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喜寿",
+          "expected": "きじゅ",
+          "observed": "キジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カゾクワキジノイワイオケーカクシ、エンポーノシンゾクニモコエオカケマシタ",
+      "diff_html": "カゾクワキジノイワイオケーカクシ、エンポーノシンゾクニモコエオカケマシタ",
+      "duration_s": 5.429875,
+      "audio_sha256": "86f961c30e9653f1986cd4d0e9402b0826cda599c5ae7dd11aabac0702e13775"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "喜寿",
+          "expected": "きじゅ",
+          "observed": "キジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カゾクワキジノイワイオケーカクシ、エンポーノシンゾクニモコエオカケマシタ",
+      "diff_html": "カゾクワキジノイワイオケーカクシ、エンポーノシンゾクニモコエオカケマシタ",
+      "duration_s": 4.821375,
+      "audio_sha256": "5f24c397f565e7358e719ddd59d23a28813dab1376ebf0e0cb1b0bc098f18ad8"
+    }
+  },
+  {
+    "id": "S1963",
+    "term_id": "T0982",
+    "target": "傘寿",
+    "text": "傘寿を迎えた祖父は、家族に昔の仕事の話をしました。",
+    "context": 1,
+    "expected_kana": "さんじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "傘寿",
+          "expected": "さんじゅ",
+          "observed": "サンジョ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "サンジョオムカエタソフワ、カゾクニムカシノシゴトノハナシオシマシタ",
+      "diff_html": "サンジ<mark>ョ</mark>オムカエタソフワ、カゾクニムカシノシゴトノハナシオシマシタ",
+      "duration_s": 5.0335625,
+      "audio_sha256": "41c239812c70bc58af9eb3cac21d6d01dc84f7e96cb8596a2715be547e3331fb"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "傘寿",
+          "expected": "さんじゅ",
+          "observed": "サンジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "サンジオムカエタソフワ、カゾクニムカシノシゴトノハナシオシマシタ",
+      "diff_html": "サンジ<mark></mark>オムカエタソフワ、カゾクニムカシノシゴトノハナシオシマシタ",
+      "duration_s": 4.288,
+      "audio_sha256": "55c7b4f49ea3d4c32b3eba633f82d932febd215faaafed1d3fe6980a0b0ad324"
+    }
+  },
+  {
+    "id": "S1965",
+    "term_id": "T0983",
+    "target": "米寿",
+    "text": "家族は米寿を迎えた祖母に、手作りの贈り物を渡しました。",
+    "context": 1,
+    "expected_kana": "べいじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "米寿",
+          "expected": "べいじゅ",
+          "observed": "ベージョー",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カゾクワベージョーオムカエタソボニ、テズクリノオクリモノオワタシマシタ",
+      "diff_html": "カゾクワベージ<mark>ョー</mark>オムカエタソボニ、テズクリノオクリモノオワタシマシタ",
+      "duration_s": 4.935875,
+      "audio_sha256": "4ce8176d43c06fd659b21c709da3cfeca3199c59b5835740cd02c9fb4c018339"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "米寿",
+          "expected": "べいじゅ",
+          "observed": "ベージ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "カゾクワベージオムカエタソボニ、テズクリノオクリモノオワタシマシタ",
+      "diff_html": "カゾクワベージ<mark></mark>オムカエタソボニ、テズクリノオクリモノオワタシマシタ",
+      "duration_s": 4.256,
+      "audio_sha256": "4a1780ad84271b551633597364cb2e8eafe1901f6704c8d66f4a344ff9b29c0c"
+    }
+  },
+  {
+    "id": "S1967",
+    "term_id": "T0984",
+    "target": "卒寿",
+    "text": "卒寿を迎えた先生を祝い、教え子たちが手紙を送りました。",
+    "context": 1,
+    "expected_kana": "そつじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "卒寿",
+          "expected": "そつじゅ",
+          "observed": "ソツジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ソツジオムカエタセンセーオイワイ、オシエゴタチガテガミオオクリマシタ",
+      "diff_html": "ソツジオムカエタセンセーオイワイ、オシエゴタチガテガミオオクリマシタ",
+      "duration_s": 5.045375,
+      "audio_sha256": "af5cdc7ece52c29dcc1a2cc497765b990075b17dc810667140fcc99b96ec5a67"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "卒寿",
+          "expected": "そつじゅ",
+          "observed": "ソツジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ソツジオムカエタセンセーオイワイ、オシエゴタチガテガミオオクリマシタ",
+      "diff_html": "ソツジオムカエタセンセーオイワイ、オシエゴタチガテガミオオクリマシタ",
+      "duration_s": 4.608,
+      "audio_sha256": "51c57f922a76c6c49b5eeff525c022780b6dcfbf646da17c96778cfe853fdd44"
+    }
+  },
+  {
+    "id": "S1970",
+    "term_id": "T0985",
+    "target": "白寿",
+    "text": "白寿を迎えた祖父は、集まった人々に笑顔で感謝を伝えました。",
+    "context": 2,
+    "expected_kana": "はくじゅ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "白寿",
+          "expected": "はくじゅ",
+          "observed": "ハクジョ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ハクジョオムカエタソフワ、アツマッタヒトビトニエガオデカンシャオツタエマシタ",
+      "diff_html": "ハクジ<mark>ョ</mark>オムカエタソフワ、アツマッタヒトビトニエガオデカンシャオツタエマシタ",
+      "duration_s": 5.309375,
+      "audio_sha256": "429a47df1228f689da8987834ebe1f7d270dbd331fe6b2f6a5fb9d1b72e093b7"
+    },
+    "voicevox": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "白寿",
+          "expected": "はくじゅ",
+          "observed": "ハクジ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ハクジオムカエタソフワ、アツマッタヒトビトニエガオデカンシャオツタエマシタ",
+      "diff_html": "ハクジ<mark></mark>オムカエタソフワ、アツマッタヒトビトニエガオデカンシャオツタエマシタ",
+      "duration_s": 4.6186875,
+      "audio_sha256": "9deae759e7db93563118aa2ee7c7263fd5295ae14c73f8ceb7b6f0832eb415ef"
+    }
+  },
+  {
+    "id": "S1999",
+    "term_id": "T1000",
+    "target": "恫喝",
+    "text": "恫喝するような発言があり、司会者が冷静な議論を求めました。",
+    "context": 1,
+    "expected_kana": "どうかつ",
+    "google": {
+      "any_difference": true,
+      "priority_difference": true,
+      "target_difference": true,
+      "findings": [
+        {
+          "surface": "恫喝",
+          "expected": "どうかつ",
+          "observed": "ボーカツ",
+          "priority": "normal"
+        }
+      ],
+      "kana": "ボーカツスルヨーナハツゲンガアリ、シカイシャガレーセーナギロンオモトメマシタ",
+      "diff_html": "<mark>ボ</mark>ーカツスルヨーナハツゲンガアリ、シカイシャガレーセーナギロンオモトメマシタ",
+      "duration_s": 5.4881875,
+      "audio_sha256": "de57db2f5b8a1d0789cc67300cb755a4c5e2a4be2970de3c0b97ee29343d3875"
+    },
+    "voicevox": {
+      "any_difference": false,
+      "priority_difference": false,
+      "target_difference": false,
+      "findings": [],
+      "kana": "ドーカツスルヨーナハツゲンガアリ、シカイシャガレーセーナギロンオモトメマシタ",
+      "diff_html": "<mark>ド</mark>ーカツスルヨーナハツゲンガアリ、シカイシャガレーセーナギロンオモトメマシタ",
+      "duration_s": 4.6506875,
+      "audio_sha256": "4f9406084019cc9b03a690be965260fb1600f64a609e9343a4d4ddfeba300afd"
+    }
+  }
+]

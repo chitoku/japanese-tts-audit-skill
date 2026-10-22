@@ -23,6 +23,7 @@ def reconcile(primary, secondary):
         clean=secondary['alignment_equal_fraction']>=.8 and confirmed and not overlapping and not finding['expected_reading_uncertain']
         status='not_reproduced' if clean else 'persistent' if overlapping else 'inconclusive'
         finding['boundary_check']={'status':status,'second_pass_overlaps':overlapping,'context_match_confirmed':confirmed}
-        finding['review_priority']='low_boundary' if clean else 'normal'
+        variant = finding.get('reading_variant', {})
+        finding['review_priority']='low_boundary' if clean else 'low_variant' if variant and not variant.get('explicit_reading_difference') else 'normal'
         checks.append({'finding_id':finding['id'],**finding['boundary_check']})
     return checks

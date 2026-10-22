@@ -1,0 +1,46 @@
+{
+  "H0015": {
+    "accepted_readings": [
+      "にんそく"
+    ],
+    "reason": "この文は運搬人・労働者の意味。「ひとあし」は人通り等の別語義で、この文では許容しない。",
+    "source": "https://www.kanjipedia.jp/kotoba/0003686200"
+  },
+  "H0016": {
+    "accepted_readings": [
+      "にんそく"
+    ],
+    "reason": "この文は運搬人・労働者の意味。「ひとあし」は人通り等の別語義で、この文では許容しない。",
+    "source": "https://www.kanjipedia.jp/kotoba/0003686200"
+  },
+  "H0003": {
+    "accepted_readings": [
+      "きちんやど"
+    ],
+    "readings_override": {
+      "米": "こめ"
+    },
+    "reason": "この文の「米」は穀物の「こめ」。辞書の自動解析が「ベイ」を採用していたため、文脈に合わせた参照読みに訂正。",
+    "source": "contextual reading correction: rice, not the phonetic reading ベイ"
+  },
+  "H0165": {
+    "accepted_readings": [
+      "こくだか"
+    ],
+    "readings_override": {
+      "米": "こめ"
+    },
+    "reason": "この文の「米」は穀物の「こめ」。辞書の自動解析が「ベイ」を採用していたため、文脈に合わせた参照読みに訂正。",
+    "source": "contextual reading correction: rice, not the phonetic reading ベイ"
+  },
+  "H0169": {
+    "accepted_readings": [
+      "とます"
+    ],
+    "readings_override": {
+      "米": "こめ"
+    },
+    "reason": "この文の「米」は穀物の「こめ」。辞書の自動解析が「ベイ」を採用していたため、文脈に合わせた参照読みに訂正。",
+    "source": "contextual reading correction: rice, not the phonetic reading ベイ"
+  }
+}

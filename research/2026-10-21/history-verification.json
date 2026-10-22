@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-21T21:41:25.017662-07:00",
+  "target_count": 100,
+  "sentences": 200,
+  "unique_audio_files": 200,
+  "audio_duration_s": 889.3546666666667,
+  "excluded_targets_not_reintroduced": 32,
+  "corpus_hash_matches_run": true,
+  "audio_script_transcript_result_hashes_match": true,
+  "accepted_dictionary_readings_not_flagged": true,
+  "paid_api_cost_usd": 0,
+  "human_listening_not_performed": true
+}

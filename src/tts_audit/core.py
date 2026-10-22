@@ -12,7 +12,7 @@ def normalize(text):
     chars, offsets = [], []
     for i, ch in enumerate(text):
         if 'ぁ' <= ch <= 'ゖ': ch = chr(ord(ch) + 0x60)
-        if ch == 'ヲ': ch = 'オ'
+        ch = {'ヲ':'オ', 'ヅ':'ズ', 'ヂ':'ジ'}.get(ch, ch)
         if ch == 'ー':
             ch = VOWELS.get(chars[-1], '') if chars else ''
         if not ('ァ' <= ch <= 'ヺ'): continue
@@ -53,6 +53,38 @@ def expected_readings(text, overrides=None):
         expected += u['normalized']; mapping.extend([i]*len(u['normalized']))
     expected, _ = normalize(expected)
     return units, expected, mapping, warnings
+
+# Whole dictionary units only: do not substitute kana substrings in unrelated words.
+# Alternate readings remain in JSON/cards; only dictionary defaults can lose priority.
+READING_VARIANTS = {
+    '払拭': ('フッショク', 'フッシキ'),
+    '施工': ('セコウ', 'シコウ'),
+    '私': ('ワタシ', 'ワタクシ'),
+    'いう': ('イウ', 'ユー'),
+}
+
+def annotate_variant(finding, units):
+    if len(units) != 1:
+        return
+    unit = units[0]
+    variants = READING_VARIANTS.get(unit['surface'], ())
+    allowed = {normalize(v)[0] for v in variants}
+    if (finding['expected_normalized'] not in allowed or
+            finding['observed_normalized'] not in allowed):
+        return
+    explicit = unit['source'] == 'user'
+    finding['reading_variant'] = {
+        'surface': unit['surface'], 'accepted_kana': list(variants),
+        'explicit_reading_difference': explicit,
+        'basis': 'surface-specific alternate reading; exact whole-unit match',
+    }
+    if explicit:
+        finding['classification'] = '指定読みとの差・別読み候補'
+        finding['reason'] += ' 辞書掲載・自然な発音の別読み候補ですが、明示された読み指定との差なので優先候補として残します。'
+    else:
+        finding['review_priority'] = 'low_variant'
+        finding['classification'] = '許容読み・自然な発音差の候補'
+        finding['reason'] += ' 語全体が既知の別読み・自然な発音と一致するため、優先度を下げて記録します。正読判定や音声の自動修正はしません。'
 
 def align(text, segments, overrides=None):
     units, expected, owners, warnings = expected_readings(text, overrides)
@@ -110,6 +142,7 @@ def align(text, segments, overrides=None):
             'status':'unreviewed','classification':'読みの差・要聴取',
             'expected_reading_uncertain':any(u['reading_uncertain'] for u in selected),
             'reason':'辞書から得た期待読みとカナASRに差があります。どちらの誤りかは未確定です。'})
+        annotate_variant(findings[-1], selected)
     equal=sum(i2-i1 for tag,i1,i2,j1,j2 in opcodes if tag=='equal')
     return {'reading_units':units,'expected_kana':''.join(u['reading'] for u in units),
             'observed_kana':raw_text,'findings':findings,'reading_warnings':warnings,
