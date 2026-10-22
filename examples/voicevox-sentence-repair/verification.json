@@ -1,0 +1,29 @@
+{
+  "status": "completed",
+  "controls": {
+    "S001": {
+      "sentence_record_unchanged": true,
+      "all_files_unchanged": true,
+      "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+      "review_unchanged": true
+    },
+    "S003": {
+      "sentence_record_unchanged": true,
+      "all_files_unchanged": true,
+      "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+      "review_unchanged": true
+    }
+  },
+  "old_target_version_unchanged": true,
+  "original_history_audio_files_unchanged": 200,
+  "original_history_review_state_unchanged": true,
+  "synthesis_requests": 1,
+  "replaced_sentence_only": "S002",
+  "before_selected": "v001",
+  "after_selected": "v002",
+  "after_approval_basis": "asr",
+  "final_human_recheck_pending": true,
+  "assembly_pcm_preserved": true,
+  "paid_api_cost_usd": 0,
+  "cli_git_revision": "2f2ce33fbe077e5e74b6273f79c2f72c74771745"
+}

@@ -1,0 +1,224 @@
+{
+  "reading_units": [
+    {
+      "surface": "日",
+      "reading": "ヒ",
+      "normalized": "ヒ",
+      "start": 0,
+      "end": 1,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "が",
+      "reading": "ガ",
+      "normalized": "ガ",
+      "start": 1,
+      "end": 2,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "暮れる",
+      "reading": "クレル",
+      "normalized": "クレル",
+      "start": 2,
+      "end": 5,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "前",
+      "reading": "マエ",
+      "normalized": "マエ",
+      "start": 5,
+      "end": 6,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "に",
+      "reading": "ニ",
+      "normalized": "ニ",
+      "start": 6,
+      "end": 7,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "宿場",
+      "reading": "しゅくば",
+      "normalized": "シュクバ",
+      "start": 7,
+      "end": 9,
+      "source": "user",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "へ",
+      "reading": "エ",
+      "normalized": "エ",
+      "start": 9,
+      "end": 10,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "着こう",
+      "reading": "ツコウ",
+      "normalized": "ツコオ",
+      "start": 10,
+      "end": 13,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "と",
+      "reading": "ト",
+      "normalized": "ト",
+      "start": 13,
+      "end": 14,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "、",
+      "reading": "、",
+      "normalized": "",
+      "start": 14,
+      "end": 15,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "旅人",
+      "reading": "タビビト",
+      "normalized": "タビビト",
+      "start": 15,
+      "end": 17,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "たち",
+      "reading": "タチ",
+      "normalized": "タチ",
+      "start": 17,
+      "end": 19,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "は",
+      "reading": "ワ",
+      "normalized": "ワ",
+      "start": 19,
+      "end": 20,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "足",
+      "reading": "アシ",
+      "normalized": "アシ",
+      "start": 20,
+      "end": 21,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "を",
+      "reading": "オ",
+      "normalized": "オ",
+      "start": 21,
+      "end": 22,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "速め",
+      "reading": "ハヤメ",
+      "normalized": "ハヤメ",
+      "start": 22,
+      "end": 24,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "まし",
+      "reading": "マシ",
+      "normalized": "マシ",
+      "start": 24,
+      "end": 26,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "た",
+      "reading": "タ",
+      "normalized": "タ",
+      "start": 26,
+      "end": 27,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "。",
+      "reading": "。",
+      "normalized": "",
+      "start": 27,
+      "end": 28,
+      "source": "sudachi",
+      "reading_uncertain": false
+    }
+  ],
+  "expected_kana": "ヒガクレルマエニしゅくばエツコウト、タビビトタチワアシオハヤメマシタ。",
+  "observed_kana": "ヒガクレルマエニシュクバエツコート、タビビトタチワアシオハヤメマシタ",
+  "findings": [],
+  "reading_warnings": [],
+  "alignment_equal_fraction": 1.0,
+  "interpretation": "差分は要確認候補です。検出数や一致度は誤読率・音声の正確さを示しません。",
+  "schema_version": 1,
+  "version": "0.2.0b0",
+  "run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+  "created_at": "2026-10-22T06:00:42.844371+00:00",
+  "script": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。",
+  "duration_s": 4.437375,
+  "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+  "script_sha256": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+  "recognition": {
+    "mode": "local Kana Whisper",
+    "model": "sbintuitions/kana-whisper",
+    "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+    "device": "mps",
+    "dtype": "torch.float32",
+    "torch": "2.9.0",
+    "chunk_seconds": 18,
+    "chunk_strategy": "nearby_low_energy_v1",
+    "script_supplied_to_asr": false,
+    "external_audio_upload": false,
+    "paid_api_cost_usd": 0
+  },
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 4.437375,
+      "text": "ヒガクレルマエニシュクバエツコート、タビビトタチワアシオハヤメマシタ"
+    }
+  ],
+  "readings_override": {
+    "本陣": "ほんじん",
+    "脇本陣": "わきほんじん",
+    "宿場": "しゅくば"
+  },
+  "elapsed_seconds": 2.689,
+  "time_note": "Segment-level approximate location, not word alignment. Cuts prefer nearby low energy but can still introduce recognition errors.",
+  "dictionary_packages": {
+    "sudachipy": "0.7.0",
+    "sudachidict_core": "20261015"
+  },
+  "boundary_recheck": {
+    "status": "not_needed",
+    "checks": []
+  }
+}

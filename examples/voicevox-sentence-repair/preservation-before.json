@@ -1,0 +1,145 @@
+{
+  "sentence_records": {
+    "S001": {
+      "id": "S001",
+      "canonical_text": "宿場の本陣は、大名などの宿泊に使われた建物です。",
+      "canonical_sha256": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+      "script_file": "sentences/S001/canonical.txt",
+      "selected_version": "v001",
+      "versions": [
+        {
+          "id": "v001",
+          "created_at": "2026-10-22T06:00:28.429845+00:00",
+          "generation_text": "宿場の本陣は、大名などの宿泊に使われた建物です。",
+          "generation_text_sha256": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+          "audio": "sentences/S001/v001/audio.wav",
+          "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+          "provider_audio": "sentences/S001/v001/provider.wav",
+          "provider_audio_sha256": "0220b9c92f7d5f005914b14cd4e4274a30e36c527dc9d8e22dfd75e66e3802b4",
+          "duration_s": 4.3626875,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "0220b9c92f7d5f005914b14cd4e4274a30e36c527dc9d8e22dfd75e66e3802b4",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "canonical_assumed",
+            "note": "Existing history corpus recording H0005; no new generation"
+          },
+          "audit": "sentences/S001/v001/audit/report.json",
+          "audit_run_id": "347c7c3c-6f5a-4b32-93ef-c56319c9fe7d",
+          "review": {
+            "verdict": "approved",
+            "basis": "human",
+            "note": "Inherited existing user judgment H0005 at 2026-10-22T05:20:06.782Z; no new human listening claimed. ",
+            "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+            "audit_run_id": "347c7c3c-6f5a-4b32-93ef-c56319c9fe7d",
+            "updated_at": "2026-10-22T06:00:43.312842+00:00"
+          }
+        }
+      ]
+    },
+    "S003": {
+      "id": "S003",
+      "canonical_text": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。",
+      "canonical_sha256": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+      "script_file": "sentences/S003/canonical.txt",
+      "selected_version": "v001",
+      "versions": [
+        {
+          "id": "v001",
+          "created_at": "2026-10-22T06:00:29.230996+00:00",
+          "generation_text": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。",
+          "generation_text_sha256": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+          "audio": "sentences/S003/v001/audio.wav",
+          "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+          "provider_audio": "sentences/S003/v001/provider.wav",
+          "provider_audio_sha256": "3605a50dce4431fa458323662f47cd64c316991e1de4c6bf9bc02e826ce3fe00",
+          "duration_s": 4.437375,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "3605a50dce4431fa458323662f47cd64c316991e1de4c6bf9bc02e826ce3fe00",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "canonical_assumed",
+            "note": "Existing history corpus recording H0009; no new generation"
+          },
+          "audit": "sentences/S003/v001/audit/report.json",
+          "audit_run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+          "review": {
+            "verdict": "approved",
+            "basis": "human",
+            "note": "Inherited existing user judgment H0009 at 2026-10-22T05:20:10.367Z; no new human listening claimed. ",
+            "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+            "audit_run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+            "updated_at": "2026-10-22T06:00:43.379870+00:00"
+          }
+        }
+      ]
+    }
+  },
+  "sentence_files": {
+    "S001": {
+      "canonical.txt": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+      "v001/audio.wav": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+      "v001/audit/audio.wav": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+      "v001/audit/report.html": "cd1c9da2bbc75b83cbebb9dbcb64398c74d1bae75ab80612e1261041afea9451",
+      "v001/audit/report.json": "cbd4da38fabf20ff68ab3e7208fc493a53d5df9b73b841e6c033bc75ac2ef354",
+      "v001/audit/transcript.json": "61a47c6ed0b0f69280bb5f08e747cf816bccb8c82effd88a453f8160479c541b",
+      "v001/generation.txt": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+      "v001/provider.wav": "0220b9c92f7d5f005914b14cd4e4274a30e36c527dc9d8e22dfd75e66e3802b4"
+    },
+    "S003": {
+      "canonical.txt": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+      "v001/audio.wav": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+      "v001/audit/audio.wav": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+      "v001/audit/report.html": "3f57fdeaf9c755377b6e94d23eff376b3f7d0dc00a3fa426ce0040c6f3cde1c7",
+      "v001/audit/report.json": "2ad2c87d520787663f5eb06cdc26f7735729e90b9966dbf8abccc80dcf12cca4",
+      "v001/audit/transcript.json": "1eb46e83cc0da4469af063dc5e87f49a675912222b8210ea8684945a6dbd84d9",
+      "v001/generation.txt": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+      "v001/provider.wav": "3605a50dce4431fa458323662f47cd64c316991e1de4c6bf9bc02e826ce3fe00"
+    }
+  },
+  "target_old_version": {
+    "audio.wav": "7439e6aefce9354070920010a911de79925a642825b3a21cfbfa93c4b5136bbf",
+    "audit/audio.wav": "7439e6aefce9354070920010a911de79925a642825b3a21cfbfa93c4b5136bbf",
+    "audit/report.html": "99ecc1a22935cc456e3256c01b2af85fd3b7266c7f9bf1e9dcd7bedad46af427",
+    "audit/report.json": "e1c6c55d8eea0e99a85c5659be8fc95399d28aa46588f6c54c253ab2982e0b09",
+    "audit/transcript.json": "945a2fb87e4c70c907562ef6f56060f74fa33ba5250fe25daea7105433036b8d",
+    "generation.txt": "b9641b6e99c199b37bf45f27d4303be7fafe20937e72f53cf231b6df7b6ce441",
+    "provider.wav": "00af58d450b173ef468c069ea8dc86e8922abc1db03300c33b941e904a4433e0"
+  }
+}

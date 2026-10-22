@@ -1,0 +1,40 @@
+{
+  "schema_version": "1",
+  "id": "O-56a0f0c8a99f7dad",
+  "surface": "脇本陣",
+  "term_id": "T-d51c334109765495",
+  "prompt_id": "P-77a075d135cccbc2",
+  "expected_kana": "わきほんじん",
+  "human_heard": null,
+  "human_review": null,
+  "reviewer_count": 0,
+  "status": "needs_adjudication",
+  "reason": "Regenerated repair approved by ASR only; human listening pending, not a scored negative",
+  "source_observation_id": "O-2d68b29fad49d049",
+  "provider": "VOICEVOX",
+  "model_label": "青山龍星・ノーマル／Engine 0.25.2",
+  "audio": {
+    "path": "audio/cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337.wav",
+    "sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337"
+  },
+  "recognition": {
+    "text": "ホンジンニハイリキラナイイッコーノタメ、ワキホンジンデモヘヤオトトノエマシタ",
+    "metadata": {
+      "mode": "local Kana Whisper",
+      "model": "sbintuitions/kana-whisper",
+      "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+      "device": "mps",
+      "dtype": "torch.float32",
+      "torch": "2.9.0",
+      "chunk_seconds": 18,
+      "chunk_strategy": "nearby_low_energy_v1",
+      "script_supplied_to_asr": false,
+      "external_audio_upload": false,
+      "paid_api_cost_usd": 0
+    }
+  },
+  "example": "examples/voicevox-sentence-repair/index.html",
+  "generation_text": "本陣に入りきらない一行のため、わきほんじんでも部屋を整えました。",
+  "already_in_frozen_dataset": false,
+  "no_new_human_confirmed_error": true
+}

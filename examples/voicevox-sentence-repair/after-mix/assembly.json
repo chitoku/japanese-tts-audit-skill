@@ -1,0 +1,42 @@
+{
+  "project_id": "c3558166-b088-422e-882a-e7f3f945a734",
+  "created_at": "2026-10-22T06:00:53.477339+00:00",
+  "sample_rate": 16000,
+  "gap_ms": 250.0,
+  "audio_sha256": "691cbda8fb912457bb29b707268fa6e64390ba8ca00eb0973de6f3f208f74740",
+  "sentence_samples_preserved": true,
+  "approved_only": true,
+  "joins_human_reviewed": false,
+  "timeline": [
+    {
+      "sentence_id": "S001",
+      "version_id": "v001",
+      "source_audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+      "review_basis": "human",
+      "review_verdict": "approved",
+      "start_sample": 0,
+      "end_sample": 69803,
+      "canonical_text": "宿場の本陣は、大名などの宿泊に使われた建物です。"
+    },
+    {
+      "sentence_id": "S002",
+      "version_id": "v002",
+      "source_audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337",
+      "review_basis": "asr",
+      "review_verdict": "approved",
+      "start_sample": 73803,
+      "end_sample": 152310,
+      "canonical_text": "本陣に入りきらない一行のため、脇本陣でも部屋を整えました。"
+    },
+    {
+      "sentence_id": "S003",
+      "version_id": "v001",
+      "source_audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+      "review_basis": "human",
+      "review_verdict": "approved",
+      "start_sample": 156310,
+      "end_sample": 227308,
+      "canonical_text": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "runner_sha256": "e435815ff1a3016580b0db9133cc01150ced4dceee5b5db58ca3dd5b5f2e0fa7",
+  "cli_revision": "2f2ce33fbe077e5e74b6273f79c2f72c74771745",
+  "synthesis": "Real local VOICEVOX HTTP API called by agent; exactly one synthesis request",
+  "inspection": "Real local sbintuitions/kana-whisper via CLI Torch/MPS float32, offline cached weights",
+  "script_supplied_to_asr": false,
+  "external_audio_upload": false,
+  "paid_api_cost_usd": 0
+}

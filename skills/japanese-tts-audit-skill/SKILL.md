@@ -9,7 +9,7 @@ Accept the user's script and existing audio. Produce an HTML/JSON report that le
 
 For authorized repairs, retain the creator’s existing TTS service, model, voice and relevant settings when available. Use session context or source-project metadata first; ask only for missing settings needed to reproduce the voice. Use the available provider API, CLI, connector or editable source project. Do not switch to ElevenLabs merely because this repository has an ElevenLabs generator. If the existing service cannot be operated, provide the affected sentence and generation-only reading changes for the creator to regenerate, then inspect the returned audio. A service that exposes neither audio nor editable segments may require an export or a manual step.
 
-For sentence-by-sentence generation, repair and assembly supported by the CLI, use [references/sentences.md](references/sentences.md). This mode spends provider credits; inspection of existing audio remains local. A proofreading request alone does not authorize paid generation.
+For sentence-by-sentence generation, repair and assembly supported by the CLI, use [references/sentences.md](references/sentences.md). Generation may consume provider credits; local engines such as VOICEVOX can run without paid API usage. Inspection of existing audio remains local. A proofreading request alone does not authorize paid generation.
 
 ## Run
 

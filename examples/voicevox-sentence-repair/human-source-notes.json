@@ -1,0 +1,20 @@
+{
+  "H0005": {
+    "verdict": "correct",
+    "heard": "",
+    "note": "",
+    "updated_at": "2026-10-22T05:20:06.782Z"
+  },
+  "H0007": {
+    "verdict": "error",
+    "heard": "ワキモトジン",
+    "note": "",
+    "updated_at": "2026-10-22T05:10:56.196Z"
+  },
+  "H0009": {
+    "verdict": "correct",
+    "heard": "",
+    "note": "",
+    "updated_at": "2026-10-22T05:20:10.367Z"
+  }
+}

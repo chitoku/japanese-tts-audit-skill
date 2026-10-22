@@ -1,0 +1,215 @@
+{
+  "reading_units": [
+    {
+      "surface": "本陣",
+      "reading": "ほんじん",
+      "normalized": "ホンジン",
+      "start": 0,
+      "end": 2,
+      "source": "user",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "に",
+      "reading": "ニ",
+      "normalized": "ニ",
+      "start": 2,
+      "end": 3,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "入り",
+      "reading": "ハイリ",
+      "normalized": "ハイリ",
+      "start": 3,
+      "end": 5,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "きら",
+      "reading": "キラ",
+      "normalized": "キラ",
+      "start": 5,
+      "end": 7,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "ない",
+      "reading": "ナイ",
+      "normalized": "ナイ",
+      "start": 7,
+      "end": 9,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "一行",
+      "reading": "イッコウ",
+      "normalized": "イッコオ",
+      "start": 9,
+      "end": 11,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "の",
+      "reading": "ノ",
+      "normalized": "ノ",
+      "start": 11,
+      "end": 12,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "ため",
+      "reading": "タメ",
+      "normalized": "タメ",
+      "start": 12,
+      "end": 14,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "、",
+      "reading": "、",
+      "normalized": "",
+      "start": 14,
+      "end": 15,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "脇本陣",
+      "reading": "わきほんじん",
+      "normalized": "ワキホンジン",
+      "start": 15,
+      "end": 18,
+      "source": "user",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "で",
+      "reading": "デ",
+      "normalized": "デ",
+      "start": 18,
+      "end": 19,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "も",
+      "reading": "モ",
+      "normalized": "モ",
+      "start": 19,
+      "end": 20,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "部屋",
+      "reading": "ヘヤ",
+      "normalized": "ヘヤ",
+      "start": 20,
+      "end": 22,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "を",
+      "reading": "オ",
+      "normalized": "オ",
+      "start": 22,
+      "end": 23,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "整え",
+      "reading": "トトノエ",
+      "normalized": "トトノエ",
+      "start": 23,
+      "end": 25,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "まし",
+      "reading": "マシ",
+      "normalized": "マシ",
+      "start": 25,
+      "end": 27,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "た",
+      "reading": "タ",
+      "normalized": "タ",
+      "start": 27,
+      "end": 28,
+      "source": "sudachi",
+      "reading_uncertain": false
+    },
+    {
+      "surface": "。",
+      "reading": "。",
+      "normalized": "",
+      "start": 28,
+      "end": 29,
+      "source": "sudachi",
+      "reading_uncertain": false
+    }
+  ],
+  "expected_kana": "ほんじんニハイリキラナイイッコウノタメ、わきほんじんデモヘヤオトトノエマシタ。",
+  "observed_kana": "ホンジンニハイリキラナイイッコーノタメ、ワキホンジンデモヘヤオトトノエマシタ",
+  "findings": [],
+  "reading_warnings": [],
+  "alignment_equal_fraction": 1.0,
+  "interpretation": "差分は要確認候補です。検出数や一致度は誤読率・音声の正確さを示しません。",
+  "schema_version": 1,
+  "version": "0.2.0b0",
+  "run_id": "39fb950a-4eb5-46cb-82e0-3c19874901c2",
+  "created_at": "2026-10-22T06:00:52.836246+00:00",
+  "script": "本陣に入りきらない一行のため、脇本陣でも部屋を整えました。",
+  "duration_s": 4.9066875,
+  "audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337",
+  "script_sha256": "b9641b6e99c199b37bf45f27d4303be7fafe20937e72f53cf231b6df7b6ce441",
+  "recognition": {
+    "mode": "local Kana Whisper",
+    "model": "sbintuitions/kana-whisper",
+    "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+    "device": "mps",
+    "dtype": "torch.float32",
+    "torch": "2.9.0",
+    "chunk_seconds": 18,
+    "chunk_strategy": "nearby_low_energy_v1",
+    "script_supplied_to_asr": false,
+    "external_audio_upload": false,
+    "paid_api_cost_usd": 0
+  },
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 4.9066875,
+      "text": "ホンジンニハイリキラナイイッコーノタメ、ワキホンジンデモヘヤオトトノエマシタ"
+    }
+  ],
+  "readings_override": {
+    "本陣": "ほんじん",
+    "脇本陣": "わきほんじん",
+    "宿場": "しゅくば"
+  },
+  "elapsed_seconds": 3.479,
+  "time_note": "Segment-level approximate location, not word alignment. Cuts prefer nearby low energy but can still introduce recognition errors.",
+  "dictionary_packages": {
+    "sudachipy": "0.7.0",
+    "sudachidict_core": "20261015"
+  },
+  "boundary_recheck": {
+    "status": "not_needed",
+    "checks": []
+  }
+}

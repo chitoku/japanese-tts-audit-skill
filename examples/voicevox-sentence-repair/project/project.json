@@ -1,0 +1,299 @@
+{
+  "schema_version": 1,
+  "tool_version": "0.2.0b0",
+  "project_id": "c3558166-b088-422e-882a-e7f3f945a734",
+  "created_at": "2026-10-22T06:00:27.872419+00:00",
+  "script_sha256": "c87a6591b67f3490ff67c2b404db493d535ecccbd7719cee2b6f0b9fedfd427e",
+  "readings_sha256": "62c59013952eb604d943d10252f4d52932e3d079c62de7608bd43a79faecc02b",
+  "provider": "external",
+  "source": {
+    "provider": "VOICEVOX",
+    "model": "Engine 0.25.2",
+    "voice": "青山龍星・ノーマル (speaker 13)",
+    "settings": {
+      "speaker": 13,
+      "speedScale": 1.0,
+      "pitchScale": 0.0,
+      "intonationScale": 1.0,
+      "volumeScale": 1.0,
+      "prePhonemeLength": 0.1,
+      "postPhonemeLength": 0.1,
+      "pauseLength": null,
+      "pauseLengthScale": 1.0,
+      "outputSamplingRate": 24000,
+      "outputStereo": false
+    },
+    "project_reference": "history-200-v1/H0007"
+  },
+  "model": null,
+  "voice_id": null,
+  "budget": null,
+  "requests": [],
+  "sentences": [
+    {
+      "id": "S001",
+      "canonical_text": "宿場の本陣は、大名などの宿泊に使われた建物です。",
+      "canonical_sha256": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+      "script_file": "sentences/S001/canonical.txt",
+      "selected_version": "v001",
+      "versions": [
+        {
+          "id": "v001",
+          "created_at": "2026-10-22T06:00:28.429845+00:00",
+          "generation_text": "宿場の本陣は、大名などの宿泊に使われた建物です。",
+          "generation_text_sha256": "4e473642348d12783e2c7eb7a3329806e012dd9253730b23352d2f76b325320e",
+          "audio": "sentences/S001/v001/audio.wav",
+          "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+          "provider_audio": "sentences/S001/v001/provider.wav",
+          "provider_audio_sha256": "0220b9c92f7d5f005914b14cd4e4274a30e36c527dc9d8e22dfd75e66e3802b4",
+          "duration_s": 4.3626875,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "0220b9c92f7d5f005914b14cd4e4274a30e36c527dc9d8e22dfd75e66e3802b4",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "canonical_assumed",
+            "note": "Existing history corpus recording H0005; no new generation"
+          },
+          "audit": "sentences/S001/v001/audit/report.json",
+          "audit_run_id": "347c7c3c-6f5a-4b32-93ef-c56319c9fe7d",
+          "review": {
+            "verdict": "approved",
+            "basis": "human",
+            "note": "Inherited existing user judgment H0005 at 2026-10-22T05:20:06.782Z; no new human listening claimed. ",
+            "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+            "audit_run_id": "347c7c3c-6f5a-4b32-93ef-c56319c9fe7d",
+            "updated_at": "2026-10-22T06:00:43.312842+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S002",
+      "canonical_text": "本陣に入りきらない一行のため、脇本陣でも部屋を整えました。",
+      "canonical_sha256": "b9641b6e99c199b37bf45f27d4303be7fafe20937e72f53cf231b6df7b6ce441",
+      "script_file": "sentences/S002/canonical.txt",
+      "selected_version": "v002",
+      "versions": [
+        {
+          "id": "v001",
+          "created_at": "2026-10-22T06:00:28.838181+00:00",
+          "generation_text": "本陣に入りきらない一行のため、脇本陣でも部屋を整えました。",
+          "generation_text_sha256": "b9641b6e99c199b37bf45f27d4303be7fafe20937e72f53cf231b6df7b6ce441",
+          "audio": "sentences/S002/v001/audio.wav",
+          "audio_sha256": "7439e6aefce9354070920010a911de79925a642825b3a21cfbfa93c4b5136bbf",
+          "provider_audio": "sentences/S002/v001/provider.wav",
+          "provider_audio_sha256": "00af58d450b173ef468c069ea8dc86e8922abc1db03300c33b941e904a4433e0",
+          "duration_s": 4.8,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "00af58d450b173ef468c069ea8dc86e8922abc1db03300c33b941e904a4433e0",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "canonical_assumed",
+            "note": "Existing history corpus recording H0007; no new generation"
+          },
+          "audit": "sentences/S002/v001/audit/report.json",
+          "audit_run_id": "a210b522-b759-47bb-8636-ad6bc1ac9111",
+          "review": {
+            "verdict": "needs_revision",
+            "basis": "human",
+            "note": "Inherited existing user judgment H0007 at 2026-10-22T05:10:56.196Z; no new human listening claimed. ワキモトジン",
+            "audio_sha256": "7439e6aefce9354070920010a911de79925a642825b3a21cfbfa93c4b5136bbf",
+            "audit_run_id": "a210b522-b759-47bb-8636-ad6bc1ac9111",
+            "updated_at": "2026-10-22T06:00:43.346835+00:00"
+          }
+        },
+        {
+          "id": "v002",
+          "created_at": "2026-10-22T06:00:45.839529+00:00",
+          "generation_text": "本陣に入りきらない一行のため、わきほんじんでも部屋を整えました。",
+          "generation_text_sha256": "0e5467be371121b1e8d17d78710e6779113b61fb2fd5ea1a92ac351d4a6f8ded",
+          "audio": "sentences/S002/v002/audio.wav",
+          "audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337",
+          "provider_audio": "sentences/S002/v002/provider.wav",
+          "provider_audio_sha256": "da2aa47da9a659d17786b0abf9229c903da293f90b1bd6b61693ed027fef28cf",
+          "duration_s": 4.9066875,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "da2aa47da9a659d17786b0abf9229c903da293f90b1bd6b61693ed027fef28cf",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "provided",
+            "note": "Agent regenerated S002 only via existing VOICEVOX engine; 脇本陣→わきほんじん"
+          },
+          "audit": "sentences/S002/v002/audit/report.json",
+          "audit_run_id": "39fb950a-4eb5-46cb-82e0-3c19874901c2",
+          "review": {
+            "verdict": "approved",
+            "basis": "asr",
+            "note": "Actual local Kana Whisper reinspection has no actionable reading differences. Corrected kana present in engine query; final human hearing pending.",
+            "audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337",
+            "audit_run_id": "39fb950a-4eb5-46cb-82e0-3c19874901c2",
+            "updated_at": "2026-10-22T06:00:53.363538+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "S003",
+      "canonical_text": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。",
+      "canonical_sha256": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+      "script_file": "sentences/S003/canonical.txt",
+      "selected_version": "v001",
+      "versions": [
+        {
+          "id": "v001",
+          "created_at": "2026-10-22T06:00:29.230996+00:00",
+          "generation_text": "日が暮れる前に宿場へ着こうと、旅人たちは足を速めました。",
+          "generation_text_sha256": "6e4d3032b933020c7bb28c56b5f0a382567dfacbe1ead5e136dcbf93e08399f3",
+          "audio": "sentences/S003/v001/audio.wav",
+          "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+          "provider_audio": "sentences/S003/v001/provider.wav",
+          "provider_audio_sha256": "3605a50dce4431fa458323662f47cd64c316991e1de4c6bf9bc02e826ce3fe00",
+          "duration_s": 4.437375,
+          "provenance": {
+            "kind": "imported",
+            "source_audio_sha256": "3605a50dce4431fa458323662f47cd64c316991e1de4c6bf9bc02e826ce3fe00",
+            "source": {
+              "provider": "VOICEVOX",
+              "model": "Engine 0.25.2",
+              "voice": "青山龍星・ノーマル (speaker 13)",
+              "settings": {
+                "speaker": 13,
+                "speedScale": 1.0,
+                "pitchScale": 0.0,
+                "intonationScale": 1.0,
+                "volumeScale": 1.0,
+                "prePhonemeLength": 0.1,
+                "postPhonemeLength": 0.1,
+                "pauseLength": null,
+                "pauseLengthScale": 1.0,
+                "outputSamplingRate": 24000,
+                "outputStereo": false
+              },
+              "project_reference": "history-200-v1/H0007"
+            },
+            "generation_text_basis": "canonical_assumed",
+            "note": "Existing history corpus recording H0009; no new generation"
+          },
+          "audit": "sentences/S003/v001/audit/report.json",
+          "audit_run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+          "review": {
+            "verdict": "approved",
+            "basis": "human",
+            "note": "Inherited existing user judgment H0009 at 2026-10-22T05:20:10.367Z; no new human listening claimed. ",
+            "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+            "audit_run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+            "updated_at": "2026-10-22T06:00:43.379870+00:00"
+          }
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "kind": "review",
+      "sentence": "S001",
+      "version": "v001",
+      "verdict": "approved",
+      "basis": "human",
+      "note": "Inherited existing user judgment H0005 at 2026-10-22T05:20:06.782Z; no new human listening claimed. ",
+      "audio_sha256": "31cc89e1bd030a6991e8d16b396e4fd9b500dc8de03de4ae03d4168036949f01",
+      "audit_run_id": "347c7c3c-6f5a-4b32-93ef-c56319c9fe7d",
+      "updated_at": "2026-10-22T06:00:43.312842+00:00"
+    },
+    {
+      "kind": "review",
+      "sentence": "S002",
+      "version": "v001",
+      "verdict": "needs_revision",
+      "basis": "human",
+      "note": "Inherited existing user judgment H0007 at 2026-10-22T05:10:56.196Z; no new human listening claimed. ワキモトジン",
+      "audio_sha256": "7439e6aefce9354070920010a911de79925a642825b3a21cfbfa93c4b5136bbf",
+      "audit_run_id": "a210b522-b759-47bb-8636-ad6bc1ac9111",
+      "updated_at": "2026-10-22T06:00:43.346835+00:00"
+    },
+    {
+      "kind": "review",
+      "sentence": "S003",
+      "version": "v001",
+      "verdict": "approved",
+      "basis": "human",
+      "note": "Inherited existing user judgment H0009 at 2026-10-22T05:20:10.367Z; no new human listening claimed. ",
+      "audio_sha256": "ca361dda51c99f61ca6b2658c891c0a82c10f4d7e0eb3e2033c0d3f0b832d98d",
+      "audit_run_id": "e07dd09d-d6cb-4dbe-8a72-3b4857e841a9",
+      "updated_at": "2026-10-22T06:00:43.379870+00:00"
+    },
+    {
+      "kind": "review",
+      "sentence": "S002",
+      "version": "v002",
+      "verdict": "approved",
+      "basis": "asr",
+      "note": "Actual local Kana Whisper reinspection has no actionable reading differences. Corrected kana present in engine query; final human hearing pending.",
+      "audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337",
+      "audit_run_id": "39fb950a-4eb5-46cb-82e0-3c19874901c2",
+      "updated_at": "2026-10-22T06:00:53.363538+00:00"
+    },
+    {
+      "kind": "select",
+      "sentence": "S002",
+      "from": "v001",
+      "to": "v002",
+      "utc": "2026-10-22T06:00:53.397972+00:00"
+    }
+  ],
+  "updated_at": "2026-10-22T06:00:53.398075+00:00"
+}

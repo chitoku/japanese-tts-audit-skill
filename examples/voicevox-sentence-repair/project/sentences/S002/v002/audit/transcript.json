@@ -1,0 +1,23 @@
+{
+  "segments": [
+    {
+      "start_s": 0.0,
+      "end_s": 4.9066875,
+      "text": "ホンジンニハイリキラナイイッコーノタメ、ワキホンジンデモヘヤオトトノエマシタ"
+    }
+  ],
+  "recognition": {
+    "mode": "local Kana Whisper",
+    "model": "sbintuitions/kana-whisper",
+    "model_revision": "88ecb3d79c5846cb4fcf76f4107b84c8fa2acd82",
+    "device": "mps",
+    "dtype": "torch.float32",
+    "torch": "2.9.0",
+    "chunk_seconds": 18,
+    "chunk_strategy": "nearby_low_energy_v1",
+    "script_supplied_to_asr": false,
+    "external_audio_upload": false,
+    "paid_api_cost_usd": 0
+  },
+  "audio_sha256": "cadc75a60972324bb2bb7d3ec453bcd80be996aac6b99dbcc4b28415b377c337"
+}

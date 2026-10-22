@@ -94,6 +94,8 @@ HTMLをファイルとして直接開く従来の方式も使えます。その�
 
 結合は `sentences assemble outputs/project --out outputs/mix`。通常は全採用文の承認が必要です。文ごとの16kHz PCMサンプルを保持して結合し、継ぎ目の試聴音声も出します。話し方・声量・間の自然さは別途確認します。元が連続音声だけの場合、無劣化で該当文を差し替えられるとは限らず、元の編集環境か文単位の書き出しが必要です。詳細は [文単位ワークフロー](skills/japanese-tts-audit-skill/references/sentences.md)。
 
+実音声で行った [VOICEVOXの一文修正の実演](examples/voicevox-sentence-repair/README.md) では、「脇本陣→ワキモトジン」を生成用入力で直し、同じVOICEVOXでその文だけ1回再生成しました。再点検後にその文だけ差し替え、他の2文の音声・判定・関連ファイルが不変であることを検証しています。修正版の採用根拠はASRで、人の再聴取とは区別しています。
+
 ### 任意：ElevenLabsの内蔵生成アダプター
 
 既存の制作環境がElevenLabsなら、補助機能としてCLIから直接生成する方法も残しています。これを既定の生成先にはしません。
