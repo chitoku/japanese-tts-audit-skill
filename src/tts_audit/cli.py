@@ -93,16 +93,46 @@ class Recognizer:
         with self.torch.inference_mode():
             return self.pipe({'raw':audio,'sampling_rate':16000})['text']
 
+    def timed(self, audio):
+        """Audio-only recognition and cross-attention DTW in the same decode."""
+        from transformers.models.whisper.tokenization_whisper import _split_tokens_on_unicode
+        features=self.pipe.feature_extractor(audio,sampling_rate=16000,return_tensors='pt',return_attention_mask=True)
+        features={k:v.to(device=self.device,dtype=self.dtype if v.is_floating_point() else v.dtype) for k,v in features.items()}
+        with self.torch.inference_mode():
+            generated=self.pipe.model.generate(**features,language='ja',task='transcribe',
+                return_token_timestamps=True,return_timestamps=False,return_dict_in_generate=True)
+        ids=generated['sequences'][0].cpu().tolist()
+        times=generated['token_timestamps'][0].cpu().tolist()
+        tokenizer=self.pipe.tokenizer
+        words,tokens,indices=_split_tokens_on_unicode(tokenizer,ids)
+        groups=[]
+        for word,toks,ixs in zip(words,tokens,indices):
+            if all(v in tokenizer.all_special_ids for v in toks): continue
+            lo,hi=min(ixs),max(ixs)+1
+            groups.append(dict(text=word,start_s=times[min(lo,len(times)-1)],end_s=times[min(hi,len(times)-1)]))
+        return dict(text=tokenizer.decode(ids,skip_special_tokens=True),groups=groups)
+
     def metadata(self):
         return {'model':MODEL,'model_revision':REVISION,'device':self.device,'dtype':str(self.dtype),'torch':self.torch.__version__}
 
 
-def transcribe(audio,args,recognizer,intervals=None):
-    segments=[]
+def transcribe(audio,args,recognizer,intervals=None,with_timing=None):
+    enabled=getattr(args,'timestamps',True) if with_timing is None else with_timing
+    segments=[];timings=[];status='disabled' if not enabled else 'completed'
     for start,end in (audio_intervals(audio,args.chunk_seconds) if intervals is None else intervals):
         print(f'Recognizing {start/16000:.1f}–{end/16000:.1f}s',flush=True)
-        segments.append({'start_s':start/16000,'end_s':end/16000,'text':recognizer(audio[start:end])})
-    return {'segments':segments,'recognition':{'mode':'local Kana Whisper',**recognizer.metadata(),'chunk_seconds':args.chunk_seconds,'chunk_strategy':'nearby_low_energy_v1','script_supplied_to_asr':False,'external_audio_upload':False,'paid_api_cost_usd':0}}
+        timed=None
+        if enabled:
+            try: timed=recognizer.timed(audio[start:end])
+            except (ValueError,OSError,ImportError,RuntimeError,AttributeError,KeyError,TypeError,IndexError):
+                status='failed'
+                print('Audio timing unavailable for this segment; retaining approximate positions.',flush=True)
+        text=timed['text'] if timed is not None else recognizer(audio[start:end])
+        segments.append({'start_s':start/16000,'end_s':end/16000,'text':text})
+        timings.append(timed)
+    result={'segments':segments,'recognition':{'mode':'local Kana Whisper',**recognizer.metadata(),'chunk_seconds':args.chunk_seconds,'chunk_strategy':'nearby_low_energy_v1','script_supplied_to_asr':False,'external_audio_upload':False,'paid_api_cost_usd':0,'audio_timing_status':status}}
+    if enabled and all(t is not None for t in timings): result['timing_segments']=timings
+    return result
 
 
 def boundary_recheck(result,audio,args,recognizer=None):
@@ -115,7 +145,7 @@ def boundary_recheck(result,audio,args,recognizer=None):
         print('Rechecking boundary-adjacent candidates with independently shifted segments.',flush=True)
         recognizer=recognizer or Recognizer(args)
         intervals=list(audio_intervals(audio,args.chunk_seconds,first_seconds=args.chunk_seconds/2,avoid_boundaries=times))
-        second=transcribe(audio,args,recognizer,intervals)
+        second=transcribe(audio,args,recognizer,intervals,with_timing=False)
         validate_segments(second,len(audio)/16000)
         compared=align(result['script'],second['segments'],result['readings_override'])
         checks=reconcile(result,compared)
@@ -151,8 +181,19 @@ def check(args,recognizer=None):
     transcript['audio_sha256']=sha
     result=align(text,segments,readings)
     result.update(schema_version=1,version=__version__,run_id=str(uuid.uuid4()),created_at=datetime.now(timezone.utc).isoformat(),script=text,duration_s=duration,audio_sha256=sha,script_sha256=hashlib.sha256(text.encode()).hexdigest(),recognition=transcript['recognition'],segments=segments,readings_override=readings,elapsed_seconds=round(time.monotonic()-started,3),time_note='Segment-level approximate location, not word alignment. Cuts prefer nearby low energy but can still introduce recognition errors.')
+    result['source_files']={'audio':str(args.audio.resolve()),'script':str(args.script.resolve())}
     result['dictionary_packages']={name:importlib.metadata.version(name) for name in ('sudachipy','sudachidict_core')}
     boundary_recheck(result,audio,args,recognizer)
+    timing=None
+    if getattr(args,'timestamps',True) and transcript.get('timing_segments'):
+        from .audio_timing import project_audio_timing
+        try:
+            timing=project_audio_timing(result,transcript,transcript['timing_segments'])
+        except (ValueError,KeyError,TypeError,IndexError):
+            result['recognition']['audio_timing_status']='rejected'
+            print('Audio timing rejected; retaining approximate positions.',flush=True)
+    elif args.transcript_json:
+        result['recognition']['audio_timing_status']='imported_without_timing' if getattr(args,'timestamps',True) else 'disabled'
     result['elapsed_seconds']=round(time.monotonic()-started,3)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     tmp=Path(tempfile.mkdtemp(prefix='.tts-audit-',dir=args.out.parent))
@@ -162,12 +203,16 @@ def check(args,recognizer=None):
         (tmp/'report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
         (tmp/'transcript.json').write_text(json.dumps(transcript,ensure_ascii=False,indent=2)+'\n')
         (tmp/'report.html').write_text(render(result))
+        from .timeline import render_timeline
+        if timing is not None:
+            (tmp/'audio-timing.json').write_text(json.dumps(timing,ensure_ascii=False,indent=2)+'\n')
+        (tmp/'timeline.html').write_text(render_timeline(result,transcript=transcript,timing=timing))
         tmp.rename(args.out)
     except Exception:
         shutil.rmtree(tmp);raise
     low=sum(f.get('review_priority')=='low_boundary' for f in result['findings'])
     variants=sum(f.get('review_priority')=='low_variant' for f in result['findings'])
-    print(json.dumps({'report':str((args.out/'report.html').resolve()),'review_candidates':len(result['findings'])-low-variants,'total_review_candidates':len(result['findings']),'variant_deprioritized':variants,'boundary_deprioritized':low,'reading_warnings':len(result['reading_warnings']),'audio_seconds':duration,'elapsed_seconds':result['elapsed_seconds']},ensure_ascii=False),flush=True)
+    print(json.dumps({'report':str((args.out/'report.html').resolve()),'timeline':str((args.out/'timeline.html').resolve()),'audio_timing':result['recognition'].get('audio_timing_status','unavailable'),'review_candidates':len(result['findings'])-low-variants,'total_review_candidates':len(result['findings']),'variant_deprioritized':variants,'boundary_deprioritized':low,'reading_warnings':len(result['reading_warnings']),'audio_seconds':duration,'elapsed_seconds':result['elapsed_seconds']},ensure_ascii=False),flush=True)
     return 0
 
 def main(argv=None):
@@ -188,6 +233,7 @@ def main(argv=None):
     p.add_argument('--readings',type=Path,help='Optional JSON mapping original phrases to expected readings')
     p.add_argument('--transcript-json',type=Path,help='Import complete kana segments bound to the input audio SHA-256')
     p.add_argument('--cache-dir',type=Path);p.add_argument('--offline',action='store_true');p.add_argument('--device');p.add_argument('--chunk-seconds',type=float,default=18)
+    p.add_argument('--timestamps',action=argparse.BooleanOptionalAction,default=True,help='Audio-derived timeline timing during local ASR (default: on; --no-timestamps for faster approximate display)')
     p.add_argument('--boundary-recheck',action=argparse.BooleanOptionalAction,default=None,help='Automatically recheck boundary-adjacent differences (default: on for local ASR, off for transcript import)')
     args=parser.parse_args(argv)
     if not 1<=args.chunk_seconds<=28:parser.error('--chunk-seconds must be between 1 and 28')

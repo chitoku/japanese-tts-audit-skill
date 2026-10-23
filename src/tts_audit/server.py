@@ -16,6 +16,7 @@ from urllib.parse import urlsplit
 import webbrowser
 
 from .report import render
+from .timeline import render_timeline
 from .reviews import merge_notes
 
 
@@ -44,8 +45,8 @@ class ReviewStore:
                 imported = self.directory / 'listening-notes.json'
                 batch = json.loads(imported.read_text(encoding='utf-8')) if imported.exists() else {
                     'schema_version': 1, 'run_id': self.report['run_id'], 'exported_at': now(), 'notes': {}}
-                notes = merge_notes(self.report, batch)['notes']
-                self._write(self._state(notes, 0))
+                merged = merge_notes(self.report, batch)
+                self._write(self._state(merged['notes'], 0, annotations=merged.get('annotations', [])))
 
     @contextmanager
     def locked(self):
@@ -74,17 +75,21 @@ class ReviewStore:
             raise Conflict('Saved reviews belong to a different report')
         return state
 
-    def _state(self, notes, revision, completed=False):
-        counts = Counter(n['verdict'] for n in notes.values())
+    def _state(self, notes, revision, completed=False, annotations=None):
+        annotations = annotations or []
+        manual_count = sum(a['kind'] == 'manual_flag' and not notes.get(a['id'],{}).get('deleted') for a in annotations)
+        candidate_count = len(self.report['findings']) + manual_count
+        counts = Counter(n['verdict'] for n in notes.values() if not n.get('deleted'))
         decided = sum(v for k, v in counts.items() if k != 'unreviewed')
         return {'schema_version': 1, 'run_id': self.report['run_id'],
                 'report_sha256': self.fingerprint, 'revision': revision,
                 'status': 'completed' if completed else 'draft', 'updated_at': now(),
                 'completed_at': now() if completed else None,
-                'candidate_count': len(self.report['findings']), 'reviewed_count': decided,
-                'unreviewed_count': len(self.report['findings']) - decided,
+                'candidate_count': candidate_count, 'machine_candidate_count': len(self.report['findings']),
+                'manual_candidate_count': manual_count, 'annotations': annotations, 'reviewed_count': decided,
+                'unreviewed_count': candidate_count - decided,
                 'verdict_counts': dict(counts), 'notes': notes,
-                'scope': 'Human review of flagged candidates only; completion does not certify full audio or resolve uncertain labels.'}
+                'scope': 'Human review of machine/manual candidates; reviewed ranges are explicit human records. Completion does not certify full audio or resolve uncertain labels.'}
 
     def _write(self, state):
         fd, name = tempfile.mkstemp(prefix='.review-state-', dir=self.directory)
@@ -107,10 +112,11 @@ class ReviewStore:
             if type(payload.get('revision')) is not int or payload['revision'] != state['revision']:
                 raise Conflict('Review changed in another window; reload before editing')
             batch = {'schema_version': payload.get('schema_version'), 'run_id': payload.get('run_id'),
-                     'exported_at': now(), 'notes': payload.get('notes')}
-            old = dict(batch, notes=state['notes'])
-            notes = merge_notes(self.report, batch, old)['notes']
-            result = self._state(notes, state['revision'] + 1, complete)
+                     'exported_at': now(), 'notes': payload.get('notes'),
+                     'annotations': payload.get('annotations', [])}
+            old = dict(batch, notes=state['notes'], annotations=state.get('annotations', []))
+            merged = merge_notes(self.report, batch, old)
+            result = self._state(merged['notes'], state['revision'] + 1, complete, merged.get('annotations', []))
             self._write(result)
             return result
 
@@ -156,12 +162,30 @@ def make_server(directory, port=0):
             try:
                 state = store.read()
                 if path == 'api/reviews': return self.send(200, state)
+                if path == 'timeline.html':
+                    transcript_path = store.directory / 'transcript.json'
+                    transcript = {}
+                    if transcript_path.is_file() and not transcript_path.is_symlink():
+                        transcript = json.loads(transcript_path.read_text(encoding='utf-8'))
+                    timing = None
+                    timing_path = store.directory / 'audio-timing.json'
+                    if timing_path.is_file() and not timing_path.is_symlink():
+                        try:
+                            timing = json.loads(timing_path.read_text(encoding='utf-8'))
+                        except (OSError, ValueError):
+                            timing = {}
+                    config = {'revision': state['revision'], 'status': state['status'],
+                              'report_directory': str(store.directory), 'review_state_path': str(store.path),
+                              'review_audio_path': str(store.directory / 'audio.wav')}
+                    return self.send(200, render_timeline(store.report, state, config, transcript, timing), 'text/html; charset=utf-8')
                 if path in ('', 'report.html'):
                     batch = {'notes': state['notes']}
-                    config = {'revision': state['revision'], 'status': state['status']}
+                    config = {'revision': state['revision'], 'status': state['status'],
+                              'report_directory': str(store.directory), 'review_state_path': str(store.path),
+                              'review_audio_path': str(store.directory / 'audio.wav')}
                     return self.send(200, render(store.report, batch, server=config), 'text/html; charset=utf-8')
                 allowed = {'audio.wav': 'audio/wav', 'report.json': 'application/json',
-                           'transcript.json': 'application/json', 'review-state.json': 'application/json'}
+                           'transcript.json': 'application/json', 'audio-timing.json': 'application/json', 'review-state.json': 'application/json'}
                 if path not in allowed: return self.send(404, {'error': 'Not found'})
                 target = store.directory / path
                 if target.is_symlink() or not target.is_file(): return self.send(404, {'error': 'Not found'})
@@ -221,8 +245,8 @@ def main(argv=None):
     args = parser.parse_args(argv)
     try:
         server = make_server(args.report_directory, args.port)
-        print(json.dumps({'url': server.review_url, 'review_state': str(server.review_store.path)}, ensure_ascii=False), flush=True)
-        if args.open: webbrowser.open(server.review_url)
+        print(json.dumps({'url': server.review_url, 'timeline_url': server.review_url+'timeline.html', 'review_state': str(server.review_store.path)}, ensure_ascii=False), flush=True)
+        if args.open: webbrowser.open(server.review_url+'timeline.html')
         try: server.serve_forever()
         except KeyboardInterrupt: pass
         finally: server.server_close()

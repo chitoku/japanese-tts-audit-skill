@@ -21,3 +21,6 @@ tts-audit = "tts_audit.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+tts_audit = ["web/*.html", "web/*.css", "web/*.js"]

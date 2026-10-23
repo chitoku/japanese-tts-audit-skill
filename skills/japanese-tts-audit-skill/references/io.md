@@ -11,6 +11,8 @@ Boundary rechecking defaults on for local recognition. A finding within six reco
 `review_priority: low_variant` retains a whole-unit match to a small known alternate-reading list in a separate playable section. `reading_variant` records allowed kana and whether the expectation was explicit. Explicit user overrides retain normal priority; no listening verdict is assigned automatically. Standard-Japanese ヅ／ズ and ヂ／ジ differences are normalized before alignment, so spelling-only differences do not create new findings. Original kana transcripts remain available.
 
 Output directory:
+- `audio-timing.json`: validated audio-derived character positions (when available); separate from recognition findings and human decisions.
+- `timeline.html`: waveform review page; serve the output directory for reliable media loading and direct decision saving.
 - `report.html`: playable local review interface; keep beside `audio.wav`.
 - `report.json`: candidate spans in script, expected and observed kana, segment-level times, dictionary warnings, model/cache/run provenance.
 - `transcript.json`: reusable kana segments bound to the original audio hash.
@@ -21,3 +23,5 @@ For the standard local-server workflow, see [review-server.md](review-server.md)
 The page includes original script and recognized kana. HTML text is escaped. In file-only mode review notes use a per-run browser-storage key; storage on local file URLs depends on the browser. Export notes JSON for a durable copy. In server mode notes are saved directly to the report directory; browser storage is only a local backup and does not override the server state on reload. Original source audio/script are not modified. Default inference is local; model retrieval contacts Hugging Face, not an audio recognition API. Nothing is submitted to an external project or published automatically.
 
 Candidate classification is provisional. Normalization treats common long-vowel forms and particles alike but is not the official Joyo Kana-CER normalization/scoring implementation. The report is a review assistant, not a validated automatic pronunciation-error detector.
+
+Local ASR collects token timestamps in the primary decode by default. `--no-timestamps` skips timing; the shifted boundary recheck remains text-only. `audio_timing` in the CLI summary reports completed/failed/rejected/disabled or imported_without_timing. Timing failure leaves all recognition candidates available with approximate positions. Imported transcripts with complete `timing_segments` can reuse timing without loading the model; imports without them remain approximate.
