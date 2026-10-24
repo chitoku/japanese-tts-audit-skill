@@ -8,31 +8,77 @@
 
 試用版です。ASRと辞書の差は誤読確定ではありません。「検出ゼロ」は正読保証ではなく、検出率・適合率は未評価です。現在、実音声の動作確認はApple Silicon Macで行っています。
 
-## まず、APIキーなしで試す
+## 1. npxでSkillを導入する（標準）
 
-Python 3.10以上（検証環境3.12）。リポジトリのルートで実行します。uvを使用する例です。
+[Node.js](https://nodejs.org/en/download)を用意し、制作プロジェクトで次を実行し、使っているAgentを選びます。**Skillの指示を導入する操作です。Python CLIと認識モデルは次の手順で別途準備します。**
 
 ```sh
+npx skills add chitoku/japanese-tts-audit-skill --skill japanese-tts-audit-skill
+```
+
+VercelのSkills CLIを使います。確認した1.7.4版はNode.js 22.20以上が必要です。Codexだけなら末尾に `-a codex`、Claude Codeなら `-a claude-code`。既定は現在のプロジェクトへの導入です。全プロジェクトで使う場合だけ `-g` を追加します。
+
+**公開前の注意：現在はPrivate RepoのためGitHubの取得権限が必要です。** 一般公開後の未認証導入は、公開時に別途確認します。
+
+Agentへの依頼例（音声・台本とCLIの場所は実際のパスを渡します）：
+
+> japanese-tts-audit-skillを使って、この台本と音声を点検してください。音声付きの確認ページを開き、私の判定を読んで、必要な文だけ既存の音声生成サービスで修正・再点検してください。CLI環境がなければ下の手順で準備してください。再生成費用は先に確認してください。
+
+**導入時の通信：** Skills CLIにはskills.shへの導入情報の送信があります。これは点検回数の計測ではありません。送信しない場合は次のように実行できます。この設定はSkills側のセキュリティ監査照会も止めます。`tts-audit`自体は利用状況を遠隔送信しません。
+
+```sh
+DISABLE_TELEMETRY=1 npx skills add chitoku/japanese-tts-audit-skill --skill japanese-tts-audit-skill
+```
+
+Nodeを使わない場合は、下記のgit取得やZIP展開後、`skills/japanese-tts-audit-skill` をAgentのSkill配置先へコピーできます。Codexの制作プロジェクト内なら `.agents/skills/japanese-tts-audit-skill/` です。既存フォルダを上書きしないでください。Codexの `$skill-installer` にこのRepo内のSkillフォルダURLを渡す方法もあります。[導入指標と実利用の違い・調査結果](docs/adoption-and-measurement.md)
+
+## 2. Python CLIを準備して、無料デモを試す
+
+Python 3.10以上（検証環境3.12）と[uv](https://docs.astral.sh/uv/getting-started/installation/)を用意します。Skillを導入済みでも、実行部品はこの手順が必要です。既存のcloneがある場合は、そのルートでvenv作成以降を実行してください。CLIだけを使う場合はSkill導入を省略できます。
+
+以下はmacOS／Linuxのシェル用です（実音声推論の確認環境はApple Silicon Mac）。Skillの配置先とCLIの保存場所は別で構いません。CLIは制作プロジェクト外のツール用フォルダにcloneしても使えます。
+
+```sh
+git clone https://github.com/chitoku/japanese-tts-audit-skill.git
+cd japanese-tts-audit-skill
 uv venv --python 3.12 .venv
 uv pip install --python .venv/bin/python '.[generation]'
+.venv/bin/tts-audit --help
+```
+
+続けて同じリポジトリ内で、同梱の短い音声を点検します。
+
+```sh
 .venv/bin/tts-audit check examples/known-error/audio.mp3 \
   --script examples/known-error/script.txt \
   --readings examples/known-error/readings.json \
   --transcript-json examples/known-error/transcript.json --out outputs/recorded-demo
 ```
 
-`outputs/recorded-demo/report.html` をブラウザーで開きます。この例は**保存済みのカナ認識を再利用**するため、モデル・APIキー・課金は不要です。「糾弾」を「シュウタン」と聞いたというユーザー報告のある合成音声です。ほかの差も含みます。音声はMIT対象外です。
+確認画面は次で開きます。起動したサーバーは確認中そのまま動かしておき、終了時はCtrl+Cで止めます。
 
-## 自分の音声をローカル点検
+```sh
+.venv/bin/tts-audit serve outputs/recorded-demo --open
+```
+
+この例は**保存済みのカナ認識を再利用**するため、モデル・APIキー・課金は不要です。「糾弾」を「シュウタン」と聞いたというユーザー報告のある合成音声です。ほかの差も含みます。音声はMIT対象外です。
+
+## 3. 認識モデルを準備して、自分の音声を点検する
+
+同じリポジトリ内で認識用の依存ライブラリを追加します。モデルは初回の `check` で自動取得するため、最初はインターネット接続が必要です。依存ライブラリ・キャッシュも含め、重み約3.24GBより多い空き容量を確保してください。
 
 ```sh
 uv pip install --python .venv/bin/python '.[asr,generation]'
-.venv/bin/tts-audit check narration.wav --script script.txt --out outputs/check
+.venv/bin/tts-audit check /absolute/path/narration.wav \
+  --script /absolute/path/script.txt --out outputs/check
+.venv/bin/tts-audit serve outputs/check --open
 ```
+
+`/absolute/path/...` は実際の音声とUTF-8台本の絶対パスに置き換えます。`--out` は毎回新しいフォルダを指定してください。既存の音声・判定を上書きしない設計です。AgentにはCLIの絶対パス（このRepoの `.venv/bin/tts-audit`）かPythonの絶対パス（`.venv/bin/python`）も伝えると、別の制作フォルダから実行できます。
 
 初回に `sbintuitions/kana-whisper` の重み約3.24GBを取得します。Whisper large-v3-turboの追加学習モデルで、Tinyではありません。MacはMPS、利用可能ならCUDA、それ以外はCPUを選びます。Windows/Linuxの実音声推論は本リリースでは未検証です。
 
-認識時に台本・期待読みのヒントは渡しません。台本はSudachiで別に読みへ変換し、ASRと照合します。点検はローカルで、音声の外部送信・有料ASR API・APIキーは不要です。モデルキャッシュ再利用には `--cache-dir CACHE --offline` を指定します。
+認識時に台本・期待読みのヒントは渡しません。台本はSudachiで別に読みへ変換し、ASRと照合します。点検はローカルで、音声の外部送信・有料ASR API・APIキーは不要です。同じ環境では通常のモデルキャッシュを再利用します。保存先を明示する場合は初回から `--cache-dir /absolute/path/model-cache` を付け、その取得済みキャッシュで通信を避けたい場合だけ、同じ指定に `--offline` を追加します。未取得の環境では `--offline` を付けないでください。
 
 通常のローカル検査は、文字起こしと同時にKana Whisperのトークン時刻を取得し、`audio-timing.json` と `timeline.html` を生成します。台本・カナ・波形を並べて確認でき、Spaceで再生・停止できます。時刻は音声からの推定で、トークン内と文字が一致しない部分は補間します。人が確定した単語境界ではありません。
 
@@ -158,7 +204,7 @@ HTMLをファイルとして直接開く従来の方式も使えます。その�
 
 実際の誤警報には「経典」をヒョーテンと認識した例、読経の許容読みドッキョウ、ツヅケ／ツズケの表記差、短文での認識の揺れがあります。辞書、ASR、TTS、許容読み、曖昧な音を区別してください。本ツールはJoyo公式の採点実装でも、TTSモデルのリーダーボードでもありません。
 
-クリーン環境で確認した範囲と未確認事項は [検証記録](docs/verification.md)。実利用の報告は任意で、インストール数を実行数や効果とみなしません。遠隔テレメトリーはありません。
+クリーン環境で確認した範囲と未確認事項は [検証記録](docs/verification.md)。実利用の報告は任意で、インストール数を実行数や効果とみなしません。本CLIに遠隔テレメトリーはありません。第三者のSkills CLIの導入情報送信は別です。[利用状況の把握方針](docs/adoption-and-measurement.md)を参照してください。
 
 ## ライセンスと協力
 
