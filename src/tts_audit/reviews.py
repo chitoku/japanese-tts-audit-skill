@@ -37,6 +37,17 @@ def merge_notes(report, incoming, existing=None):
                     if field=='deleted':
                         if type(note[field]) is not bool:raise ValueError('Invalid manual deletion')
                     elif not isinstance(note[field],str) or len(note[field])>2000:raise ValueError('Invalid manual text')
+            selection=note.get('text_selection')
+            if selection is not None:
+                if not ident.startswith('M-') or not isinstance(selection,dict):raise ValueError('Invalid manual text selection')
+                source=selection.get('source');a,b=selection.get('start'),selection.get('end')
+                if source not in {'script','asr'} or any(type(v) is not int for v in (a,b)):raise ValueError('Invalid selection source or offsets')
+                text=report.get('script' if source=='script' else 'observed_kana','')
+                encoded=text.encode('utf-16-le')
+                if not 0<=a<b<=len(encoded)//2:raise ValueError('Selection outside text')
+                try:selected=encoded[a*2:b*2].decode('utf-16-le')
+                except UnicodeError:raise ValueError('Selection splits a character')
+                if selected!=selection.get('text'):raise ValueError('Selection text mismatch')
             when = timestamp(note['updated_at'])
             if ident not in merged or when > timestamp(merged[ident]['updated_at']):
                 merged[ident] = dict(note)

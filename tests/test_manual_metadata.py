@@ -29,3 +29,18 @@ class ManualMetadataTests(unittest.TestCase):
         for patch in [dict(deleted='yes'),dict(target_text=3),dict(expected_reading=['x'])]:
             batch=dict(schema_version=1,run_id='r',exported_at='2026-10-22T00:00:02Z',notes={'F001':dict(verdict='error',heard='',note='',updated_at='2026-10-22T00:00:01Z',**patch)})
             with self.assertRaises(ValueError):merge_notes(report,batch)
+
+    def test_exact_script_and_asr_selections_validate_against_original_text(self):
+        from tts_audit.reviews import merge_notes
+        report=dict(run_id='r',duration_s=10,script='増加分',observed_kana='ゾージャブン',findings=[])
+        annotation=dict(id='M-s',kind='manual_flag',start_s=1,end_s=2,created_at='2026-10-23T00:00:00Z')
+        for selection,valid in [(dict(source='script',start=0,end=2,text='増加'),True),
+                                (dict(source='asr',start=2,end=5,text='ジャブ'),True),
+                                (dict(source='asr',start=0,end=100,text='ゾー'),False),
+                                (dict(source='script',start=0,end=2,text='捏造'),False),
+                                (dict(source='other',start=0,end=2,text='増加'),False)]:
+            note=dict(verdict='unreviewed',heard='',note='',updated_at='2026-10-23T00:00:01Z',text_selection=selection)
+            batch=dict(schema_version=1,run_id='r',exported_at=note['updated_at'],annotations=[annotation],notes={'M-s':note})
+            if valid:self.assertEqual(merge_notes(report,batch)['notes']['M-s']['text_selection'],selection)
+            else:
+                with self.assertRaises(ValueError):merge_notes(report,batch)
