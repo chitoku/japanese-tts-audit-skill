@@ -25,7 +25,7 @@ npx skills add chitoku/japanese-tts-audit-skill --skill japanese-tts-audit-skill
 
 VercelのSkills CLIを使います。確認した1.7.4版はNode.js 22.20以上が必要です。Codexだけなら末尾に `-a codex`、Claude Codeなら `-a claude-code`。既定は現在のプロジェクトへの導入です。全プロジェクトで使う場合だけ `-g` を追加します。
 
-**公開前の注意：現在はPrivate RepoのためGitHubの取得権限が必要です。** 一般公開後の未認証導入は、公開時に別途確認します。
+2026-10-24にPublicへ変更し、Skills CLI 1.7.4でGitHub認証なしの導入を確認しました。GitHubへのログインやAPIキーは不要です。
 
 Agentへの依頼例（音声・台本とCLIの場所は実際のパスを渡します）：
 
