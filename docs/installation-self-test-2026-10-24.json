@@ -1,0 +1,70 @@
+{
+  "kind": "author_installation_self_test",
+  "self_test": true,
+  "date_local": "2026-10-24",
+  "timezone": "America/Los_Angeles",
+  "started_at_local": "2026-10-24T17:18:04.932284-07:00",
+  "started_at_utc": "2026-10-25T00:18:04.931582+00:00",
+  "cli_version": "1.7.4",
+  "install_invocations": 1,
+  "skill_installations": 1,
+  "external_user_installations_claimed": 0,
+  "agent": "codex",
+  "scope": "isolated temporary project; no global install",
+  "telemetry": "enabled",
+  "metadata": {
+    "self_test": true,
+    "purpose": "author_listing_verification",
+    "date": "2026-10-24"
+  },
+  "install_exit_code": 0,
+  "observed_install_event_responses": [
+    {
+      "time": "2026-10-25T00:18:11.340Z",
+      "http_status": 200
+    }
+  ],
+  "installed_files_match_source": true,
+  "installed_files": [
+    "SKILL.md",
+    "references/sentences.md",
+    "references/review-server.md",
+    "references/io.md",
+    "agents/openai.yaml",
+    "scripts/check.py"
+  ],
+  "listing_check": [
+    {
+      "url": "https://www.skills.sh/chitoku/japanese-tts-audit-skill/japanese-tts-audit-skill",
+      "http_status": 200,
+      "checked_at_utc": "2026-10-25T00:18:15.092620+00:00",
+      "result": " japanese-tts-audit-skill — chitoku/japanese-tts-audit-skill Skills Packs Topics Official Audits Docs Navigate Packs Topics Official Audits Docs skills / chitoku / japanese-tts-audit-skill 404 japanese-tts-audit-skill isn’t available in this repository. It may have been renamed or removed. These skills are still published by chitoku / japanese-tts-audit-skill . Did you mean? View repository Browse All skills Trending Hot Official Packs Security audits Topics React Next.js Design &amp; UI Mobile Agent workflows Databases Testing Marketing All topics → Agents Claude Code Cursor Codex GitHub Copilot Windsurf Gemini Cline AMP Antigravity OpenClaw All agents → Docs Overview CLI Customize pages API FAQ Project About Contact Privacy Terms GitHub Made with care by Vercel . Skills are open source on GitHub . "
+    },
+    {
+      "url": "https://www.skills.sh/api/search?q=japanese-tts-audit-skill&limit=10",
+      "http_status": 200,
+      "checked_at_utc": "2026-10-25T00:18:16.202571+00:00",
+      "result": {
+        "query": "japanese-tts-audit-skill",
+        "searchType": "fuzzy",
+        "searchVersion": "algolia",
+        "skills": [],
+        "count": 0,
+        "duration_ms": 931,
+        "timings_ms": {
+          "rate_limit": 21.964066999964416,
+          "flags": 1.4578520000213757,
+          "visibility": 31.154615000006743,
+          "retrieval": 929.1284590000287,
+          "algolia_processing": 142,
+          "repositories": 0.007256999961100519,
+          "ranking": 0.023190999985672534,
+          "search": 931,
+          "total": 952.7503339999821
+        },
+        "provider_duration_ms": 929.1284590000287
+      }
+    }
+  ],
+  "interpretation": "One author self-test, not evidence of an external user or actual audit usage. HTTP 200 acknowledges the event endpoint response; it does not prove a counted install or completed indexing. Do not subtract one from future aggregates as if their deduplication rules were known."
+}

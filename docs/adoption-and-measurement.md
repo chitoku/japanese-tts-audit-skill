@@ -82,3 +82,20 @@ npx --yes skills@1.7.4 add chitoku/japanese-tts-audit-skill --skill japanese-tts
 検証時はGitHubトークン環境変数を除外し、Gitのグローバル・システム設定と認証ヘルパー・追加HTTPヘッダーを無効化しました。PATHから `gh` を除き、対話認証も禁止しました。従って、既存のGitHubログインには依存しない導入です。OS・npmのキャッシュは再利用しており、完全に新しいOS環境の試験ではありません。
 
 自己テストを公開導入の指標に混ぜないため `DISABLE_TELEMETRY=1 DO_NOT_TRACK=1` を指定しました。skills.shの掲載・集計は今回の確認対象外です。既存の制作プロジェクト・グローバルSkill設定・聴取結果は変更していません。GitHub Releaseは発行していません。
+
+
+## 計測ONの自己導入テスト（2026-10-24）
+
+2026-10-24 17:18（America/Los_Angeles）に、作者の隔離した一時プロジェクトで、計測ONの導入を**1回だけ**実行しました。外部利用者による導入として数えません。グローバル配置・既存の制作環境には触れていません。
+
+```sh
+npx --yes skills@1.7.4 add chitoku/japanese-tts-audit-skill \
+  --skill japanese-tts-audit-skill -a codex -y \
+  --metadata '{"self_test":true,"purpose":"author_listing_verification","date":"2026-10-24"}'
+```
+
+`DISABLE_TELEMETRY` と `DO_NOT_TRACK` をこの子プロセスの環境から外し、正常終了と6ファイルの一致を確認しました。送信を生成し直すのではなく、通常のCLIのfetch応答だけをローカルで記録し、installイベントへのHTTP 200を1件確認しています。
+
+直後の確認では、[詳細ページ](https://www.skills.sh/chitoku/japanese-tts-audit-skill/japanese-tts-audit-skill)は未掲載表示、検索結果は0件でした。イベントのHTTP 200は、公開カウンターへの反映や検索掲載の完了を保証しません。掲載のための再導入・イベント再送は行っていません。
+
+[自己テストの記録](installation-self-test-2026-10-24.json)に実行日時・件数・照合結果・掲載確認を保存しています。今後表示されるStatsには作者の自己テストが含まれる可能性があると注記し、外部利用者数と区別してください。集計・重複除外のルールが不明なまま「表示数から1を引けば外部利用者数」とは扱いません。
