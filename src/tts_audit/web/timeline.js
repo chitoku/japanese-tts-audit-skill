@@ -4,7 +4,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const duration=R.duration_s, PX=120, storageKey='tts-audit-timeline-'+R.run_id;
 const alignment=C.alignment||{script_tokens:[],kana_chars:[],findings:{}};
 const audioTimed=alignment.timing_status==='accepted';$('timing-label').textContent=audioTimed?'音声から推定した時刻 · トークン内は按分／厳密な同期は未保証':'台本とASRの照合による位置目安 · 音声との厳密な同期ではありません';$('timing-label').title=alignment.warning||'';
-let notes=structuredClone(C.state.notes||{}),annotations=structuredClone(C.state.annotations||[]),revision=C.server?.revision,selected=null,pendingOnly=false,zoom=1,peaks=null,segments=[],boundedEnd=null,undoStack=[],dirty=0,persisted=0,saveTimer,saveQueue=Promise.resolve(),savingFailed=false,blocked=false;
+let notes=structuredClone(C.state.notes||{}),annotations=structuredClone(C.state.annotations||[]),revision=C.server?.revision,selected=null,queueFilter='all',zoom=1,peaks=null,segments=[],boundedEnd=null,undoStack=[],dirty=0,persisted=0,saveTimer,saveQueue=Promise.resolve(),savingFailed=false,blocked=false;
 let viewTime=0,dragState=null,pendingSeek=null,renderRequest=null,clockUpdated=0;
 const queueNodes=new Map();
 const tileCache=new Map(),TILE=1024,debug={draws:0,overviewPaints:0,textBuilds:0,tilePaints:0,timings:[]};window.timelineDebug=debug;
@@ -38,12 +38,32 @@ function save(){dirty++;savingFailed=false;try{localStorage.setItem(storageKey,J
 function touch(id,patch){const old=notes[id]||{};notes[id]={verdict:'unreviewed',heard:'',note:'',...old,...patch,updated_at:new Date(Math.max(Date.now(),(Date.parse(old.updated_at)||0)+1)).toISOString()};save();if(selected)selected=candidates().find(f=>f.id===selected.id)||null;renderCard();renderQueue();renderFlags();refreshVerdicts();updateTextHighlights();rebuildFollowList();}
 function chooseVerdict(v){if(!selected)return;pushUndo();touch(selected.id,{verdict:v});$('notice').textContent=autoFollow?'判定を記録しました。再生位置に合わせて次のカードへ進みます。':'判定を記録しました。次へ進むには ↓ または「次の未確認」。';}
 function undo(){const prev=undoStack.pop();if(!prev)return;const ids=new Set([...Object.keys(notes),...Object.keys(prev.notes)]);for(const id of ids){const a=notes[id],b=prev.notes[id];if(JSON.stringify(a)!==JSON.stringify(b))prev.notes[id]={verdict:'unreviewed',heard:'',note:'',...b,...(!b&&id.startsWith('M-')?{deleted:true}:{}),updated_at:new Date(Math.max(Date.now(),(Date.parse(a?.updated_at)||0)+1)).toISOString()};}notes=prev.notes;save();renderQueue();select(candidates().find(f=>f.id===selected?.id)||null,false);renderFlags();}
-function refreshVerdicts(){document.querySelectorAll('.verdicts button[data-verdict]').forEach(b=>{b.disabled=!selected;b.setAttribute('aria-pressed',String(!!selected&&verdict(selected)===b.dataset.verdict));});if(document.activeElement!==$('heard'))$('heard').value=selected?notes[selected.id]?.heard||'':'';if(document.activeElement!==$('note'))$('note').value=selected?notes[selected.id]?.note||'':'';$('memo-panel').hidden=!selected;$('manual-editor').hidden=!selected?.manual;for(const [id,field] of [['manual-target','target_text'],['manual-expected','expected_reading']])if(document.activeElement!==$(id))$(id).value=selected?notes[selected.id]?.[field]||'':'';}
+function referenceFor(f){
+ if(!f)return '';
+ if(!f.manual)return f.observed_kana||'（脱落候補）';
+ const selection=notes[f.id]?.text_selection;
+ if(selection?.source==='asr')return selection.text;
+ const span=findingSpan(f),chars=alignment.kana_chars.filter(c=>c.start_s<span.end_s&&c.end_s>span.start_s);
+ return chars.map(c=>c.text).join('')||'該当範囲の認識なし';
+}
+function refreshVerdicts(){
+ document.querySelectorAll('.verdicts button[data-verdict]').forEach(b=>{b.disabled=!selected;b.setAttribute('aria-pressed',String(!!selected&&verdict(selected)===b.dataset.verdict));});
+ const manual=!!selected?.manual,n=selected?notes[selected.id]||{}:{};
+ for(const [id,value] of [['heard',n.heard||''],['note',n.note||''],['manual-target',manual?n.target_text||'':selected?.surface||''],['manual-expected',manual?n.expected_reading||'':selected?.expected_kana||'']])if(document.activeElement!==$(id))$(id).value=value;
+ $('memo-panel').hidden=!selected;$('memo-panel').classList.toggle('is-manual',manual);
+ $('manual-target').readOnly=!manual;$('manual-expected').readOnly=!manual;$('expected-label').textContent=manual?'期待する読み（任意）':'台本の参照読み';
+ $('delete-manual').hidden=!manual;$('manual-delete-divider').hidden=!manual;
+ $('asr-reference').textContent=referenceFor(selected);
+}
+function focusHeard(){
+ $('heard').focus({preventScroll:true});$('heard').select();
+}
+
 function context(f){let a=f.script_start,b=f.script_end;if(Number.isInteger(a)&&Number.isInteger(b)&&R.script.slice(a,b)===f.surface){let lo=R.script.lastIndexOf('。',a-1)+1,hi=R.script.indexOf('。',b);if(hi<0)hi=R.script.length;return esc(R.script.slice(lo,a))+'<mark>'+esc(R.script.slice(a,b))+'</mark>'+esc(R.script.slice(b,hi+1));}return esc(f.manual?'気になった音を再生して、修正が必要か確認してください。':R.script.slice(0,100));}
-function select(f,seek=true){if(f?.manual)$('memo-panel').open=true;if(seek)setAutoFollow(false);selected=f;if(f&&seek){audio.pause();boundedEnd=null;setTime(findingSpan(f).start_s-.6);}$('notice').textContent='';renderCard();renderQueue();refreshVerdicts();renderFlags();updateTextHighlights();requestDraw();if(f?.manual&&seek)$('manual-editor').scrollIntoView({block:'nearest'});try{sessionStorage.setItem(storageKey+'-position',JSON.stringify({position:audio.currentTime,selectedId:selected?.id}));}catch(e){} }
+function select(f,seek=true){if(seek)setAutoFollow(false);selected=f;if(f&&seek){audio.pause();boundedEnd=null;setTime(findingSpan(f).start_s-.6);}$('notice').textContent='';renderCard();renderQueue();refreshVerdicts();renderFlags();updateTextHighlights();requestDraw();if(f?.manual&&seek)$('memo-panel').scrollIntoView({block:'nearest'});try{sessionStorage.setItem(storageKey+'-position',JSON.stringify({position:audio.currentTime,selectedId:selected?.id}));}catch(e){} }
 function renderCard(){const f=selected;$('card').dataset.verdict=f?verdict(f):'unreviewed';const all=candidates(),i=all.findIndex(x=>x.id===f?.id);$('previous-title').textContent=i>0?all[i-1].surface:'先頭';$('next-title').textContent=i>=0&&i<all.length-1?all[i+1].surface:'最後';$('previous').disabled=i<=0;$('next').disabled=i>=all.length-1||i<0;$('position-label').textContent=f?`${f.id} · 位置目安 ${clock(findingPosition(f))}`:'フラグのない区間を聴く';
- if(!f){$('card').innerHTML='<span class="status-chip">全体をスキャン</span><h1>この位置を、耳で確かめる。</h1><p class="context">機械の指摘がない場所も、正読が保証されたわけではありません。違和感があれば <kbd>M</kbd> で指摘を追加できます。</p><p class="reason">下のタイムラインをクリックして移動。台本・カナASRは詳細から確認できます。</p>';return;}
- $('card').innerHTML=`<span class="status-chip">${esc(flagLabel(f))} · ${esc(verdictNames[verdict(f)])}</span><h1>${esc(f.surface)}</h1><p class="context">${context(f)}</p>${f.manual?`<p class="reason">期待する読み：${esc(notes[f.id]?.expected_reading||'未入力')} ／ 実際の読み：${esc(notes[f.id]?.heard||'未入力')}</p><p class="reason">${esc(notes[f.id]?.note||'補足メモを入力できます。')}${f.script_start===undefined?'（台本上の対象箇所は未指定）':''}</p>`:`<div class="comparison"><div class="reading"><small>台本の参照読み</small><b>${esc(f.expected_kana)}</b></div><span class="arrow">→</span><div class="reading"><small>カナASR · 正解とは限りません</small><b>${highlight(f.observed_kana||'（脱落候補）',f.observed_kana)}</b></div></div>`}<p class="reason">${esc(f.reason)} ${f.manual?'':'下の語の位置は文字列照合による概算です。'}</p>`;
+ if(!f){$('card').innerHTML='<span class="status-chip">全体をスキャン</span><h1>この位置を、耳で確かめる。</h1><p class="context">機械の指摘がない場所も、正読が保証されたわけではありません。違和感があれば <kbd>M</kbd> を押し、台本かASRの文字を選んで指摘を追加できます。</p><p class="reason">下のタイムラインをクリックして移動。台本・カナASRは詳細から確認できます。</p>';return;}
+ $('card').innerHTML=`<span class="status-chip">${esc(flagLabel(f))} · ${esc(verdictNames[verdict(f)])}</span><h1>${esc(f.surface)}</h1><p class="context">${context(f)}</p><p class="reason">${esc(f.reason)} ${f.manual?'':'下の語の位置は文字列照合による概算です。'}</p>`;
 }
 function highlight(text,term){if(!term)return esc(text);const i=text.indexOf(term);return i<0?esc(text):esc(text.slice(0,i))+'<mark>'+esc(term)+'</mark>'+esc(text.slice(i+term.length));}
 function revealQueueSelection(center=false){const q=$('queue'),item=q.querySelector('.selected');if(!item)return;const r=item.getBoundingClientRect(),qr=q.getBoundingClientRect();if(q.scrollHeight>q.clientHeight+1){if(center)q.scrollTop+=r.top-qr.top+(r.height-q.clientHeight)/2;else if(r.top<qr.top)q.scrollTop+=r.top-qr.top;else if(r.bottom>qr.bottom)q.scrollTop+=r.bottom-qr.bottom;}if(q.scrollWidth>q.clientWidth+1){if(center)q.scrollLeft+=r.left-qr.left+(r.width-q.clientWidth)/2;else if(r.left<qr.left)q.scrollLeft+=r.left-qr.left;else if(r.right>qr.right)q.scrollLeft+=r.right-qr.right;}}
@@ -52,14 +72,16 @@ function renderQueue(){
  $('count').textContent=`残り ${pending.length} / ${all.length}`;
  $('progress').style.width=(all.length?100*(all.length-pending.length)/all.length:0)+'%';
  $('pending').textContent=`未確認 ${pending.length}`;
- $('pending').setAttribute('aria-pressed',String(pendingOnly));$('all').setAttribute('aria-pressed',String(!pendingOnly));
- const visible=all.filter(f=>!pendingOnly||verdict(f)==='unreviewed'||f.id===selected?.id),ids=new Set(visible.map(f=>f.id));
+ $('all').textContent=`すべて ${all.length}`;$('errors').textContent=`要修正 ${all.filter(f=>verdict(f)==='error').length}`;
+ for(const [id,filter] of [['all','all'],['pending','unreviewed'],['errors','error']])$(id).setAttribute('aria-pressed',String(queueFilter===filter));
+ const matches=f=>queueFilter==='all'||verdict(f)===queueFilter;
+ const visible=all.filter(f=>matches(f)||f.id===selected?.id),ids=new Set(visible.map(f=>f.id));
  // Retain buttons and their focus/scroll geometry across verdicts and follow changes.
  for(const child of [...q.children])if(!ids.has(child.dataset.id))child.remove();
  let cursor=q.firstElementChild;
  for(const f of visible){
   let b=queueNodes.get(f.id);if(!b){b=document.createElement('button');b.dataset.id=f.id;b.onclick=()=>select(candidates().find(item=>item.id===b.dataset.id));queueNodes.set(f.id,b);}
-  b.removeAttribute('aria-pressed');const current=f.id===selected?.id,pinned=pendingOnly&&current&&verdict(f)!=='unreviewed';
+  b.removeAttribute('aria-pressed');const current=f.id===selected?.id,pinned=current&&!matches(f);
   b.className='queue-item'+(current?' selected':'')+(pinned?' pinned':'');b.dataset.verdict=verdict(f);
   if(f.manual)b.setAttribute('aria-haspopup','menu');else b.removeAttribute('aria-haspopup');
   if(current)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');
@@ -68,9 +90,13 @@ function renderQueue(){
   if(b===cursor)cursor=cursor.nextElementSibling;else q.insertBefore(b,cursor);
  }
  if(!visible.length){const e=document.createElement('div');e.className='empty';e.textContent='この条件の候補はありません。';q.append(e);}
- const index=all.findIndex(f=>f.id===selected?.id),pinned=pendingOnly&&selected&&verdict(selected)!=='unreviewed';
- $('queue-context').textContent=(index>=0?`現在 ${index+1} / ${all.length}`:'カード未選択')+(pinned?' · 判定済みの現在カードも表示':pendingOnly?' · 未確認を表示':' · 時刻順');
+ const index=all.findIndex(f=>f.id===selected?.id),pinned=selected&&!matches(selected);
+ $('queue-context').textContent=(index>=0?`現在 ${index+1} / ${all.length}`:'カード未選択')+(pinned?' · 条件外の現在カードも表示':queueFilter==='unreviewed'?' · 未確認を表示':queueFilter==='error'?' · 要修正を表示':' · 時刻順');
  revealQueueSelection();
+}
+function setQueueFilter(filter){
+ queueFilter=filter;setAutoFollow(false);
+ if(filter!=='all'&&(!selected||verdict(selected)!==filter))select(candidates().find(f=>verdict(f)===filter)||null,false);else renderQueue();
 }
 function navigate(step,onlyPending=false){const all=candidates();if(!all.length)return;const i=all.findIndex(f=>f.id===selected?.id);if(onlyPending){const next=all.slice(i+1).find(f=>verdict(f)==='unreviewed')||all.find(f=>verdict(f)==='unreviewed');if(next)select(next);}else select(all[Math.max(0,Math.min(all.length-1,i+step))]);}
 
@@ -81,26 +107,54 @@ function seek(t){setAutoFollow(false);setTime(t);}
 function play(){if(audio.paused){if(Math.abs(audio.currentTime-viewTime)>.05&&audio.readyState>=1)audio.currentTime=viewTime;audio.play().catch(()=>{$('notice').textContent='音声を再生できません。音声ファイルの読み込みを確認してください。';});}else audio.pause();}
 function replay(){setAutoFollow(false);if(!selected){play();return;}const span=findingSpan(selected);setTime(span.start_s-1);boundedEnd=clamp(Math.max(span.end_s,span.start_s+.3)+1);audio.play().catch(()=>{$('notice').textContent='音声を再生できません。';});}
 
-let textSelectionMode=false,pendingTextSelection=null;
-function resetTextSelectionPreview(){pendingTextSelection=null;$('text-selection-preview').textContent='台本またはASRの文字を選んでください';$('flag-selected-text').disabled=true;}
-function clearTextSelection(){resetTextSelectionPreview();$('text-selection-actions').hidden=!textSelectionMode;window.getSelection()?.removeAllRanges();}
-function setTextSelectionMode(on){textSelectionMode=on;if(on)audio.pause();setAutoFollow(false);$('detail').classList.toggle('text-selection-mode',on);$('text-select').setAttribute('aria-pressed',String(on));$('text-selection-actions').hidden=!on;clearTextSelection();}
+let textSelectionMode=false,pendingTextSelection=null,selectionAnchor=null;
+const selectionOverlay=document.createElement('div');selectionOverlay.id='selection-rainbow';selectionOverlay.setAttribute('aria-hidden','true');$('detail').append(selectionOverlay);
+function resetTextSelectionPreview(){pendingTextSelection=null;$('detail').classList.remove('is-selecting-text');selectionOverlay.replaceChildren();}
+function paintSelectedText(source,start,end){
+ const area=$('detail').getBoundingClientRect(),rects=[];
+ for(const token of document.querySelectorAll(source==='script'?'#script-track .text-token':'#kana-track .asr-glyph')){
+  const a=Number(token.dataset.textStart),b=Number(token.dataset.textEnd);if(a>=end||b<=start)continue;
+  if(source==='asr')rects.push(token.getBoundingClientRect());else{let offset=a;for(const glyph of token.children){const next=offset+glyph.textContent.length;if(offset<end&&next>start)rects.push(glyph.getBoundingClientRect());offset=next;}}
+ }
+
+ // Native ranges may report both a token and its text; union overlaps per line.
+ const bands=[];for(const r of rects.sort((a,b)=>a.top-b.top||a.left-b.left)){const last=bands[bands.length-1];if(last&&Math.abs(last.top-r.top)<2){last.right=Math.max(last.right,r.right);last.bottom=Math.max(last.bottom,r.bottom);}else bands.push({left:r.left,right:r.right,top:r.top,bottom:r.bottom});}
+ const fragment=document.createDocumentFragment();for(const r of bands){const band=document.createElement('div');band.className='selection-rainbow-band';band.style.left=(r.left-area.left-$('detail').clientLeft)+'px';band.style.top=(r.top-area.top-$('detail').clientTop)+'px';band.style.width=(r.right-r.left)+'px';band.style.height=(r.bottom-r.top)+'px';fragment.append(band);}
+ selectionOverlay.replaceChildren(fragment);$('detail').classList.toggle('is-selecting-text',bands.length>0);
+}
+function clearTextSelection(){selectionAnchor=null;resetTextSelectionPreview();window.getSelection()?.removeAllRanges();}
+function setTextSelectionMode(on){textSelectionMode=on;if(on)audio.pause();setAutoFollow(false);$('detail').classList.toggle('text-selection-mode',on);$('text-select').setAttribute('aria-pressed',String(on));$('text-select').innerHTML=on?'台本またはASRの文字を選んでください <kbd>Esc</kbd>':'文字選択して手動指摘 <kbd>M</kbd>';$('text-select').title=on?'文字を選択して離すと追加。クリック・M・Escでキャンセル':'台本またはASRの文字を選択し、離すと指摘を追加';clearTextSelection();}
 function captureTextSelection(){
  if(!textSelectionMode)return;const sel=window.getSelection();if(!sel||sel.isCollapsed){resetTextSelectionPreview();return;}
  const point=(node,offset)=>{const element=(node.nodeType===Node.ELEMENT_NODE?node:node.parentElement).closest('.text-token,.asr-glyph');if(!element)return null;const track=element.closest('#script-track,#kana-track');if(!track)return null;const range=document.createRange();range.selectNodeContents(element);try{range.setEnd(node,offset)}catch(e){return null;}return {source:track.id==='script-track'?'script':'asr',position:Number(element.dataset.textStart)+range.toString().length};};
  const a=point(sel.anchorNode,sel.anchorOffset),b=point(sel.focusNode,sel.focusOffset);if(!a||!b||a.source!==b.source||a.position===b.position){resetTextSelectionPreview();return;}
- const start=Math.min(a.position,b.position),end=Math.max(a.position,b.position),source=a.source,text=(source==='script'?R.script:R.observed_kana).slice(start,end);if(!text.trim()){resetTextSelectionPreview();return;}
+ const source=a.source,anchor=selectionAnchor?.source===source?selectionAnchor:null,start=Math.min(a.position,b.position,anchor?.start??Infinity),end=Math.max(a.position,b.position,anchor?.end??-Infinity),text=(source==='script'?R.script:R.observed_kana).slice(start,end);if(!text.trim()){resetTextSelectionPreview();return;}
  const nodes=[...document.querySelectorAll(source==='script'?'#script-track .text-token':'#kana-track .asr-glyph')].filter(e=>Number(e.dataset.textStart)<end&&Number(e.dataset.textEnd)>start);if(!nodes.length){resetTextSelectionPreview();return;}
  pendingTextSelection={source,start,end,text,start_s:Math.min(...nodes.map(e=>Number(e.dataset.startS))),end_s:Math.max(...nodes.map(e=>Number(e.dataset.endS)))};
- $('text-selection-preview').textContent=(source==='script'?'台本':'ASR')+'：'+text;$('flag-selected-text').disabled=false;
+ paintSelectedText(source,start,end);
+
 }
 function flagSelectedText(){
  if(!pendingTextSelection)return;const s={...pendingTextSelection};const uid=crypto.randomUUID?.()||Date.now().toString(36);const a=clamp(s.start_s),b=clamp(Math.max(s.end_s,a+.1));if(b<=a)return;pushUndo();const id='M-'+uid;
- annotations.push({id,kind:'manual_flag',start_s:a,end_s:b,created_at:new Date().toISOString()});notes[id]={verdict:'unreviewed',heard:s.source==='asr'?s.text:'',note:'',target_text:s.source==='script'?s.text:'',text_selection:{source:s.source,start:s.start,end:s.end,text:s.text},updated_at:new Date().toISOString()};
- clearTextSelection();setTextSelectionMode(false);save();select(candidates().find(f=>f.id===id),false);$('manual-editor').scrollIntoView({block:'nearest'});$('notice').textContent='選んだ文字への手動指摘を保存しました。判定とメモを追加できます。';
+ annotations.push({id,kind:'manual_flag',start_s:a,end_s:b,created_at:new Date().toISOString()});notes[id]={verdict:'error',heard:s.source==='asr'?s.text:'',note:'',target_text:s.source==='script'?s.text:'',text_selection:{source:s.source,start:s.start,end:s.end,text:s.text},updated_at:new Date().toISOString()};
+ clearTextSelection();setTextSelectionMode(false);save();select(candidates().find(f=>f.id===id),false);$('memo-panel').scrollIntoView({block:'nearest'});focusHeard();$('notice').textContent='実際に聞こえた読みを入力できます。Escで判定キーへ戻れます。';
 }
-$('text-select').onclick=()=>setTextSelectionMode(!textSelectionMode);$('flag-selected-text').onpointerdown=e=>e.preventDefault();$('flag-selected-text').onclick=flagSelectedText;$('cancel-text-selection').onclick=clearTextSelection;let selectionFrame=null;document.addEventListener('selectionchange',()=>{if(selectionFrame!==null)return;selectionFrame=requestAnimationFrame(()=>{selectionFrame=null;captureTextSelection()})});
-function manual(){setAutoFollow(false);const t=viewTime,uid=globalThis.crypto?.randomUUID?.()||Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);pushUndo();const flag={id:'M-'+uid,kind:'manual_flag',start_s:clamp(t-1),end_s:clamp(Math.max(t+.5,t+2)),created_at:new Date().toISOString()};annotations.push(flag);notes[flag.id]={verdict:'unreviewed',heard:'',note:'',updated_at:new Date().toISOString()};save();select(candidates().find(f=>f.id===flag.id),false);renderFlags();$('manual-editor').scrollIntoView({block:'nearest'});$('notice').textContent='手動の指摘を追加しました。対象語・期待する読み・聞こえた読み・メモを記録できます。1 / 2 / 3 で判定。';}
+$('text-select').onclick=()=>setTextSelectionMode(!textSelectionMode);
+$('detail').addEventListener('pointerdown',e=>{
+ if(!textSelectionMode)return;selectionAnchor=null;
+ const glyph=e.target.closest('.asr-glyph,#script-track .text-token>span');if(!glyph)return;
+ const token=glyph.closest('.text-token,.asr-glyph'),source=token.classList.contains('asr-glyph')?'asr':'script';let start=Number(token.dataset.textStart);
+ if(source==='script')for(const sibling of token.children){if(sibling===glyph)break;start+=sibling.textContent.length;}
+ selectionAnchor={source,start,end:start+glyph.textContent.length};
+});
+
+let selectionFrame=null;
+document.addEventListener('selectionchange',()=>{if(selectionFrame!==null)return;selectionFrame=requestAnimationFrame(()=>{selectionFrame=null;captureTextSelection()})});
+// Commit only when the gesture ends: selectionchange also fires while dragging.
+function finishTextSelection(){if(!textSelectionMode)return;captureTextSelection();flagSelectedText();}
+document.addEventListener('pointerup',()=>{if(textSelectionMode)setTimeout(finishTextSelection,0)});
+document.addEventListener('keyup',e=>{if(e.key==='Shift'&&textSelectionMode)finishTextSelection()});
+function manual(){setTextSelectionMode(!textSelectionMode);}
 function deleteManual(id=selected?.id){const all=candidates(),index=all.findIndex(f=>f.id===id),victim=all[index];if(!victim?.manual)return;const wasSelected=selected?.id===id;pushUndo();touch(id,{deleted:true});if(wasSelected){const remaining=candidates();select(remaining[Math.min(index,remaining.length-1)]||null,false);}$('notice').textContent='手動の指摘を削除しました。「取り消す」で戻せます。';}
 let queueMenuTarget=null,queueMenuOrigin=null;
 function closeQueueMenu(restoreFocus=false){$('queue-menu').hidden=true;queueMenuTarget=null;if(restoreFocus&&queueMenuOrigin?.isConnected)queueMenuOrigin.focus();queueMenuOrigin=null;}
@@ -147,7 +201,9 @@ function renderFlags(){renderDetailManualFlags();const w=$('overview-inner').cli
 async function loadMedia(){try{const [raw,trans]=await Promise.all([fetch('audio.wav').then(r=>{if(!r.ok)throw Error('音声の読み込みに失敗');return r.arrayBuffer()}),Object.keys(C.transcript).length?Promise.resolve(C.transcript):fetch('transcript.json').then(r=>r.ok?r.json():{})]);segments=trans.segments||[];buildTextTracks();const ctx=new (window.AudioContext||window.webkitAudioContext)();let decoded;try{decoded=await ctx.decodeAudioData(raw)}finally{await ctx.close()}const bins=Math.min(100000,Math.max(1000,Math.ceil(duration*100))),channels=Array.from({length:decoded.numberOfChannels},(_,i)=>decoded.getChannelData(i));peaks=new Float32Array(bins);for(let i=0;i<bins;i++){const a=Math.floor(i*decoded.length/bins),b=Math.floor((i+1)*decoded.length/bins);let max=0;for(const channel of channels)for(let j=a;j<b;j++)max=Math.max(max,Math.abs(channel[j]));peaks[i]=max;}layoutOverview();}catch(e){$('notice').textContent='波形を表示できません。再生と判定は引き続き利用できます。';$('notice').title=e.message;}}
 // Server data is authoritative. Browser recovery never overwrites it silently.
 let restored=null;try{restored=JSON.parse(sessionStorage.getItem(storageKey+'-position')||'null');if(!C.server){const local=JSON.parse(localStorage.getItem(storageKey)||'null');if(local){notes=local.notes||notes;annotations=local.annotations||annotations;restored=restored||local;}}}catch(e){}
-$('delete-manual').onclick=()=>deleteManual();for(const [id,field] of [['manual-target','target_text'],['manual-expected','expected_reading']])$(id).oninput=()=>{if(selected?.manual)touch(selected.id,{[field]:$(id).value,...(field==='target_text'?{text_selection:null}:{})})};$('full-script').textContent=R.script;$('full-transcript').textContent=R.observed_kana;$('auto-follow').onclick=()=>setAutoFollow(!autoFollow);$('full-scan').onclick=()=>{setAutoFollow(false);select(null,false);};$('play').onclick=play;$('replay').onclick=replay;$('manual').onclick=manual;$('scan').onclick=scan;$('undo').onclick=undo;$('speed').onchange=()=>audio.playbackRate=Number($('speed').value);$('previous').title='前の指摘（↑）';$('next').title='次の指摘・判定済みも含む（Shift＋↓）';$('previous').onclick=()=>navigate(-1);$('next').onclick=()=>navigate(1);$('next-pending').onclick=()=>navigate(1,true);$('all').onclick=()=>{pendingOnly=false;renderQueue()};$('pending').onclick=()=>{pendingOnly=true;renderQueue()};document.querySelectorAll('.verdicts button[data-verdict]').forEach(b=>b.onclick=()=>chooseVerdict(b.dataset.verdict));$('heard').oninput=()=>{if(selected)touch(selected.id,{heard:$('heard').value})};$('note').oninput=()=>{if(selected)touch(selected.id,{note:$('note').value})};
+function setEvidenceLayout(value){const layout=value==='stacked'?'stacked':'side';$('evidence-layout').value=layout;$('memo-panel').classList.toggle('is-stacked',layout==='stacked');try{localStorage.setItem('tts-audit-evidence-layout',layout)}catch(e){}}
+$('evidence-layout').onchange=()=>setEvidenceLayout($('evidence-layout').value);try{setEvidenceLayout(localStorage.getItem('tts-audit-evidence-layout'))}catch(e){setEvidenceLayout('side')}
+$('delete-manual').onclick=()=>deleteManual();for(const [id,field] of [['manual-target','target_text'],['manual-expected','expected_reading']])$(id).oninput=()=>{if(selected?.manual)touch(selected.id,{[field]:$(id).value,...(field==='target_text'?{text_selection:null}:{})})};$('full-script').textContent=R.script;$('full-transcript').textContent=R.observed_kana;$('auto-follow').onclick=()=>setAutoFollow(!autoFollow);$('full-scan').onclick=()=>{setAutoFollow(false);select(null,false);};$('play').onclick=play;$('replay').onclick=replay;$('scan').onclick=scan;$('undo').onclick=undo;$('speed').onchange=()=>audio.playbackRate=Number($('speed').value);$('previous').title='前の指摘（↑）';$('next').title='次の指摘・判定済みも含む（Shift＋↓）';$('previous').onclick=()=>navigate(-1);$('next').onclick=()=>navigate(1);$('next-pending').onclick=()=>navigate(1,true);$('all').onclick=()=>setQueueFilter('all');$('pending').onclick=()=>setQueueFilter('unreviewed');$('errors').onclick=()=>setQueueFilter('error');document.querySelectorAll('.verdicts button[data-verdict]').forEach(b=>b.onclick=()=>chooseVerdict(b.dataset.verdict));$('heard').oninput=()=>{if(selected)touch(selected.id,{heard:$('heard').value})};$('note').oninput=()=>{if(selected)touch(selected.id,{note:$('note').value})};
 // Coalesce pointer moves to one display update per animation frame. Media seeks
 // happen on release, rather than forcing the decoder to seek for every pixel.
 function beginDrag(e,kind){if(e.button!==0)return;if(kind==='detail'&&textSelectionMode&&e.target.closest('#script-track,#kana-track'))return;setAutoFollow(false);if(e.target.closest('.flag'))return;const area=e.currentTarget,windowDrag=kind==='overview'&&!!e.target.closest('#focus-window');dragState={kind,area,id:e.pointerId,x:e.clientX,time:viewTime,moved:false,windowDrag,findingIds:JSON.parse(e.target.closest('[data-finding-ids]')?.dataset.findingIds||'[]'),wasPlaying:!audio.paused};audio.pause();area.setPointerCapture(e.pointerId);area.classList.add('dragging');$('focus-window').classList.toggle('dragging',windowDrag);}
@@ -161,15 +217,25 @@ function changeZoom(v){const anchor=viewTime/duration;zoom=v;layoutOverview();$(
 $('zoom-in').onclick=()=>changeZoom(Math.min(16,zoom*2));$('zoom-out').onclick=()=>changeZoom(Math.max(1,zoom/2));$('fit').onclick=()=>changeZoom(1);
 $('export').onclick=()=>{const data={schema_version:1,run_id:R.run_id,exported_at:new Date().toISOString(),...snapshot()};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='tts-audit-listening-notes.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 $('shortcut-help').onclick=()=>$('shortcut-dialog').showModal();$('close-shortcuts').onclick=()=>$('shortcut-dialog').close();
+function pulseShortcut(selector){
+ const button=document.querySelector(selector);if(!button||button.disabled)return;
+ button.classList.remove('shortcut-pulse');void button.offsetWidth;button.classList.add('shortcut-pulse');
+ button.addEventListener('animationend',()=>button.classList.remove('shortcut-pulse'),{once:true});
+}
+const shortcutButtons={Space:'#play',ArrowUp:'#previous',Digit1:'.verdicts [data-verdict=correct]',Digit2:'.verdicts [data-verdict=error]',Digit3:'.verdicts [data-verdict=uncertain]',KeyF:'#auto-follow',KeyM:'#text-select',KeyR:'#replay',KeyA:'#full-scan',Equal:'#zoom-in',NumpadAdd:'#zoom-in',Minus:'#zoom-out',NumpadSubtract:'#zoom-out',Digit0:'#fit'};
 window.addEventListener('keydown',e=>{
+ if(e.target===$('note')&&e.key==='Tab'&&!e.shiftKey&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.isComposing){e.preventDefault();$('detail').focus({preventScroll:true});return;}
+ if(textSelectionMode&&e.key==='Escape'){e.preventDefault();setTextSelectionMode(false);pulseShortcut('#text-select');return;}
+ if(e.target.closest('#memo-panel input,#memo-panel textarea')&&e.key==='Escape'&&!e.isComposing){e.preventDefault();e.target.blur();$('detail').focus({preventScroll:true});return;}
  if(e.target.closest('input,textarea,select,summary,[contenteditable=true]')||e.repeat)return;
  if(!$('queue-menu').hidden){if(e.key==='Escape'){e.preventDefault();closeQueueMenu(true);}else if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();$('queue-menu-delete').focus();}return;}
  if($('shortcut-dialog').open)return;
- if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){e.preventDefault();undo();return;}
+ if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){e.preventDefault();undo();pulseShortcut('#undo');return;}
  if(e.metaKey||e.ctrlKey||e.altKey)return;
- if(e.key==='?'||e.key==='F1'){e.preventDefault();$('shortcut-dialog').showModal();return;}
+ if(textSelectionMode&&e.shiftKey&&e.key.startsWith('Arrow'))return;
+ if(e.key==='?'||e.key==='F1'){e.preventDefault();$('shortcut-dialog').showModal();pulseShortcut('#shortcut-help');return;}
  const act={Space:play,ArrowLeft:()=>seek(viewTime-1),ArrowRight:()=>seek(viewTime+1),ArrowUp:()=>navigate(-1),ArrowDown:()=>navigate(1,!e.shiftKey),Digit1:()=>chooseVerdict('correct'),Digit2:()=>chooseVerdict('error'),Digit3:()=>chooseVerdict('uncertain'),KeyF:()=>setAutoFollow(!autoFollow),KeyM:manual,KeyR:replay,KeyA:()=>$('full-scan').click(),Equal:()=>$('zoom-in').click(),NumpadAdd:()=>$('zoom-in').click(),Minus:()=>$('zoom-out').click(),NumpadSubtract:()=>$('zoom-out').click(),Digit0:()=>$('fit').click()}[e.code];
- if(act){e.preventDefault();act();}
+ if(act){e.preventDefault();const selector=e.code==='ArrowDown'?(e.shiftKey?'#next':'#next-pending'):shortcutButtons[e.code];const enabled=selector&&!document.querySelector(selector)?.disabled;act();if(enabled)pulseShortcut(selector);}
 });
 audio.addEventListener('timeupdate',()=>{if(dragState)return;if(boundedEnd!==null&&audio.currentTime>=boundedEnd){audio.pause();boundedEnd=null;}viewTime=audio.currentTime;followPlayback();requestDraw();try{sessionStorage.setItem(storageKey+'-position',JSON.stringify({position:viewTime,selectedId:selected?.id}));}catch(e){}});
 let animationFrame;function animate(){if(!dragState)viewTime=audio.currentTime;followPlayback();draw();if(!audio.paused)animationFrame=requestAnimationFrame(animate);}audio.addEventListener('play',()=>{followPlayback(true);$('play').innerHTML='❚❚ 停止 <kbd>Space</kbd>';cancelAnimationFrame(animationFrame);animationFrame=requestAnimationFrame(animate)});audio.addEventListener('pause',()=>{$('play').innerHTML='▶ 再生 <kbd>Space</kbd>';cancelAnimationFrame(animationFrame);requestDraw()});audio.addEventListener('loadedmetadata',()=>{if(pendingSeek!==null){audio.currentTime=pendingSeek;pendingSeek=null;}requestDraw()});audio.addEventListener('error',()=>{$('notice').textContent='音声ファイルを読み込めません。接続を確認してください。'});window.addEventListener('resize',layoutOverview);window.addEventListener('beforeunload',e=>{if(dirty>persisted){e.preventDefault();e.returnValue=''}});

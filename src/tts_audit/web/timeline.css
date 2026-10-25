@@ -40,7 +40,7 @@
 #session-short{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:650px){#session-short{display:none}.session-popover{position:fixed;top:90px;right:12px;max-height:70vh;overflow:auto}.header-actions{gap:7px;flex-wrap:wrap}}
 
-#manual-editor{margin:7px 56px;padding:10px;border:1px solid var(--line);border-radius:7px}#manual-editor[hidden]{display:none}#manual-editor label{display:block;font-size:11px;color:var(--muted)}#manual-editor input{margin:3px 0 7px}#manual-editor small{display:block;margin-top:5px}#delete-manual{color:var(--ui-red);border-color:var(--ui-red);font-size:12px}@media(max-width:650px){#manual-editor{margin-inline:35px}}
+#delete-manual{color:var(--ui-red);border-color:var(--ui-red);font-size:12px}
 
 .shortcut-strip{display:flex;align-items:center;gap:10px 17px;flex-wrap:wrap;font-size:12px;color:var(--ui-secondary-text)}.shortcut-strip>span{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.shortcut-strip kbd,.transport kbd,.verdicts kbd{font-size:11px;padding:2px 5px;line-height:1.3}.shortcut-strip button{font-size:12px;padding:4px 8px}footer{min-height:30px}#shortcut-dialog{width:min(640px,calc(100vw - 24px));max-height:85vh;overflow:auto;background:var(--ui-popup);color:var(--text);border:1px solid var(--ui-medium-line);border-radius:12px;padding:22px}#shortcut-dialog::backdrop{background:var(--ui-modal-backdrop)}.shortcut-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.shortcut-heading h2{font-size:20px;margin:0}.shortcut-list{display:grid;grid-template-columns:155px 1fr;gap:12px;font-size:14px;margin:22px 0}.shortcut-list dt{color:#c8cfff;font-weight:650}.shortcut-list dd{margin:0}#shortcut-dialog p{color:var(--muted);font-size:12px}@media(max-width:650px){.shortcut-strip{font-size:11px;gap:8px}.shortcut-list{grid-template-columns:110px 1fr;gap:10px;font-size:12px}.shortcut-heading h2{font-size:17px}}
 
@@ -51,9 +51,77 @@
 
 .primary kbd{color:inherit;border-color:currentColor}
 
-#detail.text-selection-mode #script-track,#detail.text-selection-mode #kana-track,#detail.text-selection-mode .text-token,#detail.text-selection-mode .asr-glyph,#detail.text-selection-mode .text-token>span{user-select:text;-webkit-user-select:text;cursor:text}#detail.text-selection-mode ::selection{background:var(--selected-bg);color:var(--selected-text)}#text-selection-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;padding:8px;border:1px solid var(--accent);border-radius:6px;background:var(--panel)}#text-selection-actions[hidden]{display:none}#text-selection-preview{overflow-wrap:anywhere;max-width:100%;color:var(--text);font-size:12px}#text-selection-actions button{font-size:12px}
+#detail.text-selection-mode #script-track,#detail.text-selection-mode #kana-track,#detail.text-selection-mode .text-token,#detail.text-selection-mode .asr-glyph,#detail.text-selection-mode .text-token>span{user-select:text;-webkit-user-select:text;cursor:text}#detail.text-selection-mode ::selection{background:var(--selected-bg);color:var(--selected-text)}
 
 /* Reserve the selection controls before a gesture; native text selection must not move. */
-#text-selection-actions{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;height:52px;min-height:52px;max-height:52px;overflow:hidden}#text-selection-preview{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#text-selection-actions button{white-space:nowrap}@media(max-width:650px){#text-selection-actions{grid-template-columns:auto minmax(0,1fr);height:88px;min-height:88px;max-height:88px;gap:4px 8px}#text-selection-preview{grid-column:1 / -1}#cancel-text-selection{justify-self:start}}
+@media(max-width:650px){}
 
 #queue-menu{position:fixed;z-index:50;min-width:220px;max-width:calc(100vw - 16px);padding:6px;background:var(--ui-popup);color:var(--text);border:1px solid var(--ui-medium-line);border-radius:8px;box-shadow:0 8px 28px var(--ui-shadow)}#queue-menu[hidden]{display:none}#queue-menu-label{padding:5px 8px;font-size:11px;color:var(--muted);max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#queue-menu button{display:block;width:100%;text-align:left;font-size:13px;border-color:transparent;background:transparent;color:var(--verdict-error)}#queue-menu button:hover,#queue-menu button:focus-visible{background:var(--ui-red-bg)}
+
+/* Shared evidence editor: the same fields for detected and manual findings. */
+.verdicts .action-divider{height:24px;width:1px;background:var(--line);margin:0 10px;align-self:center;flex:none}
+.verdicts .delete-action{color:var(--ui-red);border-color:var(--ui-red);background:transparent;font-size:12px}
+.verdicts .delete-action:hover{background:var(--ui-red-bg)}
+.evidence-editor{margin:12px 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.evidence-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.evidence-heading strong{font-size:12px}.evidence-heading small{font-size:10px}
+.evidence-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px}
+.evidence-script,.evidence-heard{padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--ui-inset)}
+.evidence-heard{border-color:var(--ui-accent-line);background:var(--ui-focus-tint)}
+.evidence-editor label{display:block;font-size:11px;color:var(--muted);margin:0 0 5px}
+.evidence-editor input,.evidence-editor textarea{display:block;width:100%;border:1px solid var(--line);border-radius:6px;padding:9px 10px;background:var(--panel);color:var(--text)}
+.evidence-editor input{font-size:14px}.evidence-editor input+label{margin-top:10px}
+.evidence-editor input[readonly]{background:var(--ui-inset);border-color:transparent}
+.evidence-editor #heard{border-color:var(--ui-accent-line);font-weight:600}
+.evidence-editor textarea{min-height:65px;resize:vertical}
+.asr-reference{margin-bottom:10px;min-height:54px}.asr-reference span{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}.asr-reference output{display:block;overflow-wrap:anywhere;font-size:14px}
+.primary-input-label{margin-left:6px;color:var(--accent);font-size:10px}
+@media(max-width:650px){.evidence-pair{grid-template-columns:1fr;gap:10px}.evidence-heading{align-items:flex-start;flex-direction:column;gap:2px}.verdicts .action-divider{margin:0 4px}}
+
+/* Keep the primary reading and memo fields within the upper pane. */
+#card{min-height:125px;padding:10px 18px}#card h1{font-size:21px;margin:5px 0 7px}#card .context{margin-bottom:6px}#card .reason{margin-top:5px}
+.evidence-editor{padding:10px;margin:9px 0}.evidence-heading{margin-bottom:8px}
+.evidence-options{display:flex;align-items:center;gap:12px}.evidence-options label{display:flex;align-items:center;gap:5px;margin:0}.evidence-options select{font-size:11px;padding:2px 6px}
+.evidence-pair{gap:12px;margin-bottom:8px}.evidence-script,.evidence-heard{padding:8px 10px}
+.evidence-editor input,.evidence-editor textarea{padding:7px 9px}.evidence-editor textarea{min-height:46px;height:46px}
+.asr-reference{min-height:42px;margin-bottom:6px}.evidence-editor.is-stacked .evidence-pair{grid-template-columns:1fr}
+@media(max-width:650px){.evidence-options{flex-wrap:wrap;gap:5px}.evidence-options small{font-size:9px}}
+
+/* Compact label/value rows share a fixed label column in both evidence panels. */
+.evidence-script,.evidence-heard{display:grid;grid-template-columns:132px minmax(0,1fr);gap:7px 10px;align-items:center}
+.evidence-editor .evidence-script>label,.evidence-editor .evidence-heard>label{margin:0;line-height:1.4}
+.evidence-editor input+label{margin-top:0}
+.asr-reference{display:contents}
+.asr-reference>span{margin:0;line-height:1.4}
+.asr-reference output{min-width:0;padding:7px 9px;min-height:34px}
+.evidence-note{display:grid;grid-template-columns:132px minmax(0,1fr);gap:10px;align-items:start}
+.evidence-note>label{padding-top:8px}
+.primary-input-label{display:block}
+
+@media(max-width:650px){.evidence-script,.evidence-heard,.evidence-note{grid-template-columns:110px minmax(0,1fr)}}
+
+/* Selection affordance: alternating 30px bands, no extra layout row. */
+#text-select{min-width:325px;white-space:nowrap;font-size:12px}
+#detail.text-selection-mode #script-track,#detail.text-selection-mode #kana-track{
+ background-image:linear-gradient(90deg,rgba(112,141,255,.42) 0px 30px,rgba(112,141,255,.08) 30px 60px,rgba(143,128,246,.42) 60px 90px,rgba(143,128,246,.08) 90px 120px,rgba(177,121,231,.42) 120px 150px,rgba(177,121,231,.08) 150px 180px,rgba(212,134,209,.42) 180px 210px,rgba(212,134,209,.08) 210px 240px,rgba(235,147,189,.42) 240px 270px,rgba(235,147,189,.08) 270px 300px,rgba(226,192,116,.42) 300px 330px,rgba(226,192,116,.08) 330px 360px,rgba(173,199,138,.42) 360px 390px,rgba(173,199,138,.08) 390px 420px,rgba(112,196,179,.42) 420px 450px,rgba(112,196,179,.08) 450px 480px,rgba(112,172,217,.42) 480px 510px,rgba(112,172,217,.08) 510px 540px,rgba(112,141,255,.42) 540px 570px,rgba(112,141,255,.08) 570px 600px);
+ background-size:600px 100%;background-repeat:repeat-x;animation:selection-flow 10s linear infinite;
+ box-shadow:inset 0 1px 0 var(--ui-accent-line),inset 0 -1px 0 var(--ui-accent-line);border-radius:5px;
+}
+@keyframes selection-flow{from{background-position:0 0}to{background-position:600px 0}}
+@media(prefers-reduced-motion:reduce){#detail.text-selection-mode #script-track,#detail.text-selection-mode #kana-track{animation:none}}
+@media(max-width:650px){#text-select{min-width:0;max-width:100%;white-space:normal}}
+
+/* While dragging, only the native text range gets the flowing rainbow. */
+#detail.text-selection-mode.is-selecting-text #script-track,#detail.text-selection-mode.is-selecting-text #kana-track{background-image:none;animation:none;box-shadow:none}
+#detail.text-selection-mode.is-selecting-text ::selection{background:transparent;color:inherit}
+#selection-rainbow{position:absolute;inset:0;pointer-events:none;z-index:12;overflow:hidden}
+.selection-rainbow-band{position:absolute;pointer-events:none;border-radius:3px;background-image:linear-gradient(90deg,rgba(112,141,255,.45),rgba(177,121,231,.45),rgba(235,147,189,.4),rgba(226,192,116,.4),rgba(112,196,179,.45),rgba(112,141,255,.45));background-size:240px 100%;animation:selected-rainbow-flow 4s linear infinite;box-shadow:inset 0 -2px 0 var(--ui-accent-line)}
+@keyframes selected-rainbow-flow{from{background-position:0 0}to{background-position:240px 0}}
+@media(prefers-reduced-motion:reduce){.selection-rainbow-band{animation:none}}
+
+/* Keyboard feedback is separate from persistent pressed/verdict state. */
+button.shortcut-pulse{--shortcut-glow:var(--verdict-color,var(--accent));animation:shortcut-pulse 650ms ease-out;position:relative;z-index:3}
+@keyframes shortcut-pulse{0%,18%{outline:2px solid var(--shortcut-glow);outline-offset:2px;box-shadow:0 0 0 4px color-mix(in srgb,var(--shortcut-glow) 28%,transparent),0 0 22px color-mix(in srgb,var(--shortcut-glow) 65%,transparent);filter:brightness(1.16)}100%{outline:2px solid transparent;outline-offset:5px;box-shadow:0 0 0 7px transparent,0 0 26px transparent;filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){button.shortcut-pulse{animation-name:shortcut-flash}@keyframes shortcut-flash{0%,70%{outline:2px solid var(--shortcut-glow);outline-offset:2px}100%{outline-color:transparent}}}
+
+.filters button{min-width:0;white-space:nowrap;padding-inline:3px}#errors[aria-pressed=true]{border-color:var(--ui-red);background:var(--ui-red-bg);color:var(--ui-red-text)}
