@@ -11,7 +11,7 @@
 | [review-card-and-queue.png](assets/screenshots/review-card-and-queue.png) | 自動検出カード、共通の入力欄、確認キューの切り抜き |
 | [audio-timeline-detail.png](assets/screenshots/audio-timeline-detail.png) | 台本・カナ・波形と全体タイムラインの切り抜き |
 | [queue-needs-repair.png](assets/screenshots/queue-needs-repair.png) | 要修正の件数と絞り込み |
-| [manual-selection-rainbow.png](assets/screenshots/manual-selection-rainbow.png) | 実操作動画6.9秒地点：虹色の文字選択モード（タイムラインの切り抜き） |
+| [manual-selection-rainbow.png](assets/screenshots/manual-selection-rainbow.png) | 実操作動画8.2秒地点：選択した「ソーサイ」だけを虹色で示す場面（タイムラインの切り抜き） |
 | [text-selection-mode.png](assets/screenshots/text-selection-mode.png) | 台本・ASRをなぞる文字選択モード |
 | [text-selection-manual-flag.png](assets/screenshots/text-selection-manual-flag.png) | 手動指摘の共通編集欄 |
 | [manual-flag-context-menu.png](assets/screenshots/manual-flag-context-menu.png) | 手動指摘の右クリック削除 |
