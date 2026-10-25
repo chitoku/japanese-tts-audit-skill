@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "public_announcement_baseline",
+  "observation_started_at_utc": "2026-10-25T00:56:43Z",
+  "observation_local": "2026-10-24T17:56:43-07:00",
+  "timezone": "America/Los_Angeles",
+  "announcement_urls": {
+    "zenn": "https://zenn.dev/chitoku/articles/d02d7611901d1f",
+    "x": "https://x.com/tweetok/status/2114158580291264681"
+  },
+  "github": {
+    "repository": "chitoku/japanese-tts-audit-skill",
+    "visibility": "public",
+    "stars": 0,
+    "forks": 0,
+    "subscribers": 0,
+    "open_issues_including_pull_requests": 0,
+    "traffic": {
+      "clones": 11,
+      "unique_cloners": 2,
+      "views": 0,
+      "unique_visitors": 0,
+      "first_returned_day_utc": "2026-10-10",
+      "last_returned_day_utc": "2026-10-23",
+      "referrers": [],
+      "popular_paths": [],
+      "includes_announcement_day": false,
+      "author_test_clones_included": "possible; exact attribution unavailable"
+    }
+  },
+  "skills_sh": {
+    "url": "https://www.skills.sh/chitoku/japanese-tts-audit-skill/japanese-tts-audit-skill",
+    "detail_page_available": true,
+    "installs_display": "–",
+    "installs_numeric": null,
+    "first_seen_display": "–",
+    "weekly_chart_display": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "search_result_count": 0,
+    "note": "Chart zeros and search result count do not establish zero installs. Public install count remains unavailable."
+  },
+  "self_tests": {
+    "telemetry_enabled_install_invocations": 1,
+    "observed_successful_install_event_responses": 1,
+    "record": "../../../installation-self-test-2026-10-24.json",
+    "telemetry_enabled_at_utc": "2026-10-25T00:18:04.931582+00:00",
+    "other_install_tests": "Earlier tests disabled telemetry; they may still affect GitHub clone traffic.",
+    "new_install_invocations_during_this_check": 0
+  },
+  "interpretation": {
+    "external_installations_confirmed": null,
+    "actual_skill_executions": null,
+    "subtract_author_install_from_public_count": false,
+    "notes": [
+      "Null means unknown, not zero.",
+      "GitHub traffic is a rolling window; do not sum snapshot totals or daily unique counts.",
+      "Compare daily counts keyed by UTC date; overlapping dates can be revised.",
+      "Traffic returned through October 23 does not yet measure today's announcement effect.",
+      "No individual visitor identities or private credentials are stored."
+    ]
+  }
+}

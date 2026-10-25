@@ -1,0 +1,24 @@
+{
+  "retrieved_at_utc": "2026-10-25T00:57:02.785379+00:00",
+  "url": "https://www.skills.sh/api/search?q=japanese-tts-audit-skill&limit=10",
+  "response": {
+    "query": "japanese-tts-audit-skill",
+    "searchType": "fuzzy",
+    "searchVersion": "algolia",
+    "skills": [],
+    "count": 0,
+    "duration_ms": 217,
+    "timings_ms": {
+      "rate_limit": 28.11820499994792,
+      "flags": 1.4230939999688417,
+      "visibility": 24.25774100003764,
+      "retrieval": 215.5544509999454,
+      "algolia_processing": 146,
+      "repositories": 0.00941399997100234,
+      "ranking": 0.03576899995096028,
+      "search": 217,
+      "total": 245.26713499997277
+    },
+    "provider_duration_ms": 215.5544509999454
+  }
+}
