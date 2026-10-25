@@ -66,5 +66,15 @@
       }
     }
   ],
-  "interpretation": "One author self-test, not evidence of an external user or actual audit usage. HTTP 200 acknowledges the event endpoint response; it does not prove a counted install or completed indexing. Do not subtract one from future aggregates as if their deduplication rules were known."
+  "interpretation": "One author self-test, not evidence of an external user or actual audit usage. HTTP 200 acknowledges the event endpoint response; it does not prove a counted install or completed indexing. Do not subtract one from future aggregates as if their deduplication rules were known.",
+  "final_observation": {
+    "checked_at_utc": "2026-10-25T00:19:04.154967+00:00",
+    "detail_page_available": true,
+    "verification": "Chrome rendered the Skill name, SKILL.md body and npx installation command",
+    "installs_display": "–",
+    "first_seen_display": "–",
+    "search_result_count": 0,
+    "search_results": [],
+    "aggregate_install_count_confirmed": false
+  }
 }

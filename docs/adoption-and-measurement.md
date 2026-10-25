@@ -96,6 +96,6 @@ npx --yes skills@1.7.4 add chitoku/japanese-tts-audit-skill \
 
 `DISABLE_TELEMETRY` と `DO_NOT_TRACK` をこの子プロセスの環境から外し、正常終了と6ファイルの一致を確認しました。送信を生成し直すのではなく、通常のCLIのfetch応答だけをローカルで記録し、installイベントへのHTTP 200を1件確認しています。
 
-直後の確認では、[詳細ページ](https://www.skills.sh/chitoku/japanese-tts-audit-skill/japanese-tts-audit-skill)は未掲載表示、検索結果は0件でした。イベントのHTTP 200は、公開カウンターへの反映や検索掲載の完了を保証しません。掲載のための再導入・イベント再送は行っていません。
+直後は詳細ページが未掲載表示、検索結果は0件でした。その後、Chromeで[詳細ページ](https://www.skills.sh/chitoku/japanese-tts-audit-skill/japanese-tts-audit-skill)にSkill本文と導入コマンドが表示されることを確認しました。一方、INSTALLSとFIRST SEENは「–」で、公開導入数の反映は未確認です。検索結果の最終確認は記録JSONを参照してください。イベントのHTTP 200と詳細ページの表示は、公開カウンターへの反映や検索掲載の完了を保証しません。再導入・イベント再送は行っていません。
 
 [自己テストの記録](installation-self-test-2026-10-24.json)に実行日時・件数・照合結果・掲載確認を保存しています。今後表示されるStatsには作者の自己テストが含まれる可能性があると注記し、外部利用者数と区別してください。集計・重複除外のルールが不明なまま「表示数から1を引けば外部利用者数」とは扱いません。
